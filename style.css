@@ -46,7 +46,7 @@ a {
   padding-left: 2rem;
   letter-spacing: 20px;
   transition: all 0.5s ease-in-out;
-  font-family: voyager;
+  font-family: sans-serif;
 }
 .hamburger {
   padding-right: 20px;
@@ -487,7 +487,7 @@ a {
   font-weight: 600;
   color: white;
   font-size: 2rem;
-  font-family: voyager;
+  font-family: sans-serif;
 }
 .info p {
   font-size: 2rem;
