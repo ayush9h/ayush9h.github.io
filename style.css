@@ -1,0 +1,833 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Share+Tech&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: voyager;
+  src: url("./textures/FontsFree-Net-VoyagerLight.ttf");
+}
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  color: aqua;
+  padding-left: 2rem;
+  letter-spacing: 20px;
+  transition: all 0.5s ease-in-out;
+  font-family: voyager;
+}
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 4rem;
+  height: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 25rem;
+  background-color: white;
+}
+
+.nav__link {
+  position: fixed;
+  width: 94%;
+  top: 6rem;
+  left: 2rem;
+  background-color: black;
+}
+
+.nav__link a {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.nav__link a:hover {
+  text-shadow: 2px 2px 10px #ffffff;
+}
+
+.hide {
+  display: none;
+}
+@media screen and (min-width: 500px) {
+  .nav__link {
+    display: block;
+    position: static;
+    width: auto;
+    margin-right: 20px;
+    background: none;
+  }
+
+  .nav__link a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+/*-----------------------------------
+=========TITLE SECTION OF WEBPAGE===========
+-----------------------------------*/
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./textures/bg.png");
+  background-size: cover;
+}
+
+.container h2 {
+  position: absolute;
+  color: white;
+  font-size: 7rem;
+  letter-spacing: 20px;
+  top: 30%;
+  left: 10%;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.container #name {
+  color: white;
+}
+.life {
+  width: 100rem;
+  height: 2rem;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+}
+@keyframes life {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+.life .skill_bar1 .info1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.skill_bar1 .info1 p:nth-child(2) {
+  font-weight: 600;
+  color: white;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+.info1 p {
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 4px;
+  font-family: "Press Start 2P", cursive;
+}
+.skill_bar1 .bar1 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border: 2px solid aqua;
+  padding: 1rem 1rem;
+}
+.skill_bar1 .bar1 span {
+  width: 20%;
+  height: 100%;
+  top: 2%;
+  left: -0.1%;
+  position: absolute;
+  border-radius: 0rem 2rem 2rem 0rem;
+  background-color: rgb(0, 255, 0);
+}
+.skill_bar1 .bar1 .life {
+  width: 20%;
+  animation: life 2s;
+}
+@keyframes life {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+
+.skills {
+  width: 40rem;
+  height: 20rem;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 85);
+  position: absolute;
+  top: 65%;
+  left: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: White;
+  font-size: 1.5rem;
+  letter-spacing: 15px;
+  cursor: pointer;
+}
+
+.education {
+  width: 40rem;
+  height: 20rem;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 85);
+  position: absolute;
+  top: 65%;
+  left: 37%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: White;
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+
+.projects {
+  width: 40rem;
+  height: 20rem;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 85);
+  position: absolute;
+  top: 65%;
+  left: 67%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: White;
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+.skills:hover {
+  transition: all 0.3s ease-in-out;
+  background-image: url("./textures/skill.gif");
+  color: black;
+  box-shadow: 0.2rem 0.2rem 0.8rem rgb(255, 242, 0);
+}
+.projects:hover {
+  transition: all 0.3s ease-in-out;
+  background-image: url("./textures/projects.gif");
+  color: black;
+  box-shadow: 0.2rem 0.2rem 0.8rem rgb(255, 242, 0);
+}
+.education:hover {
+  transition: all 0.3s ease-in-out;
+  background-image: url("./textures/education.gif");
+  color: black;
+  box-shadow: 0.2rem 0.2rem 0.8rem rgb(255, 242, 0);
+}
+/*----------------------------------
+==Responsiveness of website------
+===========================-------*/
+
+@media screen and (max-width: 500px) {
+  .container {
+    background-image: none;
+  }
+  .container h2 {
+    font-size: 4rem;
+  }
+  .container .life {
+    width: 60rem;
+  }
+  .life .skill_bar1 .info1 {
+    padding: 0 10px;
+  }
+  .skills {
+    top: 60%;
+    left: 30%;
+    height: 10rem;
+  }
+  .education {
+    top: 75%;
+    left: 30%;
+    height: 10rem;
+  }
+  .projects {
+    top: 90%;
+    left: 30%;
+    height: 10rem;
+  }
+}
+/*-----------------------------------
+=========EDUCATION SECTION===========
+-----------------------------------*/
+.education-section {
+  width: 100%;
+  height: 120vh;
+  margin-top: 25rem;
+}
+.edu-header {
+  width: 100%;
+  height: 20vh;
+}
+.edu-header h1 {
+  text-align: center;
+  transform: translateY(5rem);
+  font-size: 5rem;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 25px;
+  color: white;
+  text-shadow: 4px 4px 21px #ffffff;
+  animation: run 10s linear infinite alternate;
+  animation-delay: -40s;
+}
+.edu-header #arrow {
+  animation: inv 1s linear infinite;
+  letter-spacing: 20px;
+}
+
+.btech-section {
+  width: 100%;
+  height: 50vh;
+  background-image: url("./textures/school.png");
+}
+.btech-section h1 {
+  position: absolute;
+  top: 27%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.btech-section p:nth-child(2) {
+  position: absolute;
+  top: 47%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.btech-section p:nth-child(3) {
+  position: absolute;
+  top: 67%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.secondary-section {
+  width: 100%;
+  height: 50vh;
+  background-image: url("./textures/school1.png");
+  position: relative;
+}
+.secondary-section h1 {
+  position: absolute;
+  top: 27%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.secondary-section p:nth-child(2) {
+  position: absolute;
+  top: 47%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.secondary-section p:nth-child(3) {
+  position: absolute;
+  top: 67%;
+  left: 10%;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.9rem white;
+}
+.secondary-section #school,
+.btech-section #school {
+  color: yellow;
+  text-shadow: 0.2rem 0.2rem 0.9rem yellow;
+}
+@media screen and (max-width: 500px) {
+  .edu-header h1 {
+    position: absolute;
+    left: 10%;
+  }
+  .edu-header #arrow {
+    animation: none;
+    display: none;
+  }
+  .btech-section h1 {
+    top: 20%;
+    left: 25%;
+    width: 100%;
+    font-size: 3rem;
+  }
+  .btech-section p:nth-child(2) {
+    top: 52%;
+    left: 25%;
+    width: 100%;
+    font-size: 3rem;
+  }
+  .btech-section p:nth-child(3) {
+    top: 65%;
+    left: 25%;
+    width: 100%;
+    font-size: 3rem;
+  }
+  .secondary-section h1 {
+    top: 25%;
+    left: 25%;
+    width: 100%;
+    font-size: 3rem;
+  }
+  .secondary-section p:nth-child(2) {
+    top: 40%;
+    left: 25%;
+    font-size: 3rem;
+  }
+  .secondary-section p:nth-child(3) {
+    top: 55%;
+    left: 25%;
+    font-size: 3rem;
+  }
+}
+/*-----------------------------------
+=========SKILL SECTION===========
+-----------------------------------*/
+.skill {
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+}
+.skill h1 {
+  text-align: center;
+  transform: translateY(20rem);
+  font-size: 6rem;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 25px;
+  color: white;
+  text-shadow: 4px 4px 21px #ffffff;
+  animation: run 10s linear infinite alternate;
+  animation-delay: -40s;
+}
+.skill #arrow {
+  animation: inv 1s linear infinite;
+  letter-spacing: 20px;
+}
+@keyframes inv {
+  from {
+    letter-spacing: 20px;
+  }
+  to {
+    letter-spacing: 7px;
+  }
+}
+.skills_section {
+  width: 100%;
+  height: 100vh;
+  padding: 0px 8%;
+  background-color: rgba(0, 0, 0, 0.082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.skills_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 8rem;
+  grid-column-gap: 10rem;
+  margin-top: 10rem;
+}
+.skills_main .skill_bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.skill_bar .info p:nth-child(2) {
+  font-weight: 600;
+  color: white;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+.info p {
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 4px;
+  font-family: "Press Start 2P", cursive;
+}
+.skill_bar .bar {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border: 2px solid aqua;
+  box-shadow: 0.3rem 0.3rem 1rem aqua;
+  padding: 1rem 1rem;
+}
+.skill_bar .bar span {
+  width: 50%;
+  height: 100%;
+  top: 2%;
+  left: -0.1%;
+  position: absolute;
+  border-radius: 0rem 2rem 2rem 0rem;
+  background: linear-gradient(
+    41deg,
+    rgb(61, 84, 255) 0%,
+    rgb(179, 255, 0) 100%
+  );
+  box-shadow: 0.3rem 0.3rem 1rem aqua;
+}
+.skill_bar .bar .html {
+  width: 90%;
+  animation: html 2s;
+}
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+.skill_bar .bar .css {
+  width: 85%;
+  animation: css 2s;
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+.skill_bar .bar .sass {
+  width: 80%;
+  animation: sass 2s;
+}
+@keyframes sass {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+.skill_bar .bar .js {
+  width: 80%;
+  animation: css 2s;
+}
+@keyframes js {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+.skill_bar .bar .react {
+  width: 75%;
+  animation: react 2s;
+}
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+.skill_bar .bar .node {
+  width: 70%;
+  animation: node 2s;
+}
+@keyframes node {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.skill_bar .bar .express {
+  width: 65%;
+  animation: express 2s;
+}
+@keyframes express {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 65%;
+  }
+}
+.skill_bar .bar .mongo {
+  width: 60%;
+  animation: mongo 2s;
+}
+@keyframes mongo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .skill h1 {
+    position: absolute;
+    left: 20%;
+  }
+  .skill #arrow {
+    animation: none;
+    display: none;
+  }
+  .skills_main {
+    margin-top: 30rem;
+    grid-column-gap: 3rem;
+  }
+}
+/*-----------------------------------
+=========PROJECT DESIGN ===========
+-----------------------------------*/
+.project {
+  width: 100%;
+  height: 180rem;
+  position: relative;
+}
+.project .header h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 25px;
+  color: white;
+  text-shadow: 4px 4px 21px #ffffff;
+  animation: run 10s linear infinite alternate;
+  margin-top: 20rem;
+}
+.project #arrow {
+  animation: inv 1s linear infinite;
+  letter-spacing: 20px;
+}
+@keyframes inv {
+  from {
+    letter-spacing: 20px;
+  }
+  to {
+    letter-spacing: 7px;
+  }
+}
+.project1 {
+  margin-top: 20rem;
+  width: 100%;
+  height: 75vh;
+  background-image: url("./textures/project.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.project1 h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  font-family: voyager;
+  letter-spacing: 20px;
+  transform: translateY(-2rem);
+}
+.project1 #btn1 {
+  position: absolute;
+  top: 65%;
+  padding: 1rem 15rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+.project1 #btn1:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.project2 {
+  margin-top: 20rem;
+  width: 100%;
+  height: 75vh;
+  background-image: url("./textures/project.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.project2 p,
+.project1 p {
+  color: white;
+  position: absolute;
+  top: 12%;
+  left: 20%;
+  letter-spacing: 15px;
+  font-size: 1.2rem;
+  font-family: voyager;
+  font-weight: 600;
+  text-shadow: 0.3rem 0.3rem 2rem white;
+  animation: load 0.8s infinite linear alternate;
+}
+@keyframes load {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.project2 h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  font-family: voyager;
+  letter-spacing: 10px;
+  transform: translateX(-2rem);
+}
+.project2 #btn1 {
+  position: absolute;
+  top: 65%;
+  padding: 1rem 15rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+.project2 #btn1:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  .project .header h1 {
+    left: 20%;
+  }
+  .project h1 {
+    left: 35%;
+    font-family: sans-serif;
+  }
+  .project #arrow {
+    animation: none;
+    display: none;
+  }
+  .project1,
+  .project2 {
+    background-image: none;
+  }
+  .project1 #btn1,
+  .project2 #btn1 {
+    top: 75%;
+    left: 35%;
+    width: 100%;
+  }
+  .project1 p,
+  .project2 p {
+    display: none;
+  }
+}
+/*-----------------------------------
+=========heart DESIGN ===========
+-----------------------------------*/
+.heart-section {
+  width: 100%;
+  height: 120vh;
+  background-image: url(./textures/heart.gif);
+  background-size: cover;
+}
+@media screen and (max-width: 500px) {
+  .heart-section {
+    background-image: none;
+    height: 80vh;
+    margin-top: 10rem;
+  }
+  .responsive {
+    width: 100%;
+    height: auto;
+    transform: scale(2);
+  }
+}
+
+/*-----------------------------------
+=========SCROLLBAR DESIGN, SELECTION AND
+REVEAL AND NO REVEAL SECTION ===========
+-----------------------------------*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+::selection {
+  background-color: rgb(38, 27, 164);
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px) rotateX(90deg) perspective(1000px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px) rotateX(0deg) perspective(1000px);
+  opacity: 1;
+}
+
+.trail {
+  /* className for the trail elements */
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  background: rgb(2, 255, 255);
+}
