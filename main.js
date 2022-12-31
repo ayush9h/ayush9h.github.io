@@ -106,3 +106,45 @@ form.addEventListener("submit", (e) => {
   );
   form.reset().catch((error) => console.error("Error!", error.message));
 });
+
+
+TweenMax.from('.logo', 1, {
+  opacity: 0,
+  x: -20,
+  ease: Expo.easeInOut
+})
+TweenMax.staggerFrom('.navbar ul li', 1, {
+  opacity: 0,
+  x: -100,
+  ease: Power3.easeInOut
+}, 0.3)
+TweenMax.from(".text-2", 1, {
+  opacity: 0,
+  delay: 2,
+  y: -800,
+  ease: Expo.easeInOut
+})
+TweenMax.from(".cursor", 1, {
+  opacity: 0,
+  delay: 0.2,
+  y: -20,
+  ease: Expo.easeInOut
+})
+TweenMax.from(".typing", 1, {
+  opacity: 0,
+  delay: 2,
+  x: -100,
+  ease: Expo.easeInOut
+})
+
+TweenMax.from(".home", 2, {
+  opacity: 0,
+  delay: 0.6,
+  x: -800,
+  ease: Expo.easeInOut
+})
+TweenMax.from(".navbar img", 2, {
+  opacity: 0,
+  x: -20,
+  ease: Expo.easeInOut
+})
