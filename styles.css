@@ -649,9 +649,20 @@ footer span a:hover {
     background-image: url("./img/home.png");
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 350px) {
   .home {
     background-image: none;
+  }
+  .navbar .logo a {
+    font-size: 8px;
+  }
+  .projects .title {
+    font-size: 2rem;
+  }
+  .project-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 100px;
   }
 }
 @media (max-width: 991px) {
