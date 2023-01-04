@@ -6,10 +6,6 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-@font-face {
-  font-family: Nexa;
-  src: url("./Resources/Nexa/Light.otf");
-}
 
 :root {
   --primary-text-color: #26ffdf;
@@ -502,7 +498,7 @@ section .title::after {
 
 .swiper-slide {
   background-color: var(--background-color);
-  border: 5px solid var(--primary-text-color);
+  background-image: url("./img/project-bg.png");
 }
 .swiper-slide h1 {
   font-size: 3rem;
