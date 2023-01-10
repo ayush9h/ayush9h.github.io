@@ -516,7 +516,7 @@ section .title::after {
   width: 100%;
 }
 .border4 {
-  background-image: url("./img/work-border.png");
+  background-image: url("./img/Work-border.png");
   height: 300px;
   width: 100%;
   background-size: cover;
