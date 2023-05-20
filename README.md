@@ -1,6 +1,4 @@
-# ayush9h.github.io
-This is my Portfolio which is made using HTML, CSS, JavaScript GSAP and Anime.
-The images were made in  Canva.
-Includes all the information including the skills, projects and CV.
+# AYU.AR
+Portfolio website created using HTML, CSS, JS, GSAP and CANVA.
 
-Copyright © 2021-22 ayush.io() - All Rights Reserved.
+
