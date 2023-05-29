@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  user-select: none;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+/***Settings of CSS***/
+@font-face {
+  font-family: avgard-font;
+  src: url("./extras/AVGARDD_2.TTF");
+}
+:root {
+  --background-color: hsl(126, 66%, 1%);
+  --text-color: #ffffff;
+  --primary-button: #2acf8d;
+}
+html {
+  font-size: 62.5%;
+  background-color: var(--background-color);
+}
+.max-width {
+  width: min(280ch, 100% - 4rem);
+  margin-inline: auto;
+}
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-button);
+  box-shadow: 0 0 6rem #0fa, 0 0 9rem #0fa, 0 0 10rem #0fa, 0 0 11rem #0fa,
+    0 0 16rem #0fa;
+  pointer-events: none;
+  z-index: 9999;
+}
+span {
+  color: var(--primary-button);
+}
+/**Loading Container**/
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 10;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.box {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.2rem;
+  background-color: var(--primary-button);
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 3rem;
+  top: 40%;
+  color: var(--text-color);
+  font-family: avgard-font;
+}
+
+.boot-loaded {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-button);
+  font-size: 6rem;
+  width: 100%;
+  font-family: "Press Start 2P", cursive;
+  display: none;
+  text-shadow: 0 0 1rem var(--primary-button);
+}
+
+.enter-button {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.3rem solid white;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: avgard-font;
+  padding: 1rem 5rem;
+  border-radius: 5rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.enter-button:hover {
+  background-color: var(--primary-button);
+  border: 0.3rem solid var(--primary-button);
+}
+
+/******Navigation Bar CSS******/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+.navbar a {
+  font-size: 6rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar a span {
+  color: var(--primary-button);
+}
+.navbar-links {
+  display: flex;
+  padding-top: 2.5rem;
+  gap: 4rem;
+}
+.navbar-links li a {
+  font-size: 2rem;
+  list-style-type: none;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.navbar-links li a:hover {
+  color: var(--primary-button);
+}
+.navbar-links li i {
+  font-size: 2.5rem;
+}
+
+/*****Home-Container Code******/
+.home-container {
+  width: 100%;
+  height: 90vh;
+  background-image: url("./img/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.home-container h1 {
+  position: absolute;
+  top: 30%;
+  font-size: 13rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+}
+.home-container h1:nth-child(2) {
+  position: absolute;
+  top: 50%;
+}
+.home-container h1:nth-child(2) {
+  color: var(--primary-button);
+}
+
+/*****About-Container Code******/
+.about-container {
+  width: 100%;
+  margin-top: 20rem;
+}
+.about-container h1 {
+  padding: 5rem;
+  font-size: 2rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+.about-container p {
+  padding: 5rem;
+  font-size: 5rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+}
+.skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+.card {
+  position: relative;
+  height: 20rem;
+  background-color: var(--primary-button);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.center-text,
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.percentage {
+  font-size: 10rem;
+  font-family: avgard-font;
+  color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: -1;
+}
+
+/*******Work Container CSS*********/
+.work-container {
+  width: 100%;
+  margin-top: 20rem;
+}
+.work-container a {
+  text-decoration: none;
+}
+.work-container h1 {
+  padding: 5rem;
+  font-size: 2rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+.work-title {
+  width: 100%;
+  border-top: 0.3rem solid var(--text-color);
+  border-bottom: 0.3rem solid var(--text-color);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+.work-title h1 {
+  font-size: 7rem;
+  font-family: avgard-font;
+}
+.work-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary-button);
+  transition: width 0.3s ease;
+  z-index: -3;
+}
+
+.work-title:hover::before {
+  width: 100%;
+}
+.work-container p {
+  padding: 5rem;
+  font-size: 4rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+}
+.pokeball-canvas,
+.blades-canvas {
+  overflow-x: hidden;
+}
+
+/*******Footer Bar CSS*********/
+.footer {
+  background-color: var(--primary-button);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 4;
+  height: 4rem;
+  margin: 0 10rem;
+  text-align: center;
+  line-height: 4rem;
+}
+.footer-socials a {
+  font-family: avgard-font;
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.footer h1 {
+  font-family: avgard-font;
+  margin-bottom: 2rem;
+}
+
+/*******Scroll Bar CSS*********/
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0;
+}
+
+@media (max-width: 768px) {
+  .social-icon {
+    margin: 0 0.5rem;
+  }
+  .footer-socials a {
+    font-size: 1.5rem;
+  }
+}
