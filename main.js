@@ -16,6 +16,7 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+
 /************Loading Page JS***************/
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
@@ -49,7 +50,7 @@ window.addEventListener('load', function() {
 
   let progress = 0;
   const progressInterval = setInterval(() => {
-    progress += 10;
+    progress += 1;
     progressText.textContent = `${progress}%`;
     if (progress >= 100) {
       clearInterval(progressInterval);
@@ -62,11 +63,10 @@ window.addEventListener('load', function() {
       });
       isProgressComplete = true;
     }
-  }, 1000);
+  }, 100);
 });
 
 /*********GSAP Animation************/
-
 gsap.registerPlugin(ScrollTrigger)
 gsap.from('.about-container .about-title',{
   opacity : 0,
@@ -124,19 +124,6 @@ items.forEach((div, index) => {
   });
 });
 
-gsap.from('.extra-title',{
-  opacity : 0,
-  rotationX : -45,
-  y:-20,
-  duration:1,
-  delay:0.5,
-  scrollTrigger:{
-    trigger : ".extra-title",
-    toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
-  }
-})
 
 
 gsap.from('.hackhound',{
@@ -168,20 +155,47 @@ gsap.from('.work-container .work-title-header',{
   }
 })
 
-gsap.from('.work-container .work-title',{
+gsap.from('.work-title-machinelearning',{
   opacity : 0,
   rotationX : -45,
   y:-20,
   duration:1,
   delay:0.5,
   scrollTrigger:{
-    trigger : ".work-container .work-title",
+    trigger : ".work-title-machinelearning",
     toggleActions : "play none none reverse",
     start:"top 60%",
     end: "bottom 20%",
   }
 })
 
+gsap.from('.work-title-webdev',{
+  opacity : 0,
+  rotationX : -45,
+  y:-20,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".work-title-webdev",
+    toggleActions : "play none none reverse",
+    start:"top 60%",
+    end: "bottom 20%",
+  }
+})
+
+gsap.from('.work-title',{
+  opacity : 0,
+  rotationX : -45,
+  y:-20,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".work-title",
+    toggleActions : "play none none reverse",
+    start:"top 60%",
+    end: "bottom 20%",
+  }
+})
 
 gsap.from('.work-container .blades-of-chaos',{
   opacity : 0,
@@ -209,7 +223,6 @@ gsap.from('.work-container .blades-canvas',{
     end: "bottom 20%",
   }
 })
-
 
 gsap.from('.work-container .pokeball',{
   opacity : 0,
@@ -251,7 +264,6 @@ gsap.from('.extra-skill',{
     end: "bottom 20%",
   }
 })
-
 
 /**************Three JS Scene*****************/
 const canvas = document.querySelector(".blades-canvas")
