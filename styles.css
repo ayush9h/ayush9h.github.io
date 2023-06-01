@@ -443,7 +443,7 @@ span {
     padding: 0;
     font-size: 1.2rem;
   }
-  .work-title-machinelearning {
+  .work-title-machinelearning,.work-title-webdev {
     font-size: 3rem;
   }
 }
