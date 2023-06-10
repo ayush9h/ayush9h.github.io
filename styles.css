@@ -5,8 +5,8 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   user-select: none;
-  cursor: pointer;
   overflow-x: hidden;
+  cursor: pointer;
 }
 /***Settings of CSS***/
 @font-face {
@@ -23,7 +23,7 @@ html {
   background-color: var(--background-color);
 }
 .max-width {
-  width: min(280ch, 100% - 4rem);
+  width: min(290ch, 100% - 4rem);
   margin-inline: auto;
 }
 .custom-cursor {
@@ -251,14 +251,20 @@ span {
   color: var(--text-color);
   text-transform: uppercase;
 }
-.work-title {
+.work-title-purple,
+.work-title-aim,
+.work-title-flightdelay,
+.work-title-recommendation {
   width: 100%;
   border-top: 0.3rem solid var(--text-color);
   border-bottom: 0.3rem solid var(--text-color);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
 }
-.work-title h1 {
+.work-title-purple h1,
+.work-title-aim h1,
+.work-title-flightdelay h1,
+.work-title-recommendation h1 {
   font-size: 7rem;
   font-family: avgard-font;
 }
@@ -318,14 +324,14 @@ span {
 }
 .connect-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
   padding: 4rem;
 }
 
 .left-link-container {
   display: grid;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
   align-items: center;
 }
 .left-link-container h2 {
@@ -408,7 +414,7 @@ span {
     grid-template-columns: 1fr;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 684px) {
   .max-width {
     width: min(100ch, 100% - 4rem);
   }
@@ -443,8 +449,12 @@ span {
     padding: 0;
     font-size: 1.2rem;
   }
-  .work-title-machinelearning,.work-title-webdev {
+  .work-title-machinelearning,
+  .work-title-webdev {
     font-size: 3rem;
+  }
+  .connect-links {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 768px) {

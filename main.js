@@ -25,7 +25,6 @@ window.addEventListener('load', function() {
   const enterButton = document.getElementById('enter-button');
   let isProgressComplete = false;
   
-  loadingScreen.style.opacity = '1';
   loadingScreen.style.visibility = 'visible';
 
   const boxes = document.querySelectorAll('.box');
@@ -125,7 +124,6 @@ items.forEach((div, index) => {
 });
 
 
-
 gsap.from('.hackhound',{
   opacity : 0,
   rotationX : -45,
@@ -139,7 +137,6 @@ gsap.from('.hackhound',{
     end: "bottom 20%",
   }
 })
-
 
 gsap.from('.work-container .work-title-header',{
   opacity : 0,
@@ -183,14 +180,28 @@ gsap.from('.work-title-webdev',{
   }
 })
 
-gsap.from('.work-title',{
+gsap.from('.work-title-flightdelay, .work-title-recommendation',{
   opacity : 0,
   rotationX : -45,
   y:-20,
   duration:1,
   delay:0.5,
   scrollTrigger:{
-    trigger : ".work-title",
+    trigger : ".work-title-flightdelay, .work-title-recommendation",
+    toggleActions : "play none none reverse",
+    start:"top 60%",
+    end: "bottom 20%",
+  }
+})
+
+gsap.from('.work-title-purple, .work-title-aim',{
+  opacity : 0,
+  rotationX : -45,
+  y:-20,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".work-title-purple, .work-title-aim",
     toggleActions : "play none none reverse",
     start:"top 60%",
     end: "bottom 20%",
@@ -251,19 +262,6 @@ gsap.from('.work-container .pokeball-canvas',{
   }
 })
 
-gsap.from('.extra-skill',{
-  opacity : 0,
-  rotationX : -45,
-  y:-20,
-  duration:1,
-  delay:0.5,
-  scrollTrigger:{
-    trigger : ".extra-skill",
-    toggleActions : "play none none reverse",
-    start:"top 90%",
-    end: "bottom 20%",
-  }
-})
 
 /**************Three JS Scene*****************/
 const canvas = document.querySelector(".blades-canvas")
