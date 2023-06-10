@@ -54,7 +54,7 @@ span {
   justify-content: center;
   align-items: center;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   overflow: hidden;
   z-index: 10;
