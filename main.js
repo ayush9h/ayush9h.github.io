@@ -266,7 +266,7 @@ gsap.from('.work-container .pokeball-canvas',{
 /**************Three JS Scene*****************/
 const canvas = document.querySelector(".blades-canvas")
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x00000);
+scene.background = new THREE.Color(0x09001f);
 
 const loader = new GLTFLoader()
 loader.load("./models/blades.glb",function(gltf){
@@ -316,7 +316,7 @@ function onWindowResize() {
 /************Three JS for pokeball************/
 const canvas_pokeball = document.querySelector(".pokeball-canvas")
 const scene_pokeball = new THREE.Scene();
-scene_pokeball.background = new THREE.Color(0x00000);
+scene_pokeball.background = new THREE.Color(0x09001f);
 
 const loader_pokeball = new GLTFLoader()
 loader_pokeball.load("./models/pokeball.glb",function(glx){
