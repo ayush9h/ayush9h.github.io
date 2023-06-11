@@ -14,7 +14,7 @@
   src: url("./extras/AVGARDD_2.TTF");
 }
 :root {
-  --background-color: hsl(126, 66%, 1%);
+  --background-color: hsl(257, 100%, 6%);
   --text-color: #ffffff;
   --primary-button: #2acf8d;
 }
@@ -254,7 +254,8 @@ span {
 .work-title-purple,
 .work-title-aim,
 .work-title-flightdelay,
-.work-title-recommendation {
+.work-title-recommendation,
+.work-title-plc {
   width: 100%;
   border-top: 0.3rem solid var(--text-color);
   border-bottom: 0.3rem solid var(--text-color);
@@ -264,7 +265,8 @@ span {
 .work-title-purple h1,
 .work-title-aim h1,
 .work-title-flightdelay h1,
-.work-title-recommendation h1 {
+.work-title-recommendation h1,
+.work-title-plc h1 {
   font-size: 7rem;
   font-family: avgard-font;
 }

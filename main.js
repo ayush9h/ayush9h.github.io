@@ -194,14 +194,14 @@ gsap.from('.work-title-flightdelay, .work-title-recommendation',{
   }
 })
 
-gsap.from('.work-title-purple, .work-title-aim',{
+gsap.from('.work-title-purple, .work-title-aim, .work-title-plc',{
   opacity : 0,
   rotationX : -45,
   y:-20,
   duration:1,
   delay:0.5,
   scrollTrigger:{
-    trigger : ".work-title-purple, .work-title-aim",
+    trigger : ".work-title-purple, .work-title-aim, .work-title-plc",
     toggleActions : "play none none reverse",
     start:"top 60%",
     end: "bottom 20%",
