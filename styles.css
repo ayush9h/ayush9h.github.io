@@ -315,8 +315,32 @@ span {
   overflow-x: hidden;
 }
 
+/*******Motto Container CSS*********/
+.motto-container {
+  width: 100%;
+}
+.motto-container h1 {
+  font-size: 15rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-align: center;
+}
+.motto-container h2 {
+  font-size: 3rem;
+  font-family: avgard-font;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10rem;
+}
+.motto-container .author {
+  font-style: italic;
+  font-family: avgard-font;
+  font-size: 3rem;
+  margin-top: 3rem;
+}
 /*******Footer Bar CSS*********/
 .footer {
+  margin-top: 20rem;
   width: 100%;
 }
 .footer .connect {
@@ -454,6 +478,9 @@ span {
   }
   .work-title-machinelearning,
   .work-title-webdev {
+    font-size: 3rem;
+  }
+  .motto-container h1 {
     font-size: 3rem;
   }
   .connect-links {

@@ -24,9 +24,8 @@ window.addEventListener('load', function() {
   const bootLoadedText = document.getElementById('boot-loaded');
   const enterButton = document.getElementById('enter-button');
   let isProgressComplete = false;
-  
-  loadingScreen.style.visibility = 'visible';
 
+  loadingScreen.style.visibility = 'visible';
   const boxes = document.querySelectorAll('.box');
   anime({
     targets: boxes,
@@ -256,6 +255,32 @@ gsap.from('.work-container .pokeball-canvas',{
   delay:0.5,
   scrollTrigger:{
     trigger : ".work-container .pokeball-canvas",
+    toggleActions : "play none none reverse",
+    start:"top 90%",
+    end: "bottom 20%",
+  }
+})
+
+gsap.from('.motto-container h2',{
+  opacity : 0,
+  z:-20,
+  scale:0,
+  duration:1,
+  scrollTrigger:{
+    trigger : ".motto-container h2",
+    toggleActions : "play none none reverse",
+    start:"top 90%",
+    end: "bottom 20%",
+  }
+})
+
+gsap.from('.motto-container h1',{
+  opacity : 0,
+  z:-20,
+  scale:0,
+  duration:1,
+  scrollTrigger:{
+    trigger : ".motto-container h1",
     toggleActions : "play none none reverse",
     start:"top 90%",
     end: "bottom 20%",
