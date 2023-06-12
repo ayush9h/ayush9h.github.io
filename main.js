@@ -25,7 +25,6 @@ window.addEventListener('load', function() {
   const enterButton = document.getElementById('enter-button');
   let isProgressComplete = false;
 
-  loadingScreen.style.visibility = 'visible';
   const boxes = document.querySelectorAll('.box');
   anime({
     targets: boxes,
