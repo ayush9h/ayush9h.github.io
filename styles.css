@@ -55,7 +55,6 @@ span {
   align-items: center;
   text-align: center;
   opacity: 1;
-  visibility: hidden;
   overflow: hidden;
   z-index: 10;
   transition: opacity 0.5s, visibility 0.5s;
