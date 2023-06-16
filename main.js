@@ -386,6 +386,58 @@ function onWindowResize_pokeball() {
   renderer_pokeball.setSize(window.innerWidth, window.innerHeight);
 }
 
+
+/************Three JS for Ford************/
+const canvas_mustang = document.querySelector(".ford-canvas")
+const scene_mustang = new THREE.Scene();
+scene_mustang.background = new THREE.Color(0x09001f);
+
+const loader_mustang = new GLTFLoader()
+loader_mustang.load("./models/car.glb",function(glx){
+    scene_mustang.add(glx.scene)
+}, undefined,function (error){
+  console.log(error);
+});
+
+var directionalLight_mustang = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight_mustang.position.set(1, 3, 1);
+scene_mustang.add(directionalLight_mustang);
+
+var directionalLight2_mustang = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight2_mustang.position.set(0, -3, 0);
+scene_mustang.add(directionalLight2_mustang);
+
+
+const camera_mustang = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera_mustang.position.z = 3.5;
+camera_mustang.position.y = 1;
+
+
+
+const renderer_mustang = new THREE.WebGL1Renderer({ canvas: canvas_mustang, antialias: true });
+renderer_mustang.setSize(window.innerWidth, window.innerHeight);
+renderer_mustang.gammaOutput = true;
+renderer_mustang.gammaFactor = 2.5;
+
+const controls_mustang = new OrbitControls(camera_mustang, renderer.domElement);
+controls_mustang.enableZoom = false;
+controls_mustang.update();
+window.addEventListener('resize', onWindowResize_mustang, false);
+function animate_mustang()
+{
+  requestAnimationFrame(animate_mustang);
+  scene_mustang.rotation.y += 0.01;
+  controls_mustang.update();
+  renderer_mustang.render(scene_mustang, camera_mustang);
+}
+animate_mustang();
+
+function onWindowResize_mustang() {
+  camera_mustang.aspect = window.innerWidth / window.innerHeight;
+  camera_mustang.updateProjectionMatrix();
+  renderer_mustang.setSize(window.innerWidth, window.innerHeight);
+}
+
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
   var customCursor = document.createElement("div");
