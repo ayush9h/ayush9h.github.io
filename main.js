@@ -260,6 +260,33 @@ gsap.from('.work-container .pokeball-canvas',{
   }
 })
 
+gsap.from('.work-container .ford',{
+  opacity : 0,
+  rotationX : -45,
+  y:-20,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".work-container .ford",
+    toggleActions : "play none none reverse",
+    start:"top 60%",
+    end: "bottom 20%",
+  }
+})
+
+gsap.from('.work-container .ford-canvas',{
+  opacity : 0,
+  scale:0,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".work-container .ford-canvas",
+    toggleActions : "play none none reverse",
+    start:"top 90%",
+    end: "bottom 20%",
+  }
+})
+
 gsap.from('.motto-container h2',{
   opacity : 0,
   z:-20,
