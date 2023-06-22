@@ -42,6 +42,7 @@ html {
 span {
   color: var(--primary-button);
 }
+
 /**Loading Container**/
 #loading-screen {
   position: fixed;
@@ -389,8 +390,12 @@ span {
 }
 /*******Scroll Bar CSS*********/
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 0;
+  background-color: var(--background-color);
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-button);
+  border-radius: 1rem;
 }
 
 /****Media Queries******/

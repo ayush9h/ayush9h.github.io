@@ -346,13 +346,14 @@ renderer.gammaFactor = 2.2;
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = false;
-controls.enabled = false;
+controls.minPolarAngle = 0; 
+controls.maxPolarAngle = Math.PI / 2.5; 
 controls.update();
 window.addEventListener('resize', onWindowResize, false);
 function animate()
 {
   requestAnimationFrame(animate);
-  scene.rotation.y += 0.01;
+   scene.rotation.y += 0.01;
   controls.update();
   renderer.render(scene, camera);
 }
@@ -394,8 +395,10 @@ renderer_pokeball.setSize(window.innerWidth, window.innerHeight);
 renderer_pokeball.gammaOutput = true;
 renderer_pokeball.gammaFactor = 2.2;
 
-const controls_pokeball = new OrbitControls(camera_pokeball, renderer.domElement);
+const controls_pokeball = new OrbitControls(camera_pokeball, renderer_pokeball.domElement);
 controls_pokeball.enableZoom = false;
+controls_pokeball.minPolarAngle = 0; 
+controls_pokeball.maxPolarAngle = Math.PI / 2.5; 
 controls_pokeball.update();
 window.addEventListener('resize', onWindowResize_pokeball, false);
 function animate_pokeball()
@@ -440,19 +443,20 @@ camera_mustang.position.z = 3.5;
 camera_mustang.position.y = 1;
 
 
-
 const renderer_mustang = new THREE.WebGL1Renderer({ canvas: canvas_mustang, antialias: true });
 renderer_mustang.setSize(window.innerWidth, window.innerHeight);
 renderer_mustang.gammaOutput = true;
 renderer_mustang.gammaFactor = 2.5;
 
-const controls_mustang = new OrbitControls(camera_mustang, renderer.domElement);
+const controls_mustang = new OrbitControls(camera_mustang, renderer_mustang.domElement);
 controls_mustang.enableZoom = false;
+controls_mustang.minPolarAngle = 0; 
+controls_mustang.maxPolarAngle = Math.PI / 2.5; 
 controls_mustang.update();
 window.addEventListener('resize', onWindowResize_mustang, false);
 function animate_mustang()
 {
-  requestAnimationFrame(animate_mustang);
+  requestAnimationFrame(animate_mustang)
   scene_mustang.rotation.y += 0.01;
   controls_mustang.update();
   renderer_mustang.render(scene_mustang, camera_mustang);
