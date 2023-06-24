@@ -1,7 +1,3 @@
-import * as THREE from 'https://unpkg.com/three@0.148.0/build/three.module.js';
-import {GLTFLoader} from 'https://unpkg.com/three@0.148.0/examples/jsm/loaders/GLTFLoader.js'
-import {OrbitControls} from 'https://unpkg.com/three@0.148.0/examples/jsm/controls/OrbitControls.js'
-
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".navbar-links");
 
@@ -47,7 +43,7 @@ window.addEventListener('load', function() {
 
   let progress = 0;
   const progressInterval = setInterval(() => {
-    progress += 1;
+    progress += 5;
     progressText.textContent = `${progress}%`;
     if (progress >= 100) {
       clearInterval(progressInterval);
@@ -60,7 +56,7 @@ window.addEventListener('load', function() {
       });
       isProgressComplete = true;
     }
-  }, 100);
+  }, 90);
 });
 
 /*********GSAP Animation************/
@@ -312,163 +308,6 @@ gsap.from('.motto-container h1',{
     end: "bottom 20%",
   }
 })
-
-
-/**************Three JS Scene*****************/
-const canvas = document.querySelector(".blades-canvas")
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x09001f);
-
-const loader = new GLTFLoader()
-loader.load("./models/blades.glb",function(gltf){
-    scene.add(gltf.scene)
-}, undefined,function (error){
-  console.log(error);
-});
-
-var directionalLight = new THREE.DirectionalLight(0xffffff, 6);
-directionalLight.position.set(1, 3, 1);
-scene.add(directionalLight);
-
-
-var directionalLight_2 = new THREE.DirectionalLight(0xffffff, 6);
-directionalLight_2.position.set(-1, -3, 1);
-scene.add(directionalLight_2);
-
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 4.5;
-
-
-const renderer = new THREE.WebGL1Renderer({ canvas: canvas, antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.gammaOutput = true;
-renderer.gammaFactor = 2.2;
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
-controls.minPolarAngle = 0; 
-controls.maxPolarAngle = Math.PI / 2.5; 
-controls.update();
-window.addEventListener('resize', onWindowResize, false);
-function animate()
-{
-  requestAnimationFrame(animate);
-   scene.rotation.y += 0.01;
-  controls.update();
-  renderer.render(scene, camera);
-}
-animate();
-
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-/************Three JS for pokeball************/
-const canvas_pokeball = document.querySelector(".pokeball-canvas")
-const scene_pokeball = new THREE.Scene();
-scene_pokeball.background = new THREE.Color(0x09001f);
-
-const loader_pokeball = new GLTFLoader()
-loader_pokeball.load("./models/pokeball.glb",function(glx){
-    scene_pokeball.add(glx.scene)
-}, undefined,function (error){
-  console.log(error);
-});
-
-var directionalLight_pokeball = new THREE.DirectionalLight(0xffffff, 2);
-directionalLight_pokeball.position.set(1, 3, 1);
-scene_pokeball.add(directionalLight_pokeball);
-
-var directionalLight2_pokeball = new THREE.DirectionalLight(0xffffff, 2);
-directionalLight2_pokeball.position.set(0, -3, 0);
-scene_pokeball.add(directionalLight2_pokeball);
-
-
-const camera_pokeball = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera_pokeball.position.z = 6;
-
-
-const renderer_pokeball = new THREE.WebGL1Renderer({ canvas: canvas_pokeball, antialias: true });
-renderer_pokeball.setSize(window.innerWidth, window.innerHeight);
-renderer_pokeball.gammaOutput = true;
-renderer_pokeball.gammaFactor = 2.2;
-
-const controls_pokeball = new OrbitControls(camera_pokeball, renderer_pokeball.domElement);
-controls_pokeball.enableZoom = false;
-controls_pokeball.minPolarAngle = 0; 
-controls_pokeball.maxPolarAngle = Math.PI / 2.5; 
-controls_pokeball.update();
-window.addEventListener('resize', onWindowResize_pokeball, false);
-function animate_pokeball()
-{
-  requestAnimationFrame(animate_pokeball);
-  scene_pokeball.rotation.y += 0.01;
-  controls_pokeball.update();
-  renderer_pokeball.render(scene_pokeball, camera_pokeball);
-}
-animate_pokeball();
-
-function onWindowResize_pokeball() {
-  camera_pokeball.aspect = window.innerWidth / window.innerHeight;
-  camera_pokeball.updateProjectionMatrix();
-  renderer_pokeball.setSize(window.innerWidth, window.innerHeight);
-}
-
-
-/************Three JS for Ford************/
-const canvas_mustang = document.querySelector(".ford-canvas")
-const scene_mustang = new THREE.Scene();
-scene_mustang.background = new THREE.Color(0x09001f);
-
-const loader_mustang = new GLTFLoader()
-loader_mustang.load("./models/car.glb",function(glx){
-    scene_mustang.add(glx.scene)
-}, undefined,function (error){
-  console.log(error);
-});
-
-var directionalLight_mustang = new THREE.DirectionalLight(0xffffff, 2);
-directionalLight_mustang.position.set(1, 3, 1);
-scene_mustang.add(directionalLight_mustang);
-
-var directionalLight2_mustang = new THREE.DirectionalLight(0xffffff, 2);
-directionalLight2_mustang.position.set(0, -3, 0);
-scene_mustang.add(directionalLight2_mustang);
-
-
-const camera_mustang = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera_mustang.position.z = 3.5;
-camera_mustang.position.y = 1;
-
-
-const renderer_mustang = new THREE.WebGL1Renderer({ canvas: canvas_mustang, antialias: true });
-renderer_mustang.setSize(window.innerWidth, window.innerHeight);
-renderer_mustang.gammaOutput = true;
-renderer_mustang.gammaFactor = 2.5;
-
-const controls_mustang = new OrbitControls(camera_mustang, renderer_mustang.domElement);
-controls_mustang.enableZoom = false;
-controls_mustang.minPolarAngle = 0; 
-controls_mustang.maxPolarAngle = Math.PI / 2.5; 
-controls_mustang.update();
-window.addEventListener('resize', onWindowResize_mustang, false);
-function animate_mustang()
-{
-  requestAnimationFrame(animate_mustang)
-  scene_mustang.rotation.y += 0.01;
-  controls_mustang.update();
-  renderer_mustang.render(scene_mustang, camera_mustang);
-}
-animate_mustang();
-
-function onWindowResize_mustang() {
-  camera_mustang.aspect = window.innerWidth / window.innerHeight;
-  camera_mustang.updateProjectionMatrix();
-  renderer_mustang.setSize(window.innerWidth, window.innerHeight);
-}
-
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
   var customCursor = document.createElement("div");

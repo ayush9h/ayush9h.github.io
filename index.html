@@ -169,11 +169,21 @@
 
             <h1 class="blender-work"><span>Blender</span> Projects</h1>
             <p class="blades-of-chaos">Blades of Chaos - <span>God Of War</span> &reg;</p>
-            <canvas class="blades-canvas"></canvas>
+            <model-viewer src="./models/blades.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+                poster="poster.webp" shadow-intensity="2" exposure="0.93" shadow-softness="1">
+
+            </model-viewer>
             <p class="pokeball">Pokeball Design - <span>Pokemon </span> &reg;</p>
-            <canvas class="pokeball-canvas"></canvas>
+            <model-viewer src="./models/pokeball.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+                poster="poster.webp" shadow-intensity="2" exposure="0.93" shadow-softness="1">
+            </model-viewer>
             <p class="ford">Low Poly Cybertruck - <span>Tesla </span> &reg;</p>
-            <canvas class="ford-canvas"></canvas>
+            <div class="model-car">
+                <model-viewer src="./models/car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+                    poster="poster.webp" shadow-intensity="2" exposure="0.93" shadow-softness="1">
+
+                </model-viewer>
+            </div>
         </div>
     </div>
 
@@ -205,15 +215,10 @@
     </footer>
 
 </body>
-<script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three/build/three.module.js",
-            "three/": "https://unpkg.com/three/"
-        }
-    }
-</script>
+
 <script type="text/javascript" src="./extras/vanilla-tilt.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
