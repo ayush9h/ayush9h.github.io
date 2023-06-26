@@ -14,7 +14,7 @@
   src: url("./extras/AVGARDD_2.TTF");
 }
 :root {
-  --background-color: #09001f;
+  --background-color: #000000;
   --text-color: #ffffff;
   --primary-button: #2acf8d;
 }
@@ -99,7 +99,7 @@ span {
   font-size: 1rem;
   font-family: avgard-font;
   padding: 1rem 5rem;
-  border-radius: 5rem;
+  border-radius: 1rem;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .enter-button:hover {
@@ -178,6 +178,18 @@ span {
   position: absolute;
   top: 50%;
 }
+@keyframes changeText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.changing {
+  animation: changeText 2s infinite;
+}
 .home-container h1:nth-child(2) {
   color: var(--primary-button);
 }
@@ -204,6 +216,7 @@ span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
+  overflow-y: hidden;
   margin: 2rem;
 }
 .card {
@@ -390,11 +403,10 @@ model-viewer {
 /*******Scroll Bar CSS*********/
 ::-webkit-scrollbar {
   background-color: var(--background-color);
-  width: 1rem;
+  width: 2rem;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-button);
-  border-radius: 1rem;
 }
 
 /****Media Queries******/

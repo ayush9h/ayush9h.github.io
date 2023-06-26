@@ -56,8 +56,27 @@ window.addEventListener('load', function() {
       });
       isProgressComplete = true;
     }
-  }, 90);
+  }, 200);
 });
+
+const textElement = document.getElementById('changing-text');
+const texts = ['FRONT END', 'REACT', '3D ASSETS'];
+let currentIndex = 0;
+
+function changeText() {
+  textElement.textContent = texts[currentIndex];
+  textElement.classList.add('changing');
+  
+  setTimeout(() => {
+    textElement.classList.remove('changing');
+    currentIndex = (currentIndex + 1) % texts.length;
+    changeText();
+  }, 2000); // Duration of each text in milliseconds
+}
+
+// Call changeText() when the page is loaded
+window.addEventListener('load', changeText);
+
 
 /*********GSAP Animation************/
 gsap.registerPlugin(ScrollTrigger)
@@ -227,6 +246,8 @@ gsap.from('.motto-container h1',{
     end: "bottom 20%",
   }
 })
+
+
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
   var customCursor = document.createElement("div");
