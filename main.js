@@ -71,10 +71,9 @@ function changeText() {
     textElement.classList.remove('changing');
     currentIndex = (currentIndex + 1) % texts.length;
     changeText();
-  }, 2000); // Duration of each text in milliseconds
+  }, 1500); // Duration of each text in milliseconds
 }
 
-// Call changeText() when the page is loaded
 window.addEventListener('load', changeText);
 
 
