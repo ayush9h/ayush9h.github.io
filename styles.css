@@ -188,7 +188,7 @@ span {
 }
 
 .changing {
-  animation: changeText 2s infinite;
+  animation: changeText 1s infinite;
 }
 .home-container h1:nth-child(2) {
   color: var(--primary-button);
