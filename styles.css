@@ -175,14 +175,6 @@ span {
   position: absolute;
   top: 50%;
 }
-@keyframes changeText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .changing {
   animation: changeText 1s infinite;
