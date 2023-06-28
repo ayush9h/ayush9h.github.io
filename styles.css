@@ -387,7 +387,7 @@ model-viewer {
   padding: 0 4rem;
   color: var(--text-color);
   font-size: 1.7rem;
-  font-family: avgard-font;
+  font-family: 'Yatra One', cursive;
 }
 /*******Scroll Bar CSS*********/
 ::-webkit-scrollbar {
