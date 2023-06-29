@@ -442,6 +442,10 @@ model-viewer {
   .max-width {
     width: min(100ch, 100% - 4rem);
   }
+
+  .boot-loaded{
+    font-size:5rem;
+  }
   .home-container {
     background-image: url("./img/background-phone.svg");
     background-size: cover;
