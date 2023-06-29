@@ -1,4 +1,4 @@
-/************Loading Page JS***************/
+/************Loading Page JS**********************/
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
   const progressText = document.getElementById('progress-text');
