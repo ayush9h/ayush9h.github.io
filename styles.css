@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ html {
   background-color: var(--background-color);
 }
 .max-width {
-  width: min(290ch, 100% - 4rem);
+  width: min(300ch, 100% - 4rem);
   margin-inline: auto;
 }
 .custom-cursor {
@@ -54,7 +54,7 @@ span {
   text-align: center;
   opacity: 1;
   overflow: hidden;
-  z-index: 10;
+  z-index: 10000;
   transition: opacity 0.5s, visibility 0.5s;
 }
 
@@ -70,7 +70,7 @@ span {
   font-size: 3rem;
   top: 40%;
   color: var(--text-color);
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
 }
 
 .boot-loaded {
@@ -79,9 +79,9 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--primary-button);
-  font-size: 6rem;
+  font-size: 10rem;
   width: 100%;
-  font-family:'Yatra One', cursive;
+  font-family: "Coda", cursive;
   display: none;
   text-shadow: 0 0 1rem var(--primary-button);
 }
@@ -90,13 +90,14 @@ span {
   position: absolute;
   top: 65%;
   left: 50%;
+  opacity: 0;
   transform: translate(-50%, -50%);
   border: 0.3rem solid white;
   color: var(--text-color);
   font-size: 1rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   padding: 1rem 5rem;
-  border-radius: 1rem;
+  border-radius: 5rem;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .enter-button:hover {
@@ -112,7 +113,7 @@ span {
 }
 .navbar a {
   font-size: 6rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   cursor: pointer;
   text-decoration: none;
@@ -141,7 +142,7 @@ span {
 .navbar-links li a {
   font-size: 2rem;
   list-style-type: none;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -168,16 +169,12 @@ span {
   position: absolute;
   top: 30%;
   font-size: 13rem;
-  font-family:'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
 }
 .home-container h1:nth-child(2) {
   position: absolute;
   top: 50%;
-}
-
-.changing {
-  animation: changeText 1s infinite;
 }
 .home-container h1:nth-child(2) {
   color: var(--primary-button);
@@ -191,14 +188,14 @@ span {
 .about-container h1 {
   padding: 5rem;
   font-size: 2rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-transform: uppercase;
 }
 .about-container p {
   padding: 5rem;
   font-size: 5rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
 }
 .skill-container {
@@ -227,14 +224,14 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-align: center;
 }
 
 .percentage {
   font-size: 10rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%) scale(1.2);
   z-index: -1;
@@ -250,7 +247,7 @@ span {
 .work-container h1 {
   padding: 5rem;
   font-size: 2rem;
-  font-family:'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-transform: uppercase;
 }
@@ -271,13 +268,13 @@ span {
 .work-title-recommendation h1,
 .work-title-plc h1 {
   font-size: 7rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
 }
 .work-title-machinelearning {
   padding: 4rem;
   font-size: 10rem;
   margin-bottom: 2rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   opacity: 0.3;
   color: var(--text-color);
 }
@@ -286,7 +283,7 @@ span {
   padding: 4rem;
   font-size: 10rem;
   margin-top: 13rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   opacity: 0.3;
   color: var(--text-color);
 }
@@ -308,7 +305,7 @@ span {
 .work-container p {
   padding: 5rem;
   font-size: 4rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
 }
 
@@ -322,20 +319,20 @@ model-viewer {
 }
 .motto-container h1 {
   font-size: 15rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-align: center;
 }
 .motto-container h2 {
   font-size: 3rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   color: var(--text-color);
   text-align: center;
   margin-bottom: 10rem;
 }
 .motto-container .author {
   font-style: italic;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   font-size: 3rem;
   margin-top: 3rem;
 }
@@ -347,7 +344,7 @@ model-viewer {
 .footer .connect {
   padding: 4rem;
   color: var(--text-color);
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   font-size: 2rem;
 }
 .connect-links {
@@ -368,7 +365,7 @@ model-viewer {
   border-top: 0.2rem solid white;
   border-bottom: 0.2rem solid white;
   font-size: 4rem;
-  font-family: 'Yatra One', cursive;
+  font-family: "Coda", cursive;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .left-link-container h2 a {
@@ -387,15 +384,11 @@ model-viewer {
   padding: 0 4rem;
   color: var(--text-color);
   font-size: 1.7rem;
-  font-family: 'Yatra One',cursive;
+  font-family: "Coda", cursive;
 }
 /*******Scroll Bar CSS*********/
 ::-webkit-scrollbar {
-  background-color: var(--background-color);
-  width: 2rem;
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--primary-button);
+  display: none;
 }
 
 /****Media Queries******/
@@ -445,7 +438,7 @@ model-viewer {
     grid-template-columns: 1fr;
   }
 }
-@media only screen and (max-width: 684px) {
+@media only screen and (max-width: 730px) {
   .max-width {
     width: min(100ch, 100% - 4rem);
   }

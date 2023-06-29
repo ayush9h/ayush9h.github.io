@@ -1,18 +1,3 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".navbar-links");
-
-hamburger.addEventListener("click", mobileMenu);
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-const navLink = document.querySelectorAll(".nav-link");
-navLink.forEach(n => n.addEventListener("click", closeMenu));
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
-
 /************Loading Page JS***************/
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
@@ -35,6 +20,7 @@ window.addEventListener('load', function() {
   enterButton.addEventListener('click', function() {
     if (isProgressComplete) {
       gsap.to(loadingScreen, { y: '-100%', duration: 1, ease: 'power2.inOut' });
+      
     }
     let beat = new Audio('./extras/music.mp3')
     beat.play();
@@ -43,12 +29,13 @@ window.addEventListener('load', function() {
 
   let progress = 0;
   const progressInterval = setInterval(() => {
-    progress += 5;
+    progress += 1;
     progressText.textContent = `${progress}%`;
     if (progress >= 100) {
       clearInterval(progressInterval);
       progressText.style.display = 'none';
       bootLoadedText.style.display = 'block';
+      enterButton.style.opacity = "1"
       anime({
         targets: boxes,
         opacity: 0,
@@ -56,25 +43,23 @@ window.addEventListener('load', function() {
       });
       isProgressComplete = true;
     }
-  }, 200);
+  }, 50);
 });
 
-const textElement = document.getElementById('changing-text');
-const texts = ['FRONT END', 'REACT', '3D ASSETS'];
-let currentIndex = 0;
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar-links");
 
-function changeText() {
-  textElement.textContent = texts[currentIndex];
-  textElement.classList.add('changing');
-  
-  setTimeout(() => {
-    textElement.classList.remove('changing');
-    currentIndex = (currentIndex + 1) % texts.length;
-    changeText();
-  }, 1500); // Duration of each text in milliseconds
+hamburger.addEventListener("click", mobileMenu);
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
 }
-
-window.addEventListener('load', changeText);
+const navLink = document.querySelectorAll(".nav-link");
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
 
 
 /*********GSAP Animation************/
@@ -87,8 +72,6 @@ gsap.from('.about-container .about-title',{
   scrollTrigger:{
     trigger : ".about-container .about-title",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
   }
 })
 gsap.from('.about-container .about-para',{
@@ -97,10 +80,9 @@ gsap.from('.about-container .about-para',{
   y:-20,
   duration:1,
   scrollTrigger:{
-    trigger : ".about-container p",
+    trigger : ".about-container .about-para",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+ 
   }
 })
 
@@ -113,8 +95,7 @@ gsap.from('.skills',{
   scrollTrigger:{
     trigger : ".skills",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+
   }
 })
 
@@ -128,8 +109,6 @@ items.forEach((div, index) => {
     delay: index * 0.2, 
     scrollTrigger: {
       trigger: div,
-      start: 'top 60%',
-      end: 'bottom 20%',
       toggleActions: 'play none none reverse',
     },
   });
@@ -145,8 +124,7 @@ gsap.from('.hackhound',{
   scrollTrigger:{
     trigger : ".hackhound",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+  
   }
 })
 
@@ -159,8 +137,7 @@ gsap.from('.work-container .work-title-header',{
   scrollTrigger:{
     trigger : ".work-container .work-title-header",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+    
   }
 })
 
@@ -173,8 +150,7 @@ gsap.from('.work-title-machinelearning',{
   scrollTrigger:{
     trigger : ".work-title-machinelearning",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+  
   }
 })
 
@@ -187,8 +163,7 @@ gsap.from('.work-title-webdev',{
   scrollTrigger:{
     trigger : ".work-title-webdev",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+    
   }
 })
 
@@ -201,8 +176,7 @@ gsap.from('.work-title-flightdelay, .work-title-recommendation',{
   scrollTrigger:{
     trigger : ".work-title-flightdelay, .work-title-recommendation",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+  
   }
 })
 
@@ -215,8 +189,7 @@ gsap.from('.work-title-purple, .work-title-aim, .work-title-plc',{
   scrollTrigger:{
     trigger : ".work-title-purple, .work-title-aim, .work-title-plc",
     toggleActions : "play none none reverse",
-    start:"top 60%",
-    end: "bottom 20%",
+  
   }
 })
 
@@ -228,8 +201,6 @@ gsap.from('.motto-container h2',{
   scrollTrigger:{
     trigger : ".motto-container h2",
     toggleActions : "play none none reverse",
-    start:"top 90%",
-    end: "bottom 20%",
   }
 })
 
@@ -241,8 +212,6 @@ gsap.from('.motto-container h1',{
   scrollTrigger:{
     trigger : ".motto-container h1",
     toggleActions : "play none none reverse",
-    start:"top 90%",
-    end: "bottom 20%",
   }
 })
 
