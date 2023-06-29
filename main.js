@@ -1,3 +1,19 @@
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar-links");
+
+hamburger.addEventListener("click", mobileMenu);
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+const navLink = document.querySelectorAll(".nav-link");
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
 /************Loading Page JS**********************/
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
@@ -45,22 +61,6 @@ window.addEventListener('load', function() {
     }
   }, 50);
 });
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".navbar-links");
-
-hamburger.addEventListener("click", mobileMenu);
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-const navLink = document.querySelectorAll(".nav-link");
-navLink.forEach(n => n.addEventListener("click", closeMenu));
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
-
 
 /*********GSAP Animation************/
 gsap.registerPlugin(ScrollTrigger)
