@@ -39,8 +39,7 @@ html {
 span {
   color: var(--primary-button);
 }
-
-/**Loading Container**/
+/********Loading Container********/
 #loading-screen {
   position: fixed;
   top: 0;
