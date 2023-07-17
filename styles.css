@@ -5,11 +5,13 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   user-select: none;
-  overflow-x: hidden;
   cursor: pointer;
 }
 /***Settings of CSS***/
-
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 :root {
   --background-color: #000000;
   --text-color: #ffffff;
@@ -202,7 +204,7 @@ span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
-  overflow-y: hidden;
+  overflow: hidden;
   margin: 2rem;
 }
 .card {
@@ -214,7 +216,6 @@ span {
   height: 20rem;
   background-color: var(--primary-button);
   border-radius: 10px;
-  opacity: 0;
 }
 
 .center-text,
@@ -386,6 +387,14 @@ model-viewer {
   font-size: 1.7rem;
   font-family: "Coda", cursive;
 }
+
+::-webkit-scrollbar {
+  background-color: var(--background-color);
+  width: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-button);
+}
 /****Media Queries******/
 @media only screen and (max-width: 988px) {
   .navbar-links {
@@ -438,8 +447,8 @@ model-viewer {
     width: min(100ch, 100% - 4rem);
   }
 
-  .boot-loaded{
-    font-size:5rem;
+  .boot-loaded {
+    font-size: 5rem;
   }
   .home-container {
     background-image: url("./img/background-phone.svg");

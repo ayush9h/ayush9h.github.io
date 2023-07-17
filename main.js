@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
   enterButton.addEventListener('click', function() {
     if (isProgressComplete) {
       gsap.to(loadingScreen, { y: '-100%', duration: 1, ease: 'power2.inOut' });
-      
+      document.body.style.overflowY = 'auto';
     }
     let beat = new Audio('./extras/music.mp3')
     beat.play();
@@ -59,8 +59,10 @@ window.addEventListener('load', function() {
         duration: 500,
       });
       isProgressComplete = true;
+
+
     }
-  }, 50);
+  }, 1);
 });
 /*********GSAP Animation************/
 gsap.registerPlugin(ScrollTrigger)
@@ -99,20 +101,122 @@ gsap.from('.skills',{
   }
 })
 
+gsap.from('.skill-container .cpp',{
+  opacity : 0,
+  y:-20,
+  duration:1,
+  delay:0.5,
+  scrollTrigger:{
+    trigger : ".skill-container .cpp",
+    toggleActions : "play none none reverse",
 
-const items = document.querySelectorAll('.card');
-items.forEach((div, index) => {
-  gsap.to(div, {
-    opacity: 1,
-    y: 0,
-    duration: 1,
-    delay: index * 0.2, 
-    scrollTrigger: {
-      trigger: div,
-      toggleActions: 'play none none reverse',
-    },
-  });
-});
+  }
+})
+
+
+gsap.from('.skill-container .py',{
+  opacity : 0,
+  y:-20,
+  duration:1.5,
+  delay:1,
+  scrollTrigger:{
+    trigger : ".skill-container .py",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+gsap.from('.skill-container .react',{
+  opacity : 0,
+  x:-20,
+  duration:1,
+  delay:2,
+  scrollTrigger:{
+    trigger : ".skill-container .react",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+gsap.from('.skill-container .blender',{
+  opacity : 0,
+  x:-20,
+  duration:1,
+  delay:2.5,
+  scrollTrigger:{
+    trigger : ".skill-container .blender",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+gsap.from('.skill-container .html5',{
+  opacity : 0,
+  y:20,
+  duration:1,
+  delay:3,
+  scrollTrigger:{
+    trigger : ".skill-container .html5",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+
+gsap.from('.skill-container .css',{
+  opacity : 0,
+  y:20,
+  duration:1,
+  delay:3.5,
+  scrollTrigger:{
+    trigger : ".skill-container .css",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+
+gsap.from('.skill-container .flask',{
+  opacity : 0,
+  x:20,
+  duration:1,
+  delay:4,
+  scrollTrigger:{
+    trigger : ".skill-container .flask",
+    toggleActions : "play none none reverse",
+
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 gsap.from('.hackhound',{
