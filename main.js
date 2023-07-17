@@ -187,38 +187,6 @@ gsap.from('.skill-container .flask',{
 
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 gsap.from('.hackhound',{
   opacity : 0,
   rotationX : -45,
