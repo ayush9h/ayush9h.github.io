@@ -8,22 +8,31 @@
   cursor: pointer;
 }
 /***Settings of CSS***/
-body {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+
 :root {
   --background-color: #000000;
   --text-color: #ffffff;
   --primary-button: #2acf8d;
+  --font-style: "Coda", cursive;
 }
+/* Hide scrollbar initially */
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 html {
   font-size: 62.5%;
   background-color: var(--background-color);
+  font-weight: 700;
 }
 .max-width {
   width: min(300ch, 100% - 4rem);
   margin-inline: auto;
+}
+
+span {
+  color: var(--primary-button);
 }
 .custom-cursor {
   position: fixed;
@@ -38,76 +47,43 @@ html {
   pointer-events: none;
   z-index: 9999;
 }
-span {
-  color: var(--primary-button);
-}
-
 /**Loading Container**/
-#loading-screen {
+.overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-color: var(--background-color);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 1;
+  z-index: 100;
   overflow: hidden;
-  z-index: 10000;
-  transition: opacity 0.5s, visibility 0.5s;
 }
 
-.box {
-  width: 3rem;
-  height: 3rem;
-  margin: 0.2rem;
+.bar {
+  width: 10vw;
+  height: 100vh;
   background-color: var(--primary-button);
 }
-
-.progress-text {
-  position: absolute;
-  font-size: 3rem;
-  top: 40%;
+.counter {
+  position: fixed;
   color: var(--text-color);
-  font-family: "Coda", cursive;
-}
-
-.boot-loaded {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--primary-button);
-  font-size: 10rem;
   width: 100%;
-  font-family: "Coda", cursive;
-  display: none;
-  text-shadow: 0 0 1rem var(--primary-button);
-}
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1000;
+  color: var(--background-color);
+  padding: 4rem;
 
-.enter-button {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  border: 0.3rem solid white;
-  color: var(--text-color);
-  font-size: 1rem;
-  font-family: "Coda", cursive;
-  padding: 1rem 5rem;
-  border-radius: 5rem;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 30rem;
+  font-family: var(--font-style);
 }
-.enter-button:hover {
-  background-color: var(--primary-button);
-  border: 0.3rem solid var(--primary-button);
+.loading-complete .overlay,
+.loading-complete .counter {
+  /* Update z-index to negative value after loading is complete */
+  z-index: -1;
 }
+/* *Navbar* */
 
-/******Navigation Bar CSS******/
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -115,7 +91,7 @@ span {
 }
 .navbar a {
   font-size: 6rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   cursor: pointer;
   text-decoration: none;
@@ -132,7 +108,7 @@ span {
   display: none;
 }
 
-.bar {
+.ham-bar {
   display: block;
   width: 2.5rem;
   height: 0.3rem;
@@ -144,7 +120,7 @@ span {
 .navbar-links li a {
   font-size: 2rem;
   list-style-type: none;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -156,7 +132,7 @@ span {
   font-size: 2.5rem;
 }
 
-/*****Home-Container Code******/
+/* Home Container */
 .home-container {
   width: 100%;
   height: 90vh;
@@ -169,17 +145,26 @@ span {
 }
 .home-container h1 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   font-size: 13rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
 }
 .home-container h1:nth-child(2) {
   position: absolute;
-  top: 50%;
+  top: 40%;
 }
 .home-container h1:nth-child(2) {
   color: var(--primary-button);
+}
+.home-container h3 {
+  position: absolute;
+  top: 65%;
+  font-size: 5rem;
+  font-family: var(--font-style);
+  color: var(--text-color);
+  border-top: 0.5rem solid var(--primary-button);
+  border-bottom: 0.5rem solid var(--primary-button);
 }
 
 /*****About-Container Code******/
@@ -190,14 +175,14 @@ span {
 .about-container h1 {
   padding: 5rem;
   font-size: 2rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-transform: uppercase;
 }
 .about-container p {
   padding: 5rem;
   font-size: 5rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
 }
 .skill-container {
@@ -225,14 +210,14 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-align: center;
 }
 
 .percentage {
   font-size: 10rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%) scale(1.2);
   z-index: -1;
@@ -248,7 +233,7 @@ span {
 .work-container h1 {
   padding: 5rem;
   font-size: 2rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-transform: uppercase;
 }
@@ -269,13 +254,14 @@ span {
 .work-title-recommendation h1,
 .work-title-plc h1 {
   font-size: 7rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .work-title-machinelearning {
   padding: 4rem;
   font-size: 10rem;
   margin-bottom: 2rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   opacity: 0.3;
   color: var(--text-color);
 }
@@ -284,7 +270,7 @@ span {
   padding: 4rem;
   font-size: 10rem;
   margin-top: 13rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   opacity: 0.3;
   color: var(--text-color);
 }
@@ -303,10 +289,15 @@ span {
 .work-title:hover::before {
   width: 100%;
 }
+
+.work-title:hover h1 {
+  transform: translateX(2rem);
+  color: var(--background-color);
+}
 .work-container p {
   padding: 5rem;
   font-size: 4rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
 }
 
@@ -320,20 +311,20 @@ model-viewer {
 }
 .motto-container h1 {
   font-size: 15rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-align: center;
 }
 .motto-container h2 {
   font-size: 3rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   color: var(--text-color);
   text-align: center;
   margin-bottom: 10rem;
 }
 .motto-container .author {
   font-style: italic;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   font-size: 3rem;
   margin-top: 3rem;
 }
@@ -345,7 +336,7 @@ model-viewer {
 .footer .connect {
   padding: 4rem;
   color: var(--text-color);
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   font-size: 2rem;
 }
 .connect-links {
@@ -366,7 +357,7 @@ model-viewer {
   border-top: 0.2rem solid white;
   border-bottom: 0.2rem solid white;
   font-size: 4rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .left-link-container h2 a {
@@ -375,6 +366,9 @@ model-viewer {
 }
 .left-link-container h2:hover {
   background-color: var(--primary-button);
+}
+.left-link-container h2:hover a {
+  color: var(--background-color);
 }
 .right-info-container {
   display: grid;
@@ -385,17 +379,22 @@ model-viewer {
   padding: 0 4rem;
   color: var(--text-color);
   font-size: 1.7rem;
-  font-family: "Coda", cursive;
+  font-family: var(--font-style);
 }
 
-::-webkit-scrollbar {
+/* Scrollbar css */
+body::-webkit-scrollbar {
   background-color: var(--background-color);
   width: 0.8rem;
 }
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-color: var(--primary-button);
 }
-/****Media Queries******/
+body.loading-complete {
+  overflow-y: auto;
+}
+
+/* Responsive Queries */
 @media only screen and (max-width: 988px) {
   .navbar-links {
     position: fixed;
@@ -423,80 +422,17 @@ model-viewer {
     margin-top: 2rem;
     cursor: pointer;
   }
-  .hamburger.active .bar:nth-child(2) {
+  .hamburger.active .ham-bar:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger.active .bar:nth-child(1) {
+  .hamburger.active .ham-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     color: var(--primary-button);
   }
 
-  .hamburger.active .bar:nth-child(3) {
+  .hamburger.active .ham-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
     color: var(--primary-button);
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-@media only screen and (max-width: 730px) {
-  .max-width {
-    width: min(100ch, 100% - 4rem);
-  }
-
-  .boot-loaded {
-    font-size: 5rem;
-  }
-  .home-container {
-    background-image: url("./img/background-phone.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .home-container h1 {
-    font-size: 6rem;
-  }
-  .home-container h1:nth-child(2) {
-    top: 40%;
-    margin-bottom: 0;
-  }
-  .about-container p {
-    font-size: 2.5rem;
-  }
-  .extra-skill-title {
-    padding: 0rem;
-    font-size: 2.5rem;
-  }
-  .work-container .work-title h1 {
-    font-size: 2.5rem;
-  }
-
-  .left-link-container h2 {
-    font-size: 2rem;
-    padding: 0;
-  }
-  .right-info-container p {
-    padding: 0;
-    font-size: 1.2rem;
-  }
-  .work-title-machinelearning,
-  .work-title-webdev {
-    font-size: 3rem;
-  }
-  .motto-container h1 {
-    font-size: 3rem;
-  }
-  .connect-links {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .social-icon {
-    margin: 0 0.5rem;
-  }
-  .footer-socials a {
-    font-size: 1.5rem;
   }
 }

@@ -1,5 +1,49 @@
+gsap.registerPlugin(ScrollTrigger)
+// Loading animation
+function startloader(){
+  let counterElement = document.querySelector(".counter")
+  let currentValue = 0;
 
+  function updateCounter(){
+    if(currentValue === 100)
+    { 
+      return;
+    }
+    currentValue+=Math.floor(Math.random()*10) - 1;
 
+    if(currentValue > 100)
+    {
+      currentValue = 100
+    }
+    counterElement.textContent = currentValue
+    let delay = Math.floor(Math.random()*200) - 50
+    setTimeout(updateCounter,delay);
+  }
+  updateCounter();
+}
+function completeLoading() {
+  document.body.classList.add("loading-complete");
+  document.body.style.overflowY = 'auto';
+  document.body.style.overflowX = 'hidden';
+}
+
+startloader()
+
+gsap.to(".counter",0.25,{
+  delay:3.5,
+  opacity:0,
+})
+
+gsap.to(".bar",1.5,{
+  delay:3.5,
+  height:0,
+  stagger:{
+    amount:1,
+  },
+  ease:"power4.inOut",
+  onComplete: completeLoading,
+})
+/************Mobile Menu***************/
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".navbar-links");
 
@@ -15,56 +59,8 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
-/************Loading Page JS***************/
-window.addEventListener('load', function() {
-  const loadingScreen = document.getElementById('loading-screen');
-  const progressText = document.getElementById('progress-text');
-  const bootLoadedText = document.getElementById('boot-loaded');
-  const enterButton = document.getElementById('enter-button');
-  let isProgressComplete = false;
 
-  const boxes = document.querySelectorAll('.box');
-  anime({
-    targets: boxes,
-    scale: [
-      { value: 0.1, easing: 'easeOutSine', duration: 1000 },
-      { value: 1, easing: 'easeInOutQuad', duration: 1000 },
-    ],
-    delay: anime.stagger(50, { from: 'center' }),
-    loop: true,
-  });
-
-  enterButton.addEventListener('click', function() {
-    if (isProgressComplete) {
-      gsap.to(loadingScreen, { y: '-100%', duration: 1, ease: 'power2.inOut' });
-      document.body.style.overflowY = 'auto';
-    }
-    let beat = new Audio('./extras/music.mp3')
-    beat.play();
-    beat.loop = true;
-  });
-
-  let progress = 0;
-  const progressInterval = setInterval(() => {
-    progress += 1;
-    progressText.textContent = `${progress}%`;
-    if (progress >= 100) {
-      clearInterval(progressInterval);
-      progressText.style.display = 'none';
-      bootLoadedText.style.display = 'block';
-      enterButton.style.opacity = "1"
-      anime({
-        targets: boxes,
-        opacity: 0,
-        duration: 500,
-      });
-      isProgressComplete = true;
-
-
-    }
-  }, 1);
-});
-/*********GSAP Animation************/
+/************GSAP Code for web***************/
 gsap.registerPlugin(ScrollTrigger)
 gsap.from('.about-container .about-title',{
   opacity : 0,
@@ -142,7 +138,7 @@ gsap.from('.skill-container .blender',{
   opacity : 0,
   x:-20,
   duration:1,
-  delay:2.5,
+  delay:2,
   scrollTrigger:{
     trigger : ".skill-container .blender",
     toggleActions : "play none none reverse",
@@ -154,7 +150,7 @@ gsap.from('.skill-container .html5',{
   opacity : 0,
   y:20,
   duration:1,
-  delay:3,
+  delay:2,
   scrollTrigger:{
     trigger : ".skill-container .html5",
     toggleActions : "play none none reverse",
@@ -167,7 +163,7 @@ gsap.from('.skill-container .css',{
   opacity : 0,
   y:20,
   duration:1,
-  delay:3.5,
+  delay:2,
   scrollTrigger:{
     trigger : ".skill-container .css",
     toggleActions : "play none none reverse",
@@ -180,7 +176,7 @@ gsap.from('.skill-container .flask',{
   opacity : 0,
   x:20,
   duration:1,
-  delay:4,
+  delay:2,
   scrollTrigger:{
     trigger : ".skill-container .flask",
     toggleActions : "play none none reverse",
@@ -288,6 +284,8 @@ gsap.from('.motto-container h1',{
 })
 
 
+
+
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
   var customCursor = document.createElement("div");
@@ -300,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   document.addEventListener("mouseout", function() {
-    customCursor.style.top = "-100px";
-    customCursor.style.left = "-100px";
+    customCursor.style.top = "-20rem";
+    customCursor.style.left = "-20rem";
   });
 });
