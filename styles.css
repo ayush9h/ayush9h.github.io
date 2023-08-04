@@ -137,7 +137,6 @@ span {
   width: 100%;
   height: 90vh;
   background-image: url("./img/background.svg");
-  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -434,5 +433,75 @@ body.loading-complete {
   .hamburger.active .ham-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
     color: var(--primary-button);
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .max-width {
+    width: min(100ch, 100% - 4rem);
+  }
+  .home-container {
+    background-image: url("./img/background-phone.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .home-container h1 {
+    font-size: 4rem;
+  }
+  .home-container h1:nth-child(2) {
+    top: 30%;
+    margin-bottom: 0;
+  }
+  .home-container h3 {
+    font-size: 2rem;
+    top: 40%;
+    margin-bottom: 0;
+  }
+  .about-container p {
+    font-size: 2.5rem;
+  }
+  .extra-skill-title {
+    padding: 0rem;
+    font-size: 2.5rem;
+  }
+  .work-container .work-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .left-link-container h2 {
+    font-size: 2rem;
+    padding: 0;
+  }
+  .right-info-container p {
+    padding: 0;
+    font-size: 1.2rem;
+  }
+  .work-title-machinelearning,
+  .work-title-webdev {
+    font-size: 3rem;
+  }
+  .motto-container h1 {
+    font-size: 3rem;
+  }
+  .connect-links {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .social-icon {
+    margin: 0 0.5rem;
+  }
+  .footer-socials a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .counter {
+    font-size: 7rem;
   }
 }
