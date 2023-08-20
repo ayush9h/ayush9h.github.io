@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +10,11 @@
 /***Settings of CSS***/
 
 :root {
-  --background-color: #000000;
+  --background-color: #040303;
   --text-color: #ffffff;
   --primary-button: #2acf8d;
-  --font-style: "Coda", cursive;
+  --font-style:'Montserrat', sans-serif;
+
 }
 /* Hide scrollbar initially */
 body {
@@ -24,7 +25,6 @@ body {
 html {
   font-size: 62.5%;
   background-color: var(--background-color);
-  font-weight: 700;
 }
 .max-width {
   width: min(300ch, 100% - 4rem);
@@ -144,8 +144,8 @@ span {
 }
 .home-container h1 {
   position: absolute;
-  top: 20%;
-  font-size: 13rem;
+  top: 25%;
+  font-size: 10rem;
   font-family: var(--font-style);
   color: var(--text-color);
 }
@@ -158,12 +158,13 @@ span {
 }
 .home-container h3 {
   position: absolute;
-  top: 65%;
+  top: 60%;
   font-size: 5rem;
   font-family: var(--font-style);
-  color: var(--text-color);
-  border-top: 0.5rem solid var(--primary-button);
-  border-bottom: 0.5rem solid var(--primary-button);
+  color: var(--background-color);
+  background-color: var(--primary-button);
+  padding: 1.2rem;
+  border-radius: 0.6rem;
 }
 
 /*****About-Container Code******/
@@ -299,6 +300,8 @@ span {
   font-family: var(--font-style);
   color: var(--text-color);
 }
+
+
 
 model-viewer {
   height: 100vh;

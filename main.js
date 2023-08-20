@@ -59,6 +59,28 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
+/********* Hacked Effect ***************/ 
+const values = ["BLENDER ARTIST", "AI ENTHUSIAST", "FRONT END DEVELOPER"];
+        const target = document.querySelector("#main__skill");
+
+        let currentIndex = 0;
+
+function changeText() {
+    gsap.to(target, {
+        duration: 0.5,
+        opacity: 0,
+        onComplete: () => {
+            currentIndex = (currentIndex + 1) % values.length;
+            target.innerText = values[currentIndex];
+            gsap.to(target, { duration: 0.5, opacity: 1 });
+        }
+    });
+}
+
+setInterval(changeText, 3000);
+
+// Initialize the text to the first value
+target.innerText = values[currentIndex];
 
 /************GSAP Code for web***************/
 gsap.registerPlugin(ScrollTrigger)
