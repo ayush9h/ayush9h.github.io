@@ -60,7 +60,7 @@ function closeMenu() {
 }
 
 /********* Hacked Effect ***************/ 
-const values = ["BLENDER ARTIST", "AI ENTHUSIAST", "FRONT END DEVELOPER"];
+const values = ["BLENDER ARTIST", "AI/ML ENTHUSIAST", "FRONT END DEVELOPER"];
         const target = document.querySelector("#main__skill");
 
         let currentIndex = 0;
