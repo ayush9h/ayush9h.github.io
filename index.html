@@ -2,199 +2,238 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> AYUAR | Front-End Developer | Machine Learning Enthusiast</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <!----------Font Awesome Icons----------->
+    <title>AYUAR - FRONT-END DEVELOPER | ML ENTHUSIAST | BLENDER ARTIST</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!---------- Stylesheet link------------->
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!------------Loading Container---------->
-    <h1 class="counter">0</h1>
-    <div class="overlay">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <!------------Navigation Bar---------->
 
+    <!-- Header -->
     <header>
         <nav class="navbar">
             <a href="#" class="logo">AYU<span>AR</span></a>
             <ul class="navbar-links">
-                <li><a href="#about" class="nav-link">ABOUT</a></li>
-                <li><a href="#work" class="nav-link">WORK</a></li>
-                <li><a href="#footer" class="nav-link">CONTACT</a></li>
-                <li><a href="https://github.com/ayush9h" class="nav-link"><i class="fa-brands fa-github"></a></i></li>
-                <li><a href="https://www.linkedin.com/in/ayush-kumar-88b883239/" class="nav-link"><i
-                            class="fa-brands fa-linkedin"></a></i></li>
+                <li><a href="#about" class="nav-link"> <span>01.</span>ABOUT</a></li>
+                <li><a href="#work" class="nav-link"> <span>02.</span>WORK</a></li>
+                <li><a href="#connect" class="nav-link"> <span>03.</span>CONTACT</a></li>
             </ul>
-
-            <div class="hamburger">
-                <span class="ham-bar"></span>
-                <span class="ham-bar"></span>
-                <span class="ham-bar"></span>
-            </div>
         </nav>
     </header>
 
-
+    <!-- Home Container -->
     <div class="home-container">
         <div class="max-width">
-            <h1 id="changing-text">CREATING</h1>
-            <h1 id="changing-text">EXPERIENCES</h1>
-            <h3 id="main__skill">FRONT-END
-                DEVELOPER</h3>
+            <h1 class="home-title">Ayush Kum<span>ar</span></h1>
+            <div class="desc">
+                <a data-value="FRONT-END DEVELOPER, AI/ML ENTHUSIAST & LOW POLY BLENDER ARTIST">FRONT-END DEVELOPER,
+                    AI/ML
+                    ENTHUSIAST & LOW POLY BLENDER ARTIST</a>
+            </div>
+            <div id="section-1">
+                <a id="scroll-btn" href="#about"></a>
+            </div>
         </div>
     </div>
 
+    <!--About Container-->
     <div class="about-container" id="about">
         <div class="max-width">
-            <h1 class="about-title ">About <span>Me</span>
-            </h1>
-            <p class="about-para">I am <span>3rd year</span> student pursuing B.Tech in Computer Science and Engineering
-                from <span>BML
-                    Munjal University, Gurugram, India.</span>
+            <h1 class="about-title">ABOUT <span>ME</span></h1>
+            <p class="about-para"><span>3rd year</span> student pursuing B.Tech in Computer Science and Engineering with
+                specialization in <span>Deep Learning</span>
+                from <span>BML Munjal University, Gurugram, India.</span>
                 <br><br>
                 Currently working with <span>Dolf.finance, India</span> as a <span>Summer Intern.</span>
             </p>
-            <h1 class="skills">Skills</h1>
+            <h1 class="skills">SKILLS</h1>
             <div class="skill-container">
-                <div class="card cpp" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card cpp" data-tilt data-tilt-transition="true">
                     <div class="center-text">C++</div>
                     <div class="percentage ">90%</div>
                 </div>
-                <div class="card py" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card py" data-tilt data-tilt-transition="true">
                     <div class="center-text">PYTHON</div>
                     <div class="percentage ">85%</div>
                 </div>
-                <div class="card react" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card react" data-tilt data-tilt-transition="true">
                     <div class="center-text">REACTJS</div>
                     <div class="percentage ">70%</div>
                 </div>
-                <div class="card blender" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card blender" data-tilt data-tilt-transition="true">
                     <div class="center-text">BLENDER</div>
                     <div class="percentage ">85%</div>
                 </div>
-                <div class="card html5" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card html5" data-tilt data-tilt-transition="true">
                     <div class="center-text">HTML5</div>
                     <div class="percentage ">90%</div>
                 </div>
-                <div class="card css" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card css" data-tilt data-tilt-transition="true">
                     <div class="center-text">CSS3</div>
                     <div class="percentage ">80%</div>
                 </div>
-                <div class="card flask" data-tilt data-tilt-transition="true" data-tilt-glare="true">
+                <div class="card flask" data-tilt data-tilt-transition="true">
                     <div class="center-text">FLASK</div>
                     <div class="percentage ">65%</div>
                 </div>
             </div>
-            <h1 class="acolades-title">Accolades</h1>
-            <p class="hackhound"> HackHound - 2K23 Category Winner in <span>Artificial Intelligence and Machine
-                    Learning</span><br><br>
-                CodeDecode Zonals Qualified in <span>Techfest IIT-BOMBAY</span><br><br>
-                3rd Postion in Ashoka University's <span>Decipher - 2K23</p>
+            <h1 class="accolades-title">ACCOLADES</h1>
+            <p class="accolades-details"> HackHound - 2K23 Category Winner in <span>Artificial Intelligence and Machine
+                    Learning</span></p><br><br>
+            <p class="accolades-details"> CodeDecode Zonals Qualified in <span>Techfest IIT-BOMBAY</span></p><br><br>
+            <p class="accolades-details">3rd Postion in Ashoka University's <span>Decipher - 2K23</p>
         </div>
     </div>
 
-    <!----------Work Container------------->
+
+    <!--work Container-->
     <div class="work-container" id="work">
         <div class="max-width">
-            <h1 class="work-title-header">MY <span>PROJECTS</span></h1>
+            <h1 class="work-title">MY <span>WORK</span></h1>
+            <div class="dev-title">WEB DEVELOPMENT</div>
 
-            <h2 class="work-title-machinelearning">MACHINE LEARNING</h2>
-            <div class="work-title-flightdelay work-title">
-                <a href="https://github.com/ayush9h/Flight-Delay-Prediction-System">
-                    <h1>Flight Delay Prediction System</h1>
-                </a>
-            </div>
-            <div class="work-title-recommendation work-title">
-                <a href="">
-                    <h1>Recommendation System</h1>
-                </a>
-            </div>
-            <h2 class="work-title-webdev">WEB DEVELOPMENT</h2>
-            <div class="work-title-purple work-title">
-                <a href="https://ayush9h.github.io/purple-audience/">
-                    <h1>Purple Audience</h1>
-                </a>
-            </div>
-            <div class="work-title-aim work-title">
-                <a href="https://github.com/ayush9h/Aim-Assist">
-                    <h1>AIM ASSIST TRAINER</h1>
-                </a>
-            </div>
-
-            <div class="work-title-plc work-title">
-                <a href="https://snath312.github.io/PLC-Mastery">
-                    <h1>PLC MASTERY & INDUSTRY 4.0</h1>
-                </a>
+            <div class="itemcontainer">
+                <div class="itemimg" data-tilt data-tilt-transition="true">
+                    <img src="./img/purple.svg">
+                </div>
+                <div class="itemtext">
+                    <h1 class="item">01. <span>PURPLE </span>AUDIENCE</h1>
+                    <p>Purple Audience is a captivating mental health awareness website that aims to create a safe space
+                        for individuals to explore and nurture their well-being. With a soothing and inviting design,
+                        Purple Audience provides a platform that promotes mental health awareness, offering a range of
+                        resources and support for visitors.</p>
+                    <p class="tech-stack"><span>TECH STACK</span><br>
+                    <ul>
+                        <li>Client: ReactJS, GSAP</li>
+                        <li>Backend: Node, Express, MongoDB</li>
+                    </ul>
+                    </p>
+                    <p class="deployment"><span>SOURCE CODE</span><br>
+                        <a href="https://github.com/ayush9h/purple-audience" class="github__1"><i
+                                class="fa-brands fa-github"></i></a>
+                </div>
             </div>
 
-            <h1 class="blender-work"><span>Blender</span> Projects</h1>
-            <p class="blades-of-chaos">BLADES OF CHAOS - <span>God Of War</span> &reg;</p>
+            <div class="itemcontainer">
+                <div class="itemtext">
+                    <h1 class="item">02. <span>AIM ASSIST</span> TRAINER</h1>
+                    <p class="aim-text">Aim Assist Trainer is a web application for improving accuracy in FPS Games.
+                        This was the project
+                        which our team Angry
+                        Nerds(<span>Me, Dharmanshu Singh, Sankalp Mane and Daksh Goel</span>) made during 24 hr
+                        Hackhound -
+                        2k23 which was organized by MLH(Major League Hacking) in SRM Institute of Sciences, Modinagar,
+                        Ghaziabad.</p>
+                    <p class="tech-stack"><span>TECH STACK</span><br>
+                    <ul>
+                        <li>Client: HTML5, CSS3, JS</li>
+                        <li>Backend: Node, Express</li>
+                    </ul>
+                    </p>
+                    <p class="deployment"><span>SOURCE CODE</span><br>
+                        <a href="https://github.com/ayush9h/Aim-Assist" class="github__1"><i
+                                class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="itemimg">
+                    <img src="./img/aim.svg" data-tilt data-tilt-transition="true">
+                </div>
+
+            </div>
+
+
+            <div class="itemcontainer">
+                <div class="itemimg">
+                    <img src="./img/plc.svg" data-tilt data-tilt-transition="true">
+                </div>
+                <div class="itemtext">
+                    <h1 class="item">03. <span>PLC </span>MASTERY </h1>
+                    <p>PLC Courses provide hands-on training, enabling students to work with real-world PLC systems and
+                        simulate industries scenarios. This practical experience enhances their problem-solving skills
+                        and gives them a competitive edge in market.</p>
+                    <p class="tech-stack"><span>TECH STACK</span><br>
+                    <ul>
+                        <li>Client: HTML,CSS, GSAP, JS</li>
+                        <li>Backend: Google Forms Script</li>
+                    </ul>
+                    </p>
+                    <p class="deployment"><span>SOURCE CODE</span><br>
+                        <a href="https://snath312.github.io/PLC-Mastery/" class="github__1"><i
+                                class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+
+            <div class="dev-title">MACHINE LEARNING</div>
+
+            <div class="itemcontainer">
+                <div class="itemimg">
+                    <img src="./img/flight.svg" data-tilt data-tilt-transition="true">
+                </div>
+                <div class="itemtext">
+                    <h1 class="item">01. <span>FLIGHT DELAY </span>PREDICTION SYSTEM</h1>
+                    <p>A system made to predict flight delays using Machine Learning models. The Jupyter Notebook
+                        contains Data cleaning, Data preprocessing, Machine Learning models including Logistic
+                        Regression,
+                        KNN, Random Forest etc.</p>
+                    <p class="tech-stack"><span>TECH STACK</span><br>
+
+                    <ul>
+                        <li>Client: StreamlitUI</li>
+                        <li>Backend: Python</li>
+                        <li>Libraries: Numpy, Scikit, Pandas, Joblib</li>
+                    </ul>
+                    </p>
+                    <p class="deployment"><span>SOURCE CODE</span><br>
+                        <a href="https://github.com/ayush9h/Flight-Delay-Prediction-System" class="github__1"><i
+                                class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="dev-title">BLENDER PROJECTS</div>
+            <p class="blades-of-chaos">01. BLADES OF CHAOS - <span>God Of War</span> &reg;</p>
             <model-viewer src="./models/blades.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
                 touch-action="pan-y" disable-zoom shadow-intensity="2" exposure="0.93" shadow-softness="1">
 
             </model-viewer>
-            <p class="pokeball">POKEBALL DESIGN - <span>Pokemon </span> &reg;</p>
+            <p class="pokeball">02. POKEBALL DESIGN - <span>Pokemon </span> &reg;</p>
             <model-viewer src="./models/pokeball.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
                 touch-action="pan-y" disable-zoom shadow-intensity="2" exposure="0.93" shadow-softness="1">
             </model-viewer>
-            <p class="ford">LOW POLY CYBERTRUCK - <span>Tesla </span> &reg;</p>
+            <p class="tesla">03. LOW POLY CYBERTRUCK - <span>Tesla </span> &reg;</p>
             <div class="model-car">
                 <model-viewer src="./models/car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
                     touch-action="pan-y" disable-zoom shadow-intensity="2" exposure="0.93" shadow-softness="1">
-
                 </model-viewer>
             </div>
         </div>
     </div>
 
-    <!----------Motto Container--------->
-    <div class="motto-container">
+    <div class="connect" id="connect">
         <div class="max-width">
-            <h2>MY <span>MOTTO</span></h2>
-            <h1>LEARN BY <span>DOING.</span></h1>
-            <h1 class="author">~ Ayush Kumar</h1>
-        </div>
-    </div>
-
-    <!----------Footer Container------------->
-    <footer class="footer" id="footer">
-        <div class="max-width">
-            <h1 class="connect">Connect</h1>
-            <div class="connect-links">
-                <div class="left-link-container">
-                    <h2><a href="https://leetcode.com/ayukr_2002/">LeetCode</a></h2>
-                    <h2><a href="https://www.codechef.com/users/ayush200231">CodeChef</a></h2>
+            <h1 class="connect-title">CONNECT</h1>
+            <div class="linkcontainer">
+                <div class="social-accounts">
+                    <a href="https://www.linkedin.com/in/ayush-kumar-88b883239/">LINKEDIN</a><br>
+                    <a href="https://github.com/ayush9h">GITHUB</a>
                 </div>
-                <div class="right-info-container">
-                    <p><span>Email</span>: ayushkumarlfs2@gmail.com</p>
-                    <p><span>Phone</span>: +91 8306580118</p>
+                <div class="code-accounts">
+                    <a href="https://www.codechef.com/users/ayush200231">CODECHEF</a><br>
+                    <a href="https://leetcode.com/ayukr_2002/">LEETCODE</a>
+                </div>
+                <div class="email">
+                    <h2><span>Email:</span> ayushkumarlfs2@gmail.com</h2><br>
+                    <h2><span>Contact:</span> Classified</h2>
                 </div>
             </div>
         </div>
-    </footer>
-
+    </div>
 </body>
-
 <script type="text/javascript" src="./extras/vanilla-tilt.js"></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script type="module" src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
 
 </html>
