@@ -1,4 +1,30 @@
 gsap.registerPlugin(ScrollTrigger)
+window.addEventListener("load", function () {
+  // Use GSAP to animate the loading container
+  const loadingContainer = document.querySelector(".loading-container");
+  const loadingText = document.querySelector(".loading-text");
+
+  // Animate the loading container
+  gsap.to(loadingContainer, {
+      opacity: 0, 
+      duration: 2,
+      delay:1,
+      onComplete: function () {
+          loadingContainer.style.display = "none";
+      }
+  });
+
+  gsap.to(loadingText, {
+      opacity: 0, 
+      y: -50,
+      duration:5,
+  });
+  gsap.to(".small_desc", {
+    opacity: 0, 
+    y: 50,
+    duration:5,
+});
+});
 function completeLoading() {
     document.body.classList.add("loading-complete");
     document.body.style.overflowY = 'auto';
@@ -13,14 +39,14 @@ gsap.from(".navbar .logo",{
   x:-100,
   ease:"power4.out",
   duration:1,
-  delay:1,
+  delay:3,
 })
 gsap.from(".navbar-links li",{
   opacity:0,
   x:100,
   ease:"power4.out",
   duration:1,
-  delay:2,
+  delay:4,
   stagger:{
     amount:0.8,
   }
@@ -31,7 +57,7 @@ gsap.from(".home-container .home-title",{
   y:100,
   ease:"power.out",
   duration:1,
-  delay:3,
+  delay:5,
   stagger:{
     amount:0.8,
   }
@@ -41,7 +67,7 @@ gsap.from(".home-container .desc",{
   z:100,
   ease:"power.out",
   duration:1,
-  delay:4,
+  delay:6,
   stagger:{
     amount:0.8,
   }
@@ -50,7 +76,7 @@ gsap.from("#section-1",{
   opacity:0,
   ease:"power.out",
   duration:1,
-  delay:5,
+  delay:7,
 })
 
 
