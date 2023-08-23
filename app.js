@@ -1,30 +1,5 @@
 gsap.registerPlugin(ScrollTrigger)
-window.addEventListener("load", function () {
-  // Use GSAP to animate the loading container
-  const loadingContainer = document.querySelector(".loading-container");
-  const loadingText = document.querySelector(".loading-text");
 
-  // Animate the loading container
-  gsap.to(loadingContainer, {
-      opacity: 0, 
-      duration: 2,
-      delay:1,
-      onComplete: function () {
-          loadingContainer.style.display = "none";
-      }
-  });
-
-  gsap.to(loadingText, {
-      opacity: 0, 
-      y: -50,
-      duration:5,
-  });
-  gsap.to(".small_desc", {
-    opacity: 0, 
-    y: 50,
-    duration:5,
-});
-});
 function completeLoading() {
     document.body.classList.add("loading-complete");
     document.body.style.overflowY = 'auto';
@@ -39,14 +14,14 @@ gsap.from(".navbar .logo",{
   x:-100,
   ease:"power4.out",
   duration:1,
-  delay:3,
+  delay:1,
 })
 gsap.from(".navbar-links li",{
   opacity:0,
   x:100,
   ease:"power4.out",
   duration:1,
-  delay:4,
+  delay:2,
   stagger:{
     amount:0.8,
   }
@@ -57,7 +32,7 @@ gsap.from(".home-container .home-title",{
   y:100,
   ease:"power.out",
   duration:1,
-  delay:5,
+  delay:3,
   stagger:{
     amount:0.8,
   }
@@ -67,7 +42,7 @@ gsap.from(".home-container .desc",{
   z:100,
   ease:"power.out",
   duration:1,
-  delay:6,
+  delay:4,
   stagger:{
     amount:0.8,
   }
@@ -76,7 +51,7 @@ gsap.from("#section-1",{
   opacity:0,
   ease:"power.out",
   duration:1,
-  delay:7,
+  delay:5,
 })
 
 
@@ -90,12 +65,7 @@ let t2 = gsap.timeline({
     }
     
 })
-t2.from(".about-title",{
-    opacity:0,
-    ease:"power4.out",
-    duration:1.5,
-    y:10,x:50,skewX:10,rotateX:45,
-})
+
 t2.from(".about-para",{
     opacity:0,
     ease:"power4.out",
@@ -219,20 +189,6 @@ gsap.from('.skill-container .cpp',{
       amount:0.5,
     }
   })
-
-  gsap.from('.work-title',{
-    opacity:0,
-    ease:"power4.out",
-    duration:1.5,
-    y:10,x:50,skewX:10,rotateX:45,
-    scrollTrigger:{
-      trigger : ".work-title",
-      toggleActions : "play none none reverse",
-      start:"top center",
-      end:"bottom center",
-    }
-  })
-
   gsap.from('.dev-title',{
     opacity:0,
     ease:"power4.out",

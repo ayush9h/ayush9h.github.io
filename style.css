@@ -17,7 +17,7 @@ body{
     overflow-x: hidden;
 }
 :root{
-    --primary-color: #62c1e9;
+    --primary-color: #b8e962;
     --secondary-color:#C1CDE6;
     --highlight-color:#FFC436;
     --texthighlight-color:#000000;
@@ -35,7 +35,7 @@ body{
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background:linear-gradient(to right,#62c1e9,#ffffff);
+    background:linear-gradient(to right,#b8e962,#ffffff);
     pointer-events: none;
     z-index:-1000;
     animation: rotate 20s infinite;
@@ -57,35 +57,6 @@ span{
     text-shadow: var(--primary-color) 0 0 1rem;
 }
 
-.loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Place it above other elements */
-}
-
-.loading-text {
-  font-size: 20rem;
-  font-family: var(--primary-font);
-  color: var(--secondary-color);
-}
-.small_desc{
-    background-color: var(--primary-color);
-    padding: 2rem;
-    font-size: 2rem;
-    font-family: var(--primary-font);
-    text-decoration: none;
-    color:var(--texthighlight-color);
-    border-radius: 1rem;
-    position: absolute;
-    bottom:25%;
-}
 /* Navigation Menu */
 .navbar {
     display: flex;
@@ -210,10 +181,43 @@ span{
     width: 100%;
     margin-top: 10rem;
 }
+.page5{
+  background-color: var(--primary-color);
+  white-space: nowrap;
+  overflow-y: hidden;
+  margin-bottom: 5rem;
+}
+.page5::-webkit-scrollbar{
+  display: none;
+}
 .about-container .about-title{
     font-size: 15rem;
     font-family: var(--primary-font);
-    color:var(--secondary-color);
+    color:var(--texthighlight-color);
+    display: inline-block;
+    padding-right: 15rem;
+    animation: scroll 5s linear infinite ;  
+    position: relative;
+}
+.about-container .about-title::after,.work-container .work-title::after,.connect .connect-title::after{
+  position: absolute;
+  content: "";
+  right: 2rem;
+  bottom: 6rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: black;
+}
+@keyframes scroll {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-100% - 2rem));
+
+  }
+
 }
 .about-para{
     font-size: 3.5rem;
@@ -287,7 +291,10 @@ span{
 .work-container .work-title{
   font-size: 15rem;
     font-family: var(--primary-font);
-    color:var(--secondary-color);
+    color:var(--texthighlight-color);
+    display: inline-block;
+    padding-right: 15rem;
+    animation: scroll 5s linear infinite;
 }
 .dev-title{
   font-size: 10rem;
@@ -362,7 +369,11 @@ model-viewer {
 .connect-title{
   font-size: 15rem;
   font-family: var(--primary-font);
-  color:var(--primary-color);
+  color:var(--texthighlight-color);
+  display: inline-block;
+  padding-right: 15rem;
+  animation: scroll 5s linear infinite ;  
+  position: relative;
 }
 .linkcontainer{
   width: 100%;
