@@ -4,10 +4,8 @@ function completeLoading() {
     document.body.classList.add("loading-complete");
     document.body.style.overflowY = 'auto';
     document.body.style.overflowX = 'hidden';
+    document.body.style.transition = "all 0.4s"
   }
-const tl = gsap.timeline(
-    { onComplete: completeLoading}
-);
 
 gsap.from(".navbar .logo",{
   opacity:0,
@@ -52,6 +50,7 @@ gsap.from("#section-1",{
   ease:"power.out",
   duration:1,
   delay:5,
+  onComplete:completeLoading,
 })
 
 
