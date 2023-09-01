@@ -264,8 +264,87 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(customCursor);
     
     document.addEventListener("mousemove", function(event) {
-      customCursor.style.top = event.clientY + "px";
-      customCursor.style.left = event.clientX + "px";
+
+      customCursor.animate({
+        left: `${event.clientX}px`,
+        top: `${event.clientY}px`}, 
+        { duration: 3000, fill: "forwards" });
+      })
     });
   
-  });
+/***************Project Carousel************************** */
+    document.addEventListener("DOMContentLoaded", function () {
+      const projects = document.querySelectorAll(".project");
+      let currentProjectIndex = 0;
+    
+      function showProject(index) {
+        projects.forEach((project, i) => {
+          if (i === index) {
+            project.style.display = "block";
+          } else {
+            project.style.display = "none";
+          }
+        });
+      }
+    
+      // Initial display
+      showProject(currentProjectIndex);
+    
+      // GSAP animation configuration
+      const slideDuration = 0.5; 
+      const animationEase = Power3.easeInOut; 
+    
+      // Handle navigation when clicking left arrow
+      document.querySelector(".front").addEventListener("click", function () {
+        var audio = new Audio('./extras/back_click.mp3');
+        audio.play();
+        const prevIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+        const prevProject = projects[prevIndex];
+        const currentProject = projects[currentProjectIndex];
+        
+        // GSAP animation for sliding left and fading
+        TweenMax.fromTo(
+          currentProject,
+          slideDuration,
+          { x: 0, opacity: 1 },
+          { x: "150%", opacity: 0, ease: animationEase }
+        );
+    
+        TweenMax.fromTo(
+          prevProject,
+          slideDuration,
+          { x: "-150%", opacity: 0 },
+          { x: 0, opacity: 1, ease: animationEase, onComplete: () => showProject(prevIndex) }
+        );
+    
+        currentProjectIndex = prevIndex;
+      });
+    
+      // Handle navigation when clicking right arrow
+      document.querySelector(".back").addEventListener("click", function () {
+        var audio = new Audio('./extras/click.mp3');
+        audio.play();
+        const nextIndex = (currentProjectIndex + 1) % projects.length;
+        const nextProject = projects[nextIndex];
+        const currentProject = projects[currentProjectIndex];
+        
+        // GSAP animation for sliding right and fading
+        TweenMax.fromTo(
+          currentProject,
+          slideDuration,
+          { x: 0, opacity: 1 },
+          { x: "-100%", opacity: 0, ease: animationEase }
+        );
+    
+        TweenMax.fromTo(
+          nextProject,
+          slideDuration,
+          { x: "100%", opacity: 0 },
+          { x: 0, opacity: 1, ease: animationEase, onComplete: () => showProject(nextIndex) }
+        );
+    
+        currentProjectIndex = nextIndex;
+      });
+    });
+    
+    
