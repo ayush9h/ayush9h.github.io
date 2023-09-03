@@ -1,6 +1,6 @@
-## AYUAR
+## AYU.AR
 
-Portfolio Website made using HTML, CSS, JS, ANIME.JS and GSAP.
+Portfolio Website made using HTML, CSS, JS and GSAP(GreenSock)
 
 
 ## License
