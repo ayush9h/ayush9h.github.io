@@ -370,21 +370,28 @@ span{
 }
 .nav_arrows{
   display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .nav_arrows i{
   margin-right: 5rem;
   font-size: 5rem;
   color:var(--secondary-color);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-radius: 0.5rem;
+  border-radius: 50%;
+  background-color: #102341;
+  border: 0.001rem solid var(--primary-color);
   padding: 2rem;
 }
 .nav_arrows i:hover{
   background-color: var(--secondary-color);
   color:var(--texthighlight-color);
+}
+
+.nav_arrows .front:hover{
+  transform: translateX(-1rem);
+}
+.nav_arrows .back:hover{
+  transform: translateX(1rem);
 }
 
 
