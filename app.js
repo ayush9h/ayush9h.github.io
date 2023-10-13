@@ -45,6 +45,7 @@ gsap.from(".home-container .desc",{
     amount:0.8,
   }
 })
+
 gsap.from("#section-1",{
   opacity:0,
   ease:"power.out",
@@ -59,10 +60,8 @@ let t2 = gsap.timeline({
         trigger:".about-title",
         start:"top center",
         end:"bottom center",
-        toggleActions:"play none none reverse",
-        
+        toggleActions:"play none none reverse",   
     }
-    
 })
 
 t2.from(".about-para",{
@@ -71,6 +70,26 @@ t2.from(".about-para",{
     duration:1.5,
     y:20,
 })
+
+gsap.from(".about",{
+  width:0,
+  ease:"power4.out",
+  duration:1.5,
+  scrollTrigger:{
+    trigger:".about",
+    scrub:1,
+  }
+})
+gsap.from(".work",{
+  width:0,
+  ease:"power4.out",
+  duration:1.5,
+  scrollTrigger:{
+    trigger:".work",
+    scrub:1,
+  }
+})
+
 
 gsap.from(".skills",{
   opacity:0,
@@ -188,31 +207,15 @@ gsap.from('.skill-container .cpp',{
       amount:0.5,
     }
   })
+
   gsap.from('.dev-title',{
-    opacity:0,
-    ease:"power4.out",
+    x:-100,
+    ease:"power3.out",
     duration:1.5,
-    y:10,
     scrollTrigger:{
       trigger : ".dev-title",
-      toggleActions : "play none none reverse",
-      start:"top center",
-      end:"bottom center",
     }
   })
-  gsap.from('.itemcontainer',{
-    opacity:0,
-    ease:"power4.out",
-    duration:1.5,
-    x:10,
-    scrollTrigger:{
-      trigger : ".itemcontainer",
-      toggleActions : "play none none reverse",
-      start:"top center",
-      end:"bottom center",
-    }
-  })
-
   gsap.from('.blades-of-chaos,.pokeball,.tesla',{
     opacity:0,
     ease:"power4.out",
