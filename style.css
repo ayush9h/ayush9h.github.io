@@ -268,9 +268,13 @@ span{
   align-items: center;
   text-align: center;
   height: 20rem;
-  background-color:#000000;
+  background-color:var(--primary-color);
+  background-image: url("./img/card.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 0.2px solid var(--primary-color);
+  border: 0.2px solid var(--texthighlight-color);
+  border-radius: 0.2rem;
 }
 
 .center-text,
@@ -281,14 +285,14 @@ span{
   transform: translate(-50%, -50%);
   font-size: 5rem;
   font-family: var(--primary-font);
-  color: var(--primary-color);
+  color: var(--texthighlight-color);
   text-align: center;
 }
 
 .percentage {
   font-size: 7rem;
   font-family: var(--primary-font);
-  color: rgba(255, 255, 255, 1);
+  color: black;
   transform: translate(-50%, -50%) scale(1.2);
   z-index: -1;
   opacity: 0;
