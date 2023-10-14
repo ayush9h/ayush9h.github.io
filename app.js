@@ -14,17 +14,16 @@ gsap.from(".navbar .logo",{
   duration:1,
   delay:1,
 })
-gsap.from(".navbar-links li",{
+gsap.from(".menu-button",{
   opacity:0,
   x:100,
-  ease:"power4.out",
+  ease:"power.out",
   duration:1,
   delay:2,
   stagger:{
     amount:0.8,
   }
 })
-
 gsap.from(".home-container .home-title",{
   opacity:0,
   y:100,
@@ -63,6 +62,19 @@ let t2 = gsap.timeline({
         toggleActions:"play none none reverse",   
     }
 })
+function toggleMenu() {
+  const navbarLinks = document.getElementById('navbar-menu');
+  const menuButton = document.querySelector('.menu-button');
+
+  if (navbarLinks.style.display === "block") {
+    menuButton.classList.remove('menu-open');
+    navbarLinks.style.display = "none";
+  } else {
+    menuButton.classList.add('menu-open');
+    navbarLinks.style.display = "block";
+  }
+}
+
 
 t2.from(".about-para",{
     opacity:0,

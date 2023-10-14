@@ -18,9 +18,12 @@
         <nav class="navbar">
             <a href="#" class="logo">AYU<span>.AR</span></a>
             <ul class="navbar-links">
-                <li><a href="#about" class="nav-link"> <span>01.</span>ABOUT</a></li>
-                <li><a href="#work" class="nav-link"> <span>02.</span>WORK</a></li>
-                <li><a href="#connect" class="nav-link"> <span>03.</span>CONTACT</a></li>
+                <li><button class="menu-button" onclick="toggleMenu()">MENU <span id="menu-icon">+</span></button></li>
+            </ul>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="#about">01. ABOUT</a></li>
+                <li><a href="#work">02. WORK</a></li>
+                <li><a href="#connect">03. CONNECT</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +31,7 @@
     <!-- Home Container -->
     <div class="home-container">
         <div class="max-width">
-            <a href="./extras/AyushKumar_cv.pdf" class="dnld">Curriculum vitae(CV) <i class="fa fa-download"></i></a>
+
             <h1 class="home-title">Ayush Kum<span>ar</span></h1>
             <div class="desc">
                 <a data-value="FRONT-END DEVELOPER, AI/ML ENTHUSIAST & LOW POLY BLENDER ARTIST">FRONT-END DEVELOPER,
