@@ -278,6 +278,13 @@ document.querySelectorAll(".navbar-menu li a").forEach(anchor => {
   anchor.addEventListener("mouseover", applyEffect);
 });
 
+document.querySelectorAll(".social-accounts a").forEach(anchor => {
+  anchor.addEventListener("mouseover", applyEffect);
+});
+
+document.querySelectorAll(".code-accounts a").forEach(anchor => {
+  anchor.addEventListener("mouseover", applyEffect);
+});
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
     var customCursor = document.createElement("div");
