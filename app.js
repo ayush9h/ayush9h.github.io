@@ -242,35 +242,41 @@ gsap.from('.skill-container .cpp',{
     }
   })
   // Hacked Effect
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-document.querySelector(".desc a").onmouseover = event => {  
+function applyEffect(event) {
   let iteration = 0;
-  
   clearInterval(interval);
-  
+
   interval = setInterval(() => {
     event.target.innerText = event.target.innerText
       .split("")
       .map((letter, index) => {
-        if(index < iteration) {
+        if (index < iteration) {
           return event.target.dataset.value[index];
         }
-      
-        return letters[Math.floor(Math.random() * 26)]
+        return letters[Math.floor(Math.random() * 26)];
       })
       .join("");
-    
-    if(iteration >= event.target.dataset.value.length){ 
+
+    if (iteration >= event.target.dataset.value.length) {
       clearInterval(interval);
     }
-    
+
     iteration += 1 / 3;
-  }, 10);
+  }, 20);
 }
 
+document.querySelectorAll(".desc a").forEach(anchor => {
+  anchor.addEventListener("mouseover", applyEffect);
+});
+
+// Apply effect to nav-bar links
+document.querySelectorAll(".navbar-menu li a").forEach(anchor => {
+  anchor.addEventListener("mouseover", applyEffect);
+});
 
 /************Custom Cursor JS***************/
 document.addEventListener("DOMContentLoaded", function() {
