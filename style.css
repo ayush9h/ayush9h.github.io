@@ -31,8 +31,8 @@ body{
     top: 50%;
     left: 50%;
     translate:-50% -50%;
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background:linear-gradient(to right,var(--primary-color),#ffffff);
     pointer-events: none;
