@@ -31,14 +31,14 @@ body{
     top: 50%;
     left: 50%;
     translate:-50% -50%;
-    width: 34vw;
-    height: 34vh;
+    width: 10vw;
+    height: 10vh;
     border-radius: 50%;
     background:linear-gradient(to right,var(--primary-color),#ffffff);
     pointer-events: none;
     z-index:-1000;
     animation: rotate 20s infinite;
-    filter: blur(300px);
+    backdrop-filter: blur(200px);
   }
   @keyframes rotate {
     0%{
