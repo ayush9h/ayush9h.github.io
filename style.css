@@ -31,10 +31,10 @@ body{
     top: 50%;
     left: 50%;
     translate:-50% -50%;
-    width: 34vmax;
-    height: 34vmax;
+    width: 34vw;
+    height: 34vh;
     border-radius: 50%;
-    background:linear-gradient(to right,#b8e962,#ffffff);
+    background:linear-gradient(to right,var(--primary-color),#ffffff);
     pointer-events: none;
     z-index:-1000;
     animation: rotate 20s infinite;
