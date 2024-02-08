@@ -12,7 +12,6 @@
 body, html {
   font-size: 62.5%;
   background-color: var(--bg-color);
-  overflow: hidden;
 }
 
 .max-width {
@@ -363,9 +362,10 @@ margin-bottom: 5rem;
   background-repeat: no-repeat;
 }
 .nath{
-  background-image: url("./assets/images/nath-logo.svg");
+  background-image: url("./assets/images/nath-logo.png");
   background-size: contain;
   background-repeat: no-repeat;
+  border: 0.2rem solid white;
 }
 .block{
   background-image: url("./assets/images/block.svg");
@@ -518,4 +518,8 @@ model-viewer{
     .project-image{
       height: 20rem;
     }
+}
+
+::-webkit-scrollbar{
+  display: none;
 }

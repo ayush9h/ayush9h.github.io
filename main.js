@@ -152,6 +152,7 @@ const animateText = (target) => {
 animateText(".what-desc .first");
 animateText(".what-desc .second");
 animateText(".what-desc .third");
+animateText(".what-desc .fourth");
 
 animateText(".about-para");
 animateText(".accolade-box");
