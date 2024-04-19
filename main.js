@@ -9,7 +9,7 @@ const lenis = new Lenis({
   easing: (t) => 1 - Math.pow(1 - t, 4),
   direction: "vertical",
   gestureDirection: "vertical",
-  lerp: 0.01,
+  lerp: 0.05,
   smooth: 2,
   smoothTouch: false,
   touchMultiplier: 2,
@@ -59,6 +59,7 @@ playBtn.addEventListener("click", () => {
     playBtn.style.backgroundColor = "";
   }
 });
+
 
 // --------------------- GSAP Navigation Bar -------------------------
 const open = document.querySelector(".nav-toggle");
@@ -159,9 +160,6 @@ animateText(".accolade-box");
 animateText(".web-projects");
 animateText(".ml-projects");
 animateText(".blender-projects");
-animateText(".blades-title");
-animateText(".pokeball-title");
-animateText(".nintendo-title");
 
 // --------------------- GSAP Project Title -------------------------
 const animateProject = (target) => {

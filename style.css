@@ -15,14 +15,14 @@ body, html {
 }
 
 .max-width {
-  width: min(400ch, 100% - 4rem);
+  width: min(450ch, 100% - 4rem);
   margin-inline: auto;
 }
 
 /* Color Variables */
 :root {
-  --primary-color: #F4CF54;
-  --bg-color: #14161C;
+  --primary-color: #E9F551;
+  --bg-color: #1F1E1F;
   --text-color: #ffffff;
   --head-font: "Bebas Neue", sans-serif;
   --body-font: 'Varela', sans-serif;
@@ -347,35 +347,90 @@ margin-bottom: 5rem;
 .project-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 2rem;
 }
 .project{
   padding: 1rem;
 }
 .project-image{
   width: 100%;
-  height: 35rem;
-  border-radius: 3rem;
+  height: 45rem;
+  border-radius: 1rem;
 }
 .purple{  
   background-image: url("./assets/images/purple-logo.svg");
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
 }
 .nath{
-  background-image: url("./assets/images/nath-logo.png");
-  background-size: contain;
+  background-image: url("./assets/images/nath-logo.svg");
+  background-size: cover;
   background-repeat: no-repeat;
-  border: 0.2rem solid white;
+  border: 0.1rem solid lightslategrey;
 }
 .block{
   background-image: url("./assets/images/block.svg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
 }
 .flight{
   background-image: url("./assets/images/flight.svg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
+}
+.legal{
+  background-image: url("./assets/images/legal.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
+}
+.gen{
+  background-image: url("./assets/images/stable.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
+}
+.cyber{
+  background-image: url("./assets/images/cyber.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
+  border-radius: 1rem;
+}
+.watch{
+  background-image: url("./assets/images/watch.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.1rem solid lightslategrey;
+  border-radius: 1rem;
+}
+
+
+.more-project{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.1rem solid lightslategrey;
+  padding: 3rem;
+  border-radius: 20rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.more-project a{
+  text-decoration: none;
+  font-size: 7rem;
+  font-family: var(--head-font);
+  color: var(--text-color);
+}
+.more-project:hover{
+  background-color: var(--primary-color);
+  color:var(--bg-color);
+}
+.more-project:hover a{
+  color: var(--bg-color);
 }
 .project-stack{
   margin-top: 1rem;
@@ -384,7 +439,7 @@ margin-bottom: 5rem;
   color: var(--text-color);
 }
 .project-name{
-  font-size: 5rem;
+  font-size: 6rem;
   font-family: var(--head-font);
   color:var(--text-color);
 }
