@@ -22,8 +22,8 @@ body, html {
 /* Color Variables */
 :root {
   --primary-color: #E9F551;
-  --bg-color: #1F1E1F;
-  --text-color: #ffffff;
+  --bg-color: #0E0E11;
+  --text-color: #FEFEF8;
   --head-font: "Bebas Neue", sans-serif;
   --body-font: 'Varela', sans-serif;
 }
@@ -336,75 +336,32 @@ margin-bottom: 5rem;
   position: relative;
 }
 
-.web-projects{
-  font-weight: bold;
-  font-size: 4rem;
-  font-family: var(--body-font);
-  color:var(--text-color);
-  text-transform: uppercase;
-}
-
 .project-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 2rem;
+  gap: 15rem;
 }
-.project{
-  padding: 1rem;
-}
-.project-image{
+
+.project-image img {
   width: 100%;
-  height: 45rem;
-  border-radius: 1rem;
-}
-.purple{  
-  background-image: url("./assets/images/purple-logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
-}
-.nath{
-  background-image: url("./assets/images/nath-logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 .block{
-  background-image: url("./assets/images/block.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
-}
-.flight{
-  background-image: url("./assets/images/flight.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
-}
-.legal{
-  background-image: url("./assets/images/legal.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
-}
-.gen{
-  background-image: url("./assets/images/stable.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
-}
-.cyber{
-  background-image: url("./assets/images/cyber.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
 }
-.watch{
-  background-image: url("./assets/images/watch.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 0.1rem solid lightslategrey;
+.flight{
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+}
+.legal{
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+}
+.gen{
+  aspect-ratio: 16/9;
   border-radius: 1rem;
 }
 
@@ -414,9 +371,11 @@ margin-bottom: 5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 0.1rem solid lightslategrey;
+  border:1px solid #3F3E47;
+  background-color: #18181B;
   padding: 3rem;
-  border-radius: 20rem;
+  margin-top: 5rem;
+  border-radius: 50rem;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .more-project a{
@@ -437,51 +396,16 @@ margin-bottom: 5rem;
   font-size: 2rem;
   font-family: var(--body-font);
   color: var(--text-color);
+  text-align: left;
 }
 .project-name{
   font-size: 6rem;
   font-family: var(--head-font);
   color:var(--text-color);
+  text-align: left;
 }
 .project-name:hover{
   color:var(--primary-color);
-}
-.ml-projects{
-  margin-top: 5rem;
-  font-weight: bold;
-  font-size: 4rem;
-  font-family: var(--body-font);
-  color:var(--text-color);
-  text-transform: uppercase;
-}
-
-.blender-projects{
-  margin-top: 5rem;
-  font-weight: bold;
-  font-size: 4rem;
-  font-family: var(--body-font);
-  color:var(--text-color);
-  text-transform: uppercase;
-}
-
-.blades,.nintendo,.pokeball{
-  margin-top: 4rem;
-}
-.blades-title,.nintendo-title,.pokeball-title{
-  font-weight: bold;
-  font-size: 4rem;
-  font-family: var(--body-font);
-  color:var(--text-color);
-  text-transform: uppercase;
-}
-
-model-viewer{
-  width: 100%;
-  height: 100vh;
-}
-.progress-bar{
-  width: 50%;
-  background-color: var(--text-color);
 }
 
 /* Connect */
@@ -548,12 +472,6 @@ model-viewer{
     font-size: 2rem;
 
   }
-  .web-projects,.ml-projects,.blender-projects{
-    font-size: 3rem;
-  }
-  .blades-title,.nintendo-title,.pokeball-title{
-    font-size: 3rem;
-  }
   .linkcontainer{
     grid-template-columns: repeat(1, 1fr);
   }
@@ -563,6 +481,7 @@ model-viewer{
   .project-container{
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(1,1fr);
+    gap:5rem
     }
     .project-stack{
       font-size: 1.5rem;
@@ -571,8 +490,11 @@ model-viewer{
       font-size: 3rem;
     }
     .project-image{
-      height: 20rem;
+      aspect-ratio: 4/3;
     }
+  .more-project a{
+    font-size: 3rem;
+  }
 }
 
 ::-webkit-scrollbar{
