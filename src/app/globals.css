@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varela&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -17,7 +17,7 @@
   --color-success: oklch(0.5 0.05 160);
   --color-info: oklch(0.5 0.05 260);
   --font-bebas:  "Bebas Neue", sans-serif;
-  --font-mont: "Montserrat", sans-serif;
+  --font-mont: "Varela", sans-serif;
 }
 
 html{
