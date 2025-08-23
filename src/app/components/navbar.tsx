@@ -33,9 +33,9 @@ export default function Navbar(){
         </div>
 
         <div ref={linksRef} className="font-mont">
-            <a className="text-xs p-2 cursor-pointer transition-all rounded-xl antialiased uppercase mr-6 hover:underline">About</a>
-            <a className="text-xs p-2 cursor-pointer transition-all rounded-xl antialiased uppercase mr-6 hover:underline">Projects</a>
-            <a className="text-xs p-2 cursor-pointer transition-all rounded-xl antialiased uppercase mr-6 hover:underline">Contact</a>
+             <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">About</button>
+            <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">Projects</button>
+            <button onClick={() => document.getElementById("connect")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">Connect</button>
 
         </div>
 

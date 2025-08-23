@@ -69,7 +69,7 @@ export default function Projects() {
   ]
 
   return (
-    <div className="mt-30 max-w-7xl mx-auto">
+    <div id="projects" className="mt-30 max-w-7xl mx-auto">
       <h1 ref={marqueeRef} className="text-9xl font-bebas mb-20">Works</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
         {projects.map((p, i) => (
@@ -84,7 +84,7 @@ export default function Projects() {
             <p className="font-mont text-lg text-gray-500">{p.tech}</p>
             <div
               ref={(el) => (linkRefs.current[i] = el)}
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-2 cursor-pointer hover:underline"
             >
               <ArrowRight className="arrow w-5 h-5 text-black" />
               <a target="__blank__" href={p.link} className="link-text font-mont text-xl font-semibold">
@@ -96,7 +96,7 @@ export default function Projects() {
         ))}
       </div>
     
-      <a href="https://github.com/ayush9h" target="__blank__" className="mx-auto w-1/5 p-2 rounded-full shadow-md mt-10 flex justify-center items-center text-center font-mont bg-white hover:shadow-xl transition-all">SEE ALL PROJECTS</a>
+      <a href="https://github.com/ayush9h" target="__blank__" className="mx-auto w-[12rem] p-2 rounded-full shadow-md mt-10 flex justify-center items-center text-center font-mont bg-white hover:shadow-xl transition-all text-md">SEE ALL PROJECTS</a>
 
 
     </div>

@@ -28,7 +28,10 @@ export default function Connect() {
   ]
 
   return (
-    <div className="mt-30 bg-black rounded-tl-4xl rounded-tr-4xl h-96 flex flex-col items-center justify-center relative">
+    <div
+  id="connect"
+  className="mt-30 bg-black rounded-tl-4xl rounded-tr-4xl min-h-screen flex flex-col items-center justify-center"
+>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
       <h1 className="text-white text-9xl font-bebas text-center mb-12">

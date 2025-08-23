@@ -51,7 +51,7 @@ export default function About() {
   }, [])
 
   return (
-    <div className="mt-30">
+    <div id="about" className="mt-30">
 
 
       <h1 ref={marqueeRef} className="text-9xl font-bebas">
