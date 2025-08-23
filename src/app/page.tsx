@@ -15,7 +15,7 @@ export default function Home() {
       easing: (t) => 1 - Math.pow(1 - t, 3),
     })
 
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }

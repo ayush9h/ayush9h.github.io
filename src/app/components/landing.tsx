@@ -36,7 +36,7 @@ export default function Landing() {
      <h1
        ref={headingRef}
        className="mt-10 text-5xl text-center font-mont tracking-tight ">
-       Debugging Code, One <span className="italic font-bold">BUG</span> at a Time
+       Debugging Code, One <span className="italic font-bold">BUG</span> at a Time.
      </h1>
 
 
