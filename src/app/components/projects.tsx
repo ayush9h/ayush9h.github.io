@@ -71,7 +71,7 @@ export default function Projects() {
   return (
     <div className="mt-30 max-w-7xl mx-auto">
       <h1 ref={marqueeRef} className="text-9xl font-bebas mb-20">Works</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
         {projects.map((p, i) => (
           <div key={i} className="space-y-4">
             <div className="overflow-hidden shadow-xl rounded-2xl">
@@ -96,7 +96,7 @@ export default function Projects() {
         ))}
       </div>
     
-      <a href="https://github.com/ayush9h" target="__blank__" className="mx-auto w-1/5 p-2 rounded-full shadow-md mt-10 flex justify-center items-center text-center font-mont bg-white">SEE ALL PROJECTS</a>
+      <a href="https://github.com/ayush9h" target="__blank__" className="mx-auto w-1/5 p-2 rounded-full shadow-md mt-10 flex justify-center items-center text-center font-mont bg-white hover:shadow-xl transition-all">SEE ALL PROJECTS</a>
 
 
     </div>
