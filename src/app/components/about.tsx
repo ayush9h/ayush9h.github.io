@@ -15,7 +15,7 @@ export default function About() {
       const split = new SplitText(marqueeRef.current, { type: "chars" })
       gsap.from(split.chars, {
         duration: 1,
-        x: -100,
+        y: -50,
         autoAlpha: 0,
         stagger: 0.05,
         ease: "power3.out"
@@ -51,10 +51,10 @@ export default function About() {
   }, [])
 
   return (
-    <div className="mt-24 max-w-7xl mx-auto overflow-hidden">
+    <div className="mt-30">
 
 
-      <h1 ref={marqueeRef} className="text-6xl font-bebas">
+      <h1 ref={marqueeRef} className="text-9xl font-bebas">
         About
       </h1>
 
