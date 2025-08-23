@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: oklch(0.92 0.005 127);
+  --color-bg: oklch(0.96 0.005 127);
+  --color-bg-light: oklch(1 0.005 127);
+  --color-text: oklch(0.15 0.01 127);
+  --color-text-muted: oklch(0.4 0.01 127);
+  --color-highlight: oklch(1 0.01 127);
+  --color-border: oklch(0.6 0.01 127);
+  --color-border-muted: oklch(0.7 0.01 127);
+  --color-primary: oklch(0.4 0.1 127);
+  --color-secondary: oklch(0.4 0.1 307);
+  --color-danger: oklch(0.5 0.05 30);
+  --color-warning: oklch(0.5 0.05 100);
+  --color-success: oklch(0.5 0.05 160);
+  --color-info: oklch(0.5 0.05 260);
+  --font-bebas:  "Bebas Neue", sans-serif;
+  --font-mont: "Montserrat", sans-serif;
+}
+
+html{
+  background-color: var(--color-bg);
+}
