@@ -44,10 +44,10 @@ export default function Connect() {
             key={i}
             ref={(el) => {(linkRefs.current[i] = el)}}
             href={link.url}
-            className="flex items-center justify-center h-full cursor-target hover:bg-white hover:text-black transition-all text-white font-mont space-x-2 rounded-md px-4"
+            className="flex items-center justify-center h-full cursor-target hover:bg-text-muted hover:text-slate-100 transition-all text-white font-mont space-x-2 rounded-md px-4"
           >
             <span>{link.name}</span>
-            <ArrowRight className="arrow w-5 h-5 text-black" />
+            <ArrowRight className="arrow w-5 h-5 text-slate-100" />
           </a>
         ))}
       </div>
