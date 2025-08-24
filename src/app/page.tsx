@@ -31,8 +31,9 @@ export default function Home() {
         <Landing />
         <About />
         <Projects />
-        <Connect />
+        
       </div>
+      <Connect />
     </>
   )
 }

@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import TargetCursor from '../elements/magnet'
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUp } from "lucide-react"
 
 export default function Connect() {
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([])
@@ -27,14 +27,33 @@ export default function Connect() {
     { name: "LeetCode", url: "https://leetcode.com/u/ayukr_2002/" }
   ]
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <div
-  id="connect"
-  className="mt-30 bg-black rounded-tl-4xl rounded-tr-4xl min-h-screen flex flex-col items-center justify-center"
->
+      id="connect"
+      className="mt-30 relative bg-black min-h-screen flex flex-col items-center justify-center space-y-12"
+    >
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
-      <h1 className="text-white text-9xl font-bebas text-center mb-12">
+      <div
+        onClick={scrollToTop}
+        className="flex flex-col items-center cursor-pointer group"
+      >
+        <div className="w-12 h-12 flex items-center justify-center border-2 border-white rounded-xl group-hover:bg-white transition-all duration-300">
+          <ArrowUp className="w-6 h-6 text-white group-hover:text-black transition-all duration-300" />
+        </div>
+        <span className="mt-2 text-sm text-white font-mont uppercase group-hover:text-gray-300 transition-all">
+          Back to top
+        </span>
+      </div>
+
+      <h1
+        className="text-[5rem] md:text-[15rem] font-bebas text-center 
+                   bg-gradient-to-t from-white to-white/30 bg-clip-text text-transparent leading-none"
+      >
         Let&apos;s Connect
       </h1>
 
@@ -42,12 +61,17 @@ export default function Connect() {
         {links.map((link, i) => (
           <a
             key={i}
-            ref={(el) => {(linkRefs.current[i] = el)}}
+            ref={(el) => { linkRefs.current[i] = el }}
             href={link.url}
-            className="flex items-center justify-center h-full cursor-target hover:bg-text-muted hover:text-slate-100 transition-all text-white font-mont space-x-2 rounded-md px-4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center h-full cursor-target 
+                       hover:bg-white hover:text-black 
+                       transition-all duration-300 
+                       text-zinc-500 font-mont space-x-2 rounded-md px-4"
           >
-            <span>{link.name}</span>
-            <ArrowRight className="arrow w-5 h-5 text-slate-100" />
+            <span className="font-mont uppercase font-bold">{link.name}</span>
+            <ArrowRight className="arrow w-5 h-5 text-black" />
           </a>
         ))}
       </div>
