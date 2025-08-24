@@ -16,8 +16,8 @@ const Spheres = ({ className = "", containerRef }) => {
 
     // ----- Scene & Camera -----
     const scene = new THREE.Scene()
-    const width = canvas.offsetWidth || 800
-    const height = canvas.offsetHeight || 600
+    const width = canvas.clientWidth || window.innerWidth
+    const height = canvas.clientHeight || window.innerHeight
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 200)
     camera.position.z = 60
 
@@ -160,8 +160,8 @@ const Spheres = ({ className = "", containerRef }) => {
 
     // ----- Resize -----
     const handleResize = () => {
-      const w = canvas.offsetWidth
-      const h = canvas.offsetHeight
+      const w = canvas.clientWidth || window.innerWidth
+      const h = canvas.clientHeight || window.innerHeight
       renderer.setSize(w, h)
       camera.aspect = w / h
       camera.updateProjectionMatrix()
