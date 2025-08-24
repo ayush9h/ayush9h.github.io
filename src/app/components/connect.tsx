@@ -5,7 +5,7 @@ import TargetCursor from '../elements/magnet'
 import { ArrowRight } from "lucide-react"
 
 export default function Connect() {
-  const linkRefs = useRef([])
+  const linkRefs = useRef<(HTMLAnchorElement | null)[]>([])
 
   useEffect(() => {
     linkRefs.current.forEach((el) => {
@@ -23,7 +23,7 @@ export default function Connect() {
 
   const links = [
     { name: "Github", url: "https://github.com/ayush9h" },
-    { name: "Linkedin", url: "hhttps://www.linkedin.com/in/ayush-kumar-88b883239/" },
+    { name: "Linkedin", url: "https://www.linkedin.com/in/ayush-kumar-88b883239/" },
     { name: "LeetCode", url: "https://leetcode.com/u/ayukr_2002/" }
   ]
 
@@ -42,7 +42,7 @@ export default function Connect() {
         {links.map((link, i) => (
           <a
             key={i}
-            ref={(el) => (linkRefs.current[i] = el)}
+            ref={(el) => {(linkRefs.current[i] = el)}}
             href={link.url}
             className="flex items-center justify-center h-full cursor-target hover:bg-white hover:text-black transition-all text-white font-mont space-x-2 rounded-md px-4"
           >

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function Projects() {
   const marqueeRef = useRef(null)
-  const linkRefs = useRef([])
+  const linkRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     if (marqueeRef.current) {
@@ -83,7 +83,7 @@ export default function Projects() {
             </div>
             <p className="font-mont text-lg text-gray-500">{p.tech}</p>
             <div
-              ref={(el) => (linkRefs.current[i] = el)}
+              ref={(el) => {(linkRefs.current[i] = el)}}
               className="flex items-center gap-2 cursor-pointer hover:underline"
             >
               <ArrowRight className="arrow w-5 h-5 text-black" />

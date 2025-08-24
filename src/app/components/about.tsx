@@ -6,7 +6,7 @@ import { SplitText } from "gsap/all"
 export default function About() {
   const marqueeRef = useRef(null)
   const aboutRef = useRef(null)
-  const itemsRef = useRef([])
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
 
@@ -71,7 +71,7 @@ export default function About() {
         {["Web Development", "Generative AI", "3D"].map((text, i) => (
           <div
             key={i}
-            ref={(el) => (itemsRef.current[i] = el)}
+            ref={(el) => {(itemsRef.current[i] = el)}}
             className="group cursor-pointer p-8 hover:bg-black transition-colors duration-300 border-b border-text-muted"
           >
             <h1 className="text-4xl font-mont font-bold transition-colors duration-300 group-hover:text-white uppercase">
