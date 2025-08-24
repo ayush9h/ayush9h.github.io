@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
 import { ArrowRight } from "lucide-react"
-
+import Image from "next/image"
 export default function Projects() {
   const marqueeRef = useRef(null)
   const linkRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -75,11 +75,8 @@ export default function Projects() {
         {projects.map((p, i) => (
           <div key={i} className="space-y-4">
             <div className="overflow-hidden shadow-xl rounded-2xl">
-              <img
-                src={p.img}
-                alt="project"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
-              />
+              <Image alt="project" src={p.img} title={p.title} width={720} height={720} className="object-cover" />
+          
             </div>
             <p className="font-mont text-lg text-gray-500">{p.tech}</p>
             <div

@@ -35,7 +35,7 @@ export default function Connect() {
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
       <h1 className="text-white text-9xl font-bebas text-center mb-12">
-        Let's Connect
+        Let&apos;s Connect
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl h-20 items-center">

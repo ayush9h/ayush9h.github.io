@@ -60,7 +60,7 @@ export default function About() {
 
 
       <p ref={aboutRef} className="mt-10 font-mont text-3xl">
-        I'm Ayush Kumar, a Computer Science Engineer passionate about AI,
+        I&apos;m Ayush Kumar, a Computer Science Engineer passionate about AI,
         full-stack development, and solving problems with elegant solutions.
       </p>
 

@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Spheres from "../elements/pit"
-import { Plus, ChevronDown } from "lucide-react"
+import { Plus } from "lucide-react"
 
 export default function Landing() {
   const headingRef = useRef<HTMLHeadingElement>(null)
