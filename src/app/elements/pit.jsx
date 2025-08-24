@@ -27,21 +27,31 @@ const Spheres = ({ className = "", containerRef }) => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.outputColorSpace = THREE.SRGBColorSpace
+    renderer.shadowMap.enabled = true
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
 
     // ----- Lights -----
     scene.add(new THREE.AmbientLight(0xffffff, 0.35))
-    const pointLight = new THREE.PointLight(0xffffff, 1.4)
-    pointLight.position.set(15, 15, 15)
-    scene.add(pointLight)
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4)
+    directionalLight.position.set(15, 25, 15)       
+    directionalLight.castShadow = true              
+    directionalLight.shadow.mapSize.width = 1024
+    directionalLight.shadow.mapSize.height = 1024  
+    directionalLight.shadow.camera.near = 0.85
+    scene.add(directionalLight)
+
+
+    // directionalLight.shadow.camera.far = 
 
     // ----- Spheres -----
     const spheres = []
     const radius = 8
-    const geometry = new THREE.SphereGeometry(radius, 32, 32)
+    const geometry = new THREE.SphereGeometry(radius, 64, 64)
     const materials = [
-      new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.25, metalness: 0.1, envMapIntensity: 1.0 }),
+      new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.55, metalness: 0.1, envMapIntensity: 1.0 }),
       new THREE.MeshStandardMaterial({ color: 0x2266cc, roughness: 0.35, metalness: 0.3, envMapIntensity: 0.9 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.25, metalness: 0.15, envMapIntensity: 1.2 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.45, metalness: 0.15, envMapIntensity: 1.2 }),
     ]
 
     const areaSize = 40
@@ -56,6 +66,9 @@ const Spheres = ({ className = "", containerRef }) => {
       sphere.userData.target = pos.clone()
       spheres.push(sphere)
       scene.add(sphere)
+      sphere.castShadow = true
+      sphere.receiveShadow = true
+
     }
 
     // ----- Interaction -----
