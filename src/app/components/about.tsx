@@ -1,8 +1,10 @@
 "use client"
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
-import { SplitText } from "gsap/all"
+import { SplitText, ScrollTrigger } from "gsap/all"
 
+
+gsap.registerPlugin(ScrollTrigger)
 export default function About() {
   const marqueeRef = useRef(null)
   const aboutRef = useRef(null)
@@ -18,7 +20,12 @@ export default function About() {
         y: -50,
         autoAlpha: 0,
         stagger: 0.05,
-        ease: "power3.out"
+        ease: "power3.out",
+        scrollTrigger: {
+        trigger: marqueeRef.current,
+        start: "top 70%", 
+        toggleActions: "play none none reverse"
+      }
       })
     }
 
@@ -31,7 +38,12 @@ export default function About() {
         autoAlpha: 0,
         stagger: 0.05,
         ease: "power3.out",
-        delay: 0.5
+        delay: 0.5,
+        scrollTrigger: {
+        trigger: aboutRef.current,
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+      }
       })
     }
 
@@ -45,7 +57,12 @@ export default function About() {
         autoAlpha: 0,
         stagger: 0.05,
         delay: 1 + i * 0.3, 
-        ease: "power3.out"
+        ease: "power3.out",
+        scrollTrigger: {
+        trigger: item,
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+      }
       })
     })
   }, [])
