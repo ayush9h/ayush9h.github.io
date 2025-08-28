@@ -154,8 +154,12 @@ const Spheres = ({ className = "", containerRef }) => {
     new RGBELoader().load("/studio_small_09_4k.hdr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping
       scene.environment = texture
-      animate() // start animation after HDR is ready
-      gsap.to(canvas, { opacity: 1, duration: 1 }) // smooth fade-in
+      renderer.compileAsync(scene, camera).then(()=>{
+        animate()
+        gsap.to(canvas,{opacity:1, duration:1})
+
+        containerRef?.current?.dispatchEvent(new Event('ready'))
+      })
     })
 
     // ----- Resize -----

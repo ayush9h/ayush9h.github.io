@@ -13,7 +13,7 @@ export default function Landing() {
   const iconsRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    const tl = gsap.timeline()
+    const tl = gsap.timeline({paused:true})
     tl.from(headingRef.current, {
       y: -50,
       opacity: 0,
@@ -32,6 +32,11 @@ export default function Landing() {
       duration: 1,
       ease: "power2.out",
     }, "-=0.3")
+
+    const onready = ()=> tl.play()
+    containerRef.current?.addEventListener("ready", onready)
+    return ()=>containerRef.current?.removeEventListener("ready", onready)
+
   }, [])
 
   return (
