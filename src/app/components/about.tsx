@@ -9,7 +9,7 @@ export default function About() {
   const marqueeRef = useRef(null)
   const aboutRef = useRef(null)
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
-
+  const itemsRef2 = useRef<(HTMLDivElement | null)[]>([])
   useGSAP(() => {
 
     
@@ -65,6 +65,23 @@ export default function About() {
       }
       })
     })
+     itemsRef2.current.forEach((item, i) => {
+      if (!item) return
+      const splitItem = new SplitText(item, { type: "words" })
+      gsap.from(splitItem.words, {
+        duration: 1,
+        y: 50,
+        autoAlpha: 0,
+        stagger: 0.05,
+        delay: 1 + i * 0.3, 
+        ease: "power3.out",
+        scrollTrigger: {
+        trigger: item,
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+      }
+      })
+    })
   }, [])
 
   return (
@@ -82,14 +99,14 @@ export default function About() {
       </p>
 
 
-      <h1 className="mt-10 font-mont text-md uppercase">What I do</h1>
+      <h1 className="mt-10 font-mont text-md  uppercase">What I do</h1>
 
       <div className="gap-6 mt-10">
         {["Web Development", "Generative AI", "3D"].map((text, i) => (
           <div
             key={i}
             ref={(el) => {(itemsRef.current[i] = el)}}
-            className="group cursor-pointer p-8 hover:bg-black transition-colors duration-300 border-b border-text-muted"
+            className="group cursor-pointer p-7 hover:bg-black transition-colors duration-300 border-b border-text-muted"
           >
             <h1 className="text-4xl font-mont font-bold transition-colors duration-300 group-hover:text-white uppercase">
               {text}
@@ -97,6 +114,22 @@ export default function About() {
           </div>
         ))}
       </div>
+
+
+      <h1 className="mt-10 font-mont text-md uppercase">Accolades</h1>
+      <div className="gap-6 mt-10">
+      {["MLH'23 Hackhound Winner in AI/ML", "Techfest'22 IIT Bombay Zonals Qualified"].map((text, i) => (
+        <div
+          key={i}
+          ref={(el) => {(itemsRef2.current[i] = el)}}
+          className="group cursor-pointer p-7"
+        >
+          <h1 className="text-4xl font-mont font-bold uppercase">
+            {text}
+          </h1>
+        </div>
+      ))}
+    </div>
     </div>
   )
 }

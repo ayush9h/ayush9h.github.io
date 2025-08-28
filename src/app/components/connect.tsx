@@ -21,7 +21,7 @@ export default function Connect() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: headingRef.current,
-          start: "top 80%",
+          start: "top 60%",
           toggleActions: "play none none reverse"
         }
       })

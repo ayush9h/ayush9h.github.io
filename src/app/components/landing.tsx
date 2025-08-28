@@ -56,7 +56,7 @@ export default function Landing() {
 
       <div
         ref={containerRef}
-        className="mt-10 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-zinc-900 overflow-clip"
+        className="mt-7 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-zinc-900 overflow-clip"
       >
         <Spheres containerRef={containerRef} />
       </div>
