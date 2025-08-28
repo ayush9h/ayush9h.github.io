@@ -43,14 +43,14 @@ export default function Landing() {
     <>
      <h1
        ref={headingRef}
-       className="mt-10 text-5xl text-center font-mont tracking-tight ">
+       className="mt-10 text-5xl text-center font-mont">
        Debugging Code, One <span className="italic font-bold">BUG</span> at a Time.
      </h1>
 
 
       <div
         ref={containerRef}
-        className="mt-10 h-[27rem] max-w-7xl rounded-xl border border-slate-300 mx-auto shadow bg-black overflow-clip"
+        className="mt-10 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-black overflow-clip"
       >
         <Spheres containerRef={containerRef} />
       </div>
@@ -58,18 +58,18 @@ export default function Landing() {
 
       <div
         ref={iconsRef}
-        className="mt-2 flex justify-around items-center text-black"
+        className="mt-2 flex justify-between items-center text-black"
       >
-        <Plus className="w-7 h-7 transition-colors" />
-        <Plus className="w-7 h-7 transition-colors" />
+        <Plus className="w-5 h-5 transition-colors" />
+        <Plus className="w-5 h-5 transition-colors" />
 
 
         <div>
-          <span className="text-sm flex justify-center text-center items-center font-bebas text-black uppercase font-semibold tracking-wide">Scroll to explore</span>
+          <span className="text-md flex justify-center text-center items-center font-bebas text-black uppercase tracking-wide">Scroll to explore</span>
         </div>
 
-        <Plus className="w-7 h-7 transition-colors" />
-        <Plus className="w-7 h-7 transition-colors" />
+        <Plus className="w-5 h-5 transition-colors" />
+        <Plus className="w-5 h-5 transition-colors" />
       </div>
     </>
   )

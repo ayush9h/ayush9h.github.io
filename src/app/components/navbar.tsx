@@ -35,10 +35,10 @@ export default function Navbar(){
             <h1>AYUAR</h1>
         </div>
 
-        <div ref={linksRef} className="font-mont">
-             <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">About</button>
-            <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">Projects</button>
-            <button onClick={() => document.getElementById("connect")?.scrollIntoView({ behavior: "smooth" })} className="text-xs p-2 cursor-pointer mr-6 uppercase">Connect</button>
+        <div ref={linksRef} className="text-xs font-mont cursor-pointer font-semibold">
+             <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="uppercase p-2 mr-6  hover:underline transition-all">About</button>
+            <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="uppercase p-2 mr-6  hover:underline transition-all">Projects</button>
+            <button onClick={() => document.getElementById("connect")?.scrollIntoView({ behavior: "smooth" })} className="uppercase p-2 mr-6  hover:underline transition-all">Connect</button>
 
         </div>
 

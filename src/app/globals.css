@@ -23,3 +23,7 @@
 html{
   background-color: var(--color-bg);
 }
+::selection {
+  background: black;   
+  color: white;        
+}
