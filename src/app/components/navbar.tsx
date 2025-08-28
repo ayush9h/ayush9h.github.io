@@ -1,12 +1,15 @@
 "use client"
-import { useEffect,useRef } from "react"
+import { useRef } from "react"
 import gsap from "gsap"
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP)
 export default function Navbar(){
 
     const navRef = useRef<HTMLDivElement>(null);
     const linksRef = useRef<HTMLDivElement>(null)
 
-    useEffect(()=>{
+    useGSAP(()=>{
         gsap.from(navRef.current,{
             y:-20,
             opacity:0,

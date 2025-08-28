@@ -1,15 +1,18 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import gsap from "gsap"
 import Spheres from "../elements/pit"
 import { Plus } from "lucide-react"
+import { useGSAP } from "@gsap/react"
+
+gsap.registerPlugin(useGSAP)
 
 export default function Landing() {
   const headingRef = useRef<HTMLHeadingElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const iconsRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline()
     tl.from(headingRef.current, {
       y: -50,

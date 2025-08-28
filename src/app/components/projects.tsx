@@ -1,19 +1,20 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { useGSAP } from "@gsap/react"
 
-gsap.registerPlugin(ScrollTrigger, SplitText)
+gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP)
 
 export default function Projects() {
   const marqueeRef = useRef(null)
   const linkRefs = useRef<(HTMLDivElement | null)[]>([])
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  useEffect(() => {
+  useGSAP(() => {
     if (marqueeRef.current) {
       const splitAbout = new SplitText(marqueeRef.current, { type: "chars" })
       gsap.from(splitAbout.chars, {

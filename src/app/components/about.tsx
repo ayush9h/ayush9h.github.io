@@ -1,16 +1,16 @@
 "use client"
-import { useEffect, useRef } from "react"
+import {  useRef } from "react"
 import gsap from "gsap"
 import { SplitText, ScrollTrigger } from "gsap/all"
+import { useGSAP } from "@gsap/react"
 
-
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 export default function About() {
   const marqueeRef = useRef(null)
   const aboutRef = useRef(null)
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
 
-  useEffect(() => {
+  useGSAP(() => {
 
     
     if (marqueeRef.current) {

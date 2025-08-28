@@ -1,18 +1,18 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import TargetCursor from '../elements/magnet'
 import { ArrowRight, ArrowUp } from "lucide-react"
-
-gsap.registerPlugin(ScrollTrigger)
+import { useGSAP } from "@gsap/react"
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function Connect() {
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([])
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const headingRef = useRef<HTMLHeadingElement | null>(null)
 
-  useEffect(() => {
+  useGSAP(() => {
     if (headingRef.current) {
       gsap.from(headingRef.current, {
         y: 100,
