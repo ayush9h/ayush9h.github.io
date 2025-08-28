@@ -17,23 +17,12 @@ export default function Connect() {
       const arrow = el.querySelector(".arrow")
       gsap.set(arrow, { x: -10, autoAlpha: 0 })
       el.addEventListener("mouseenter", () => {
-        gsap.to(arrow, { x: 0, autoAlpha: 1, duration: 0.3, ease: "power3.out" })
+        gsap.to(arrow, { x: 0, autoAlpha: 1, duration: 0.1, ease: "power3.out" })
       })
       el.addEventListener("mouseleave", () => {
-        gsap.to(arrow, { x: -10, autoAlpha: 0, duration: 0.3, ease: "power3.in" })
+        gsap.to(arrow, { x: -10, autoAlpha: 0, duration: 0.1, ease: "power3.in" })
       })
-      gsap.from(el, {
-        y: 50,
-        autoAlpha: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: i * 0.2,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-          toggleActions: "play none none reverse"
-        }
-      })
+      
     })
 
     return () => ScrollTrigger.getAll().forEach(t => t.kill())
