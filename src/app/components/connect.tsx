@@ -10,23 +10,8 @@ gsap.registerPlugin(ScrollTrigger, useGSAP)
 export default function Connect() {
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([])
   const sectionRef = useRef<HTMLDivElement | null>(null)
-  const headingRef = useRef<HTMLHeadingElement | null>(null)
 
   useGSAP(() => {
-    if (headingRef.current) {
-      gsap.from(headingRef.current, {
-        y: 100,
-        autoAlpha: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 60%",
-          toggleActions: "play none none reverse"
-        }
-      })
-    }
-
     linkRefs.current.forEach((el, i) => {
       if (!el) return
       const arrow = el.querySelector(".arrow")
@@ -45,7 +30,7 @@ export default function Connect() {
         delay: i * 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "top 60%",
           toggleActions: "play none none reverse"
         }
       })
@@ -68,7 +53,7 @@ export default function Connect() {
     <div
       id="connect"
       ref={sectionRef}
-      className="mt-30 relative bg-black min-h-screen flex flex-col items-center justify-center space-y-12"
+      className="mt-30 relative bg-zinc-900 min-h-screen flex flex-col items-center justify-center space-y-12"
     >
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
@@ -85,7 +70,6 @@ export default function Connect() {
       </div>
 
       <h1
-        ref={headingRef}
         className="text-[5rem] md:text-[15rem] font-bebas text-center 
                    bg-gradient-to-t from-white to-white/30 bg-clip-text text-transparent leading-none"
       >
