@@ -41,16 +41,17 @@ export default function Landing() {
 
   return (
     <>
+    <div className="mt-23">
      <h1
        ref={headingRef}
-       className="mt-10 text-5xl text-center font-mont">
+       className="text-5xl text-center font-mont">
        Debugging Code, One <span className="italic font-bold">BUG</span> at a Time.
      </h1>
 
 
       <div
         ref={containerRef}
-        className="mt-10 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-black overflow-clip"
+        className="mt-10 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-zinc-900 overflow-clip"
       >
         <Spheres containerRef={containerRef} />
       </div>
@@ -70,6 +71,7 @@ export default function Landing() {
 
         <Plus className="w-5 h-5 transition-colors" />
         <Plus className="w-5 h-5 transition-colors" />
+      </div>
       </div>
     </>
   )
