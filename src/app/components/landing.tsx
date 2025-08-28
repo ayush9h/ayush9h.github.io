@@ -2,7 +2,7 @@
 import { useRef } from "react"
 import gsap from "gsap"
 import Spheres from "../elements/pit"
-import { Plus } from "lucide-react"
+import { Plus, BugPlay } from "lucide-react"
 import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(useGSAP)
@@ -45,8 +45,13 @@ export default function Landing() {
      <h1
        ref={headingRef}
        className="text-5xl text-center font-mont">
-       Debugging Code, One <span className="italic font-bold">BUG</span> at a Time.
-     </h1>
+       Debugging Code, One{" "}
+      <span className="inline-flex items-center gap-2 bg-black text-white px-3 py-1 rounded-lg font-bold group cursor-pointer hover:tracking-widest transition-all">
+        BUG
+        <BugPlay className="w-6 h-6 transition-transform duration-300 group-hover:rotate-45 " />
+      </span>{" "}
+      at a Time.
+    </h1>
 
 
       <div
