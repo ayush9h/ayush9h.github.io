@@ -49,9 +49,9 @@ const Spheres = ({ className = "", containerRef }) => {
     const radius = 8
     const geometry = new THREE.SphereGeometry(radius, 64, 64)
     const materials = [
-      new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.55, metalness: 0.1, envMapIntensity: 1.0 }),
-      new THREE.MeshStandardMaterial({ color: 0x2266cc, roughness: 0.35, metalness: 0.3, envMapIntensity: 0.9 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.45, metalness: 0.15, envMapIntensity: 1.2 }),
+      new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.25, metalness: 0.8, envMapIntensity: 1.0 }),
+      new THREE.MeshStandardMaterial({ color: 0x2266cc, roughness: 0.15, metalness: 0.8, envMapIntensity: 0.9 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35, metalness: 0.8, envMapIntensity: 1.2 }),
     ]
 
     const areaSize = 40
