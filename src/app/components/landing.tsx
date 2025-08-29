@@ -56,7 +56,7 @@ export default function Landing() {
 
       <div
         ref={containerRef}
-        className="mt-7 h-[28rem] max-w-7xl rounded-2xl border border-slate-300 mx-auto shadow bg-zinc-900 overflow-clip"
+        className="mt-7 h-[28rem] max-w-7xl border border-slate-300 mx-auto shadow bg-zinc-900 overflow-clip"
       >
         <Spheres containerRef={containerRef} />
       </div>
@@ -71,7 +71,7 @@ export default function Landing() {
 
 
         <div>
-          <span className="text-md flex justify-center text-center items-center font-bebas text-black uppercase tracking-wide">Scroll to explore</span>
+          <span className="text-md flex justify-center text-center items-center font-mont text-black uppercase tracking-wide">Scroll to explore</span>
         </div>
 
         <Plus className="w-5 h-5 transition-colors" />

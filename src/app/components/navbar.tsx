@@ -38,13 +38,13 @@ export default function Navbar(){
     return(
       <nav 
         ref={navRef} 
-        className="fixed top-0 left-0 w-full border-b border-b-border-muted p-2 flex justify-around items-center bg-white/25 backdrop-blur-md z-50"
+        className="fixed top-0 left-0 w-full border-b border-zinc-300 p-2 flex justify-around items-center bg-white z-50"
       >
         <div className="text-md font-bebas font-bold">
             <h1>AYUAR</h1>
         </div>
 
-        <div ref={linksRef} className="text-xs font-mont cursor-pointer font-semibold">
+        <div ref={linksRef} className="text-xs font-mont cursor-pointer font-semibold text-slate-700">
             <button 
               onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} 
               className="uppercase p-2 mr-6 hover:underline transition-all"

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Display:wght@300..800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -16,8 +16,8 @@
   --color-warning: oklch(0.5 0.05 100);
   --color-success: oklch(0.5 0.05 160);
   --color-info: oklch(0.5 0.05 260);
-  --font-bebas:  "Bebas Neue", sans-serif;
-  --font-mont: "Varela", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-mont:"Funnel Display", sans-serif;
 }
 
 html{
