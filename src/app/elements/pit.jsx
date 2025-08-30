@@ -58,9 +58,8 @@ const Spheres = ({ className = "", containerRef }) => {
     for (let i = 0; i < 25; i++) {
       const sphere = new THREE.Mesh(geometry, materials[i % 3])
       const pos = new THREE.Vector3(
-        (Math.random() - 0.5) * areaSize,
-        (Math.random() - 0.5) * areaSize,
-        (Math.random() - 0.5) * areaSize * 0.5
+        (Math.random() - 0.5) * areaSize * 0.25,
+        (Math.random() - 0.5) * areaSize * 0.5,
       )
       sphere.position.copy(pos)
       sphere.userData.target = pos.clone()
