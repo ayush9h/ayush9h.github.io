@@ -24,7 +24,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: marqueeRef.current,
-          start: "top 60%",
+          start: "top 40%",
           toggleActions: "play none none reverse"
         }
       })
@@ -40,7 +40,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: aboutRef.current,
-          start: "top 50%",
+          start: "top 40%",
           toggleActions: "play none none reverse"
         }
       })
@@ -56,7 +56,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: whatIDoRef.current,
-          start: "top 70%",
+          start: "top 40%",
           toggleActions: "play none none reverse"
         }
       })
@@ -72,7 +72,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: accoladesRef.current,
-          start: "top 70%",
+          start: "top 40%",
           toggleActions: "play none none reverse"
         }
       })
@@ -82,11 +82,11 @@ export default function About() {
       if (!item) return
       const splitItem = new SplitText(item, { type: "words" })
       gsap.from(splitItem.words, {
-        duration: 1,
+        duration: 0.5,
         y: 50,
         autoAlpha: 0,
         stagger: 0.05,
-        delay: 1 + i * 0.3,
+        delay: 0.1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: item,
@@ -104,7 +104,7 @@ export default function About() {
         y: 50,
         autoAlpha: 0,
         stagger: 0.05,
-        delay: 1 + i * 0.3,
+        delay:0.1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: item,
