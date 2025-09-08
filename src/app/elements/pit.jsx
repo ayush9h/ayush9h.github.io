@@ -60,6 +60,7 @@ const Spheres = ({ className = "", containerRef }) => {
       const pos = new THREE.Vector3(
         (Math.random() - 0.5) * areaSize * 0.25,
         (Math.random() - 0.5) * areaSize * 0.5,
+        0
       )
       sphere.position.copy(pos)
       sphere.userData.target = pos.clone()
@@ -85,6 +86,7 @@ const Spheres = ({ className = "", containerRef }) => {
       raycaster.setFromCamera(mouse, camera)
       if (raycaster.ray.intersectPlane(plane, intersection)) {
         forceSphere.copy(intersection)
+        forceSphere.z = 0
       }
     }
     window.addEventListener("mousemove", onMouseMove)
@@ -123,20 +125,17 @@ const Spheres = ({ className = "", containerRef }) => {
           const b = spheres[j]
           const dx = a.position.x - b.position.x
           const dy = a.position.y - b.position.y
-          const dz = a.position.z - b.position.z
-          const d2 = dx * dx + dy * dy + dz * dz
+          const d2 = dx * dx + dy * dy 
           if (d2 > 1e-8 && d2 < minDistSq) {
             const d = Math.sqrt(d2)
             const overlap = (minDist - d) * 0.5
             const nx = dx / d
             const ny = dy / d
-            const nz = dz / d
             a.position.x += nx * overlap
             a.position.y += ny * overlap
-            a.position.z += nz * overlap
             b.position.x -= nx * overlap
             b.position.y -= ny * overlap
-            b.position.z -= nz * overlap
+
           }
         }
       }
@@ -144,6 +143,7 @@ const Spheres = ({ className = "", containerRef }) => {
       for (const a of spheres) {
         a.rotation.x += 0.001
         a.rotation.y += 0.0015
+        a.rotation.z = 0
       }
 
       renderer.render(scene, camera)
