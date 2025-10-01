@@ -125,7 +125,7 @@ export default function About() {
     </div>
 
     <div className="grid grid-cols-2 items-center">
-      <h1 className="text-md p-4 font-mont">Techfest'22 IIT Bombay Zonals Qualified</h1>
+      <h1 className="text-md p-4 font-mont">Techfest&apos;22 IIT Bombay Zonals Qualified</h1>
       <Image
         alt="Techfest Image"
         src="/techfest.jpg"
