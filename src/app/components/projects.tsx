@@ -40,7 +40,7 @@ export default function Projects() {
         <div className="border-r border-slate-200/50">
             {projects.map((item,i) =>(
 
-              <div key={i} className="space-y-2 p-8 border-b border-slate-200">
+              <div key={i} className="space-y-2 p-2 md:p-8 border-b border-slate-200">
                 <div
                   className="overflow-hidden rounded-xl border border-slate-200 shadow-sm"
                 >

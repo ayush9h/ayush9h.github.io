@@ -38,7 +38,7 @@ export default function Connect() {
       <div className="col-span-2 border border-slate-100"></div>
 
       <div className="col-span-8 border-t border-b border-slate-100 bg-white">
-        <h1 className="text-8xl text-center uppercase text-zinc-950 font-medium font-mont p-4">
+        <h1 className="text-2xl md:text-8xl text-center uppercase text-zinc-950 font-medium font-mont p-4">
           Ayush Kumar
         </h1>
       </div>
@@ -56,7 +56,7 @@ export default function Connect() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center h-full 
+            className="text-sm md:text-md flex items-center justify-center h-full 
                        hover:bg-white hover:text-black hover:underline 
                        transition-all duration-300 
                        text-zinc-500 font-mont space-x-2 rounded-md px-4"
