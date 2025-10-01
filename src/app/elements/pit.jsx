@@ -4,14 +4,13 @@ import * as THREE from "three"
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js"
 import gsap from "gsap"
 
-const Spheres = ({ className = "", containerRef }) => {
+const Spheres = ({ className = "" }) => {
   const canvasRef = useRef(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    // Start with canvas hidden
     canvas.style.opacity = 0
 
     // ----- Scene & Camera -----
@@ -30,19 +29,15 @@ const Spheres = ({ className = "", containerRef }) => {
     renderer.shadowMap.enabled = true
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
-
     // ----- Lights -----
     scene.add(new THREE.AmbientLight(0xffffff, 0.35))
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4)
-    directionalLight.position.set(15, 25, 15)       
-    directionalLight.castShadow = true              
+    directionalLight.position.set(15, 25, 15)
+    directionalLight.castShadow = true
     directionalLight.shadow.mapSize.width = 1024
-    directionalLight.shadow.mapSize.height = 1024  
+    directionalLight.shadow.mapSize.height = 1024
     directionalLight.shadow.camera.near = 0.85
     scene.add(directionalLight)
-
-
-    // directionalLight.shadow.camera.far = 
 
     // ----- Spheres -----
     const spheres = []
@@ -68,7 +63,6 @@ const Spheres = ({ className = "", containerRef }) => {
       scene.add(sphere)
       sphere.castShadow = true
       sphere.receiveShadow = true
-
     }
 
     // ----- Interaction -----
@@ -97,7 +91,7 @@ const Spheres = ({ className = "", containerRef }) => {
       colorIndex = (colorIndex + 1) % colors.length
       materials[1].color.setHex(colors[colorIndex])
     }
-    containerRef?.current?.addEventListener("click", onClick)
+    window.addEventListener("click", onClick)
 
     // ----- Animation -----
     const clock = new THREE.Clock()
@@ -125,7 +119,7 @@ const Spheres = ({ className = "", containerRef }) => {
           const b = spheres[j]
           const dx = a.position.x - b.position.x
           const dy = a.position.y - b.position.y
-          const d2 = dx * dx + dy * dy 
+          const d2 = dx * dx + dy * dy
           if (d2 > 1e-8 && d2 < minDistSq) {
             const d = Math.sqrt(d2)
             const overlap = (minDist - d) * 0.5
@@ -135,7 +129,6 @@ const Spheres = ({ className = "", containerRef }) => {
             a.position.y += ny * overlap
             b.position.x -= nx * overlap
             b.position.y -= ny * overlap
-
           }
         }
       }
@@ -153,11 +146,9 @@ const Spheres = ({ className = "", containerRef }) => {
     new RGBELoader().load("/studio_small_09_4k.hdr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping
       scene.environment = texture
-      renderer.compileAsync(scene, camera).then(()=>{
+      renderer.compileAsync(scene, camera).then(() => {
         animate()
-        gsap.to(canvas,{opacity:1, duration:1})
-
-        containerRef?.current?.dispatchEvent(new Event('ready'))
+        gsap.to(canvas, { opacity: 1, duration: 1 })
       })
     })
 
@@ -175,12 +166,12 @@ const Spheres = ({ className = "", containerRef }) => {
     return () => {
       window.removeEventListener("resize", handleResize)
       window.removeEventListener("mousemove", onMouseMove)
-      containerRef?.current?.removeEventListener("click", onClick)
+      window.removeEventListener("click", onClick)
       renderer.dispose()
       geometry.dispose()
       materials.forEach((m) => m.dispose())
     }
-  }, [containerRef])
+  }, [])
 
   return <canvas ref={canvasRef} className={`${className} w-full h-full`} />
 }

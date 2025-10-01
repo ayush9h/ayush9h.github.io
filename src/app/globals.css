@@ -2,27 +2,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-dark: oklch(0.92 0.005 127);
-  --color-bg: oklch(0.96 0.005 127);
-  --color-bg-light: oklch(1 0.005 127);
-  --color-text: oklch(0.15 0.01 127);
-  --color-text-muted: oklch(0.4 0.01 127);
-  --color-highlight: oklch(1 0.01 127);
-  --color-border: oklch(0.6 0.01 127);
-  --color-border-muted: oklch(0.7 0.01 127);
-  --color-primary: oklch(0.4 0.1 127);
-  --color-secondary: oklch(0.4 0.1 307);
-  --color-danger: oklch(0.5 0.05 30);
-  --color-warning: oklch(0.5 0.05 100);
-  --color-success: oklch(0.5 0.05 160);
-  --color-info: oklch(0.5 0.05 260);
-  --font-bebas: "Bebas Neue", sans-serif;
+
+  --bg-background: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cacaca' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  --bg-hero: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dddddd' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   --font-mont:"Funnel Display", sans-serif;
 }
 
-html{
-  background-color: var(--color-bg);
-}
 ::selection {
   background: black;   
   color: white;        

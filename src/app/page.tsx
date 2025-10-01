@@ -26,13 +26,11 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-      <div className="max-w-7xl mx-auto">
-        <Landing />
-        <About />
-        <Projects />
-        
-      </div>
+      {/* <Navbar /> */}
+      <Landing />
+      <About />
+      <Projects />
+      
       <Connect />
     </>
   )
