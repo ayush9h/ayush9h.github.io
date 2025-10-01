@@ -51,7 +51,7 @@ export default function Projects() {
                   className="flex items-center gap-2 cursor-pointer hover:underline"
                 >
                   <ArrowRight className="arrow w-5 h-5 text-black" />
-                  <a target="_blank" className="link-text font-mont text-xl font-semibold">
+                  <a target="_blank" href={item.link} className="link-text font-mont text-xl font-semibold">
                     {item.title}
                   </a>
                 </div>
