@@ -111,7 +111,7 @@ export default function About() {
 
 
     <div className="grid grid-cols-2 items-center">
-      <h1 className="text-md p-4 font-mont">MLH'23 Hackhound Winner in AI/ML Category</h1>
+      <h1 className="text-md p-4 font-mont">MLH&apos;23 Hackhound Winner in AI/ML Category</h1>
             
         <Image
         alt="MLH Image"
