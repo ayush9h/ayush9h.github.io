@@ -34,11 +34,10 @@ export default function CommandMenu() {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-black/20" onClick={()=>setOpen(false)}>
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-transparent" onClick={()=>setOpen(false)}>
       <Command
-        label="Command Menu"
-        className="w-full max-w-md rounded-xl bg-white border border-slate-200 shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer overflow-hidden"
-      >
+          label="Command Menu"
+          className="w-full max-w-md rounded-xl bg-white border border-slate-200 shadow-[0_25px_60px_rgba(0,0,0,0.22),0_-12px_30px_rgba(0,0,0,0.12)] cursor-pointer overflow-hidden">
         <Command.Input
           autoFocus
           placeholder="Type a command or search..."
@@ -65,13 +64,13 @@ export default function CommandMenu() {
               About
             </Command.Item>
 
-            <Command.Item
+            {/* <Command.Item
               onSelect={() => goTo('experience')}
               className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
             >
               <Briefcase size={16} />
               Experience
-            </Command.Item>
+            </Command.Item> */}
 
             <Command.Item
               onSelect={() => goTo('projects')}
@@ -119,6 +118,15 @@ export default function CommandMenu() {
 
           <CommandSeparator />
         </Command.List>
+        <div className="relative flex items-center gap-2 p-3 mt-2 border-t border-t-slate-300">
+          <span className="text-xs font-semibold font-mont text-slate-400">
+            Exit
+          </span>
+          <kbd className="px-2 py-0.5 rounded border border-slate-300 bg-white text-[10px] font-mono text-slate-500">
+            Esc
+          </kbd>
+        </div>
+
       </Command>
     </div>
   )
