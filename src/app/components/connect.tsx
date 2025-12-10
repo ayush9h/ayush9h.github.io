@@ -1,11 +1,4 @@
 "use client"
-import { useRef } from "react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import TargetCursor from '../elements/magnet'
-import { ArrowRight, ArrowUp } from "lucide-react"
-import { useGSAP } from "@gsap/react"
-gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function Connect() {
  
@@ -16,13 +9,9 @@ export default function Connect() {
     { name: "LeetCode", url: "https://leetcode.com/u/ayukr_2002/" }
   ]
 
-  // const scrollToTop = () => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" })
-  // }
-
   return (
     <>     
-    <div className="grid grid-cols-12 mx-auto">
+    <div className="grid grid-cols-12 mx-auto" id="connect">
       <div className="col-span-2 border border-slate-100"></div>
 
       <div className="col-span-8 border-t border-b border-slate-100 bg-white">

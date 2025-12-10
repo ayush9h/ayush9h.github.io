@@ -1,12 +1,12 @@
 import { Command, CommandSeparator } from 'cmdk'
 import { useEffect, useState } from 'react'
-import { User, Folder, Briefcase, Link } from 'lucide-react'
-
+import { User, Folder, Briefcase, Linkedin, Github, Code } from 'lucide-react'
+import Link from 'next/link'
 export default function CommandMenu() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e:any) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
         setOpen((prev) => !prev)
@@ -21,87 +21,103 @@ export default function CommandMenu() {
   }, [])
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [open])
+
+  const goTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  setOpen(false)
+}
+
 
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-black/20">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-black/20" onClick={()=>setOpen(false)}>
       <Command
         label="Command Menu"
-        className=" w-full max-w-md rounded-xl bg-white border border-slate-200 shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer"
+        className="w-full max-w-md rounded-xl bg-white border border-slate-200 shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer overflow-hidden"
       >
         <Command.Input
           autoFocus
           placeholder="Type a command or search..."
-          className="
-            w-full
-            p-3
-            border-b border-slate-300
-            text-sm
-            outline-none
-            placeholder:text-slate-400
-            font-mono
-            text-black
+          className=" w-full p-3 border-b border-slate-300 text-sm outline-none placeholder:text-slate-400 font-mono text-black
           "
         />
 
         <Command.List
           onWheel={(e) => e.stopPropagation()}
-          className="p-2 max-h-80 overflow-y-auto space-y-4">
+          className="p-2 max-h-80 overflow-y-auto space-y-6"
+        >
           <Command.Empty className="p-2 text-sm font-mono text-black">
             No results found.
           </Command.Empty>
 
-          <Command.Group heading="Menu" className="text-xs font-mont text-slate-400 px-1">
-            <div className="space-y-1 mt-2">
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <User size={16} />
-                About
-              </Command.Item>
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <Briefcase size={16} />
-                Experience
-              </Command.Item>
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <Folder size={16} />
-                Projects
-              </Command.Item>
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <Link size={16} />
-                Connect
-              </Command.Item>
-            </div>
+        <Command.Group
+            heading={<span className="mt-4 mb-2 font-mont text-xs text-slate-400 block px-3">Menu</span>}
+          >
+            <Command.Item
+              onSelect={() => goTo('about')}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
+            >
+              <User size={16} />
+              About
+            </Command.Item>
+
+            <Command.Item
+              onSelect={() => goTo('experience')}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
+            >
+              <Briefcase size={16} />
+              Experience
+            </Command.Item>
+
+            <Command.Item
+              onSelect={() => goTo('projects')}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
+            >
+              <Folder size={16} />
+              Projects
+            </Command.Item>
+
+            <Command.Item
+              onSelect={() => goTo('connect')}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
+            >
+              <Briefcase size={16} />
+              Connect
+            </Command.Item>
           </Command.Group>
 
-          <CommandSeparator className="my-2" />
 
-          <Command.Group heading="Socials" className="text-xs font-mont text-slate-400 px-1">
-            <div className="space-y-1 mt-2">
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <User size={16} />
-                Linkedin
-              </Command.Item>
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <Folder size={16} />
-                LeetCode
-              </Command.Item>
-              <Command.Item className="flex items-center gap-3 p-3 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-                <Briefcase size={16} />
-                Codeforces
-              </Command.Item>
-            </div>
-          </Command.Group>
+          <CommandSeparator />
 
-          <CommandSeparator className="my-2" />
+        <Command.Group
+          heading={<span className="font-mont text-xs text-slate-400 block px-3 mt-4 mb-2">Social Links</span>}
+        >
+          <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
+            <Linkedin size={16} />
+            <Link href='https://www.linkedin.com/in/ayush-kumar-88b883239/'>Linkedin</Link>
+          </Command.Item>
+
+          <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
+            <Github size={16} />
+             <Link href='https://github.com/ayush9h'>Github</Link>
+          </Command.Item>
+
+          <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
+            <Code size={16} />
+            <Link href="https://leetcode.com/u/ayukr_2002">Leetcode</Link>
+          </Command.Item>
+
+          <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
+            <Code size={16} />
+            <Link href="https://codeforces.com/profile/ayush2025">Codeforces</Link>
+          </Command.Item>
+        </Command.Group>
+
+          <CommandSeparator />
         </Command.List>
       </Command>
     </div>

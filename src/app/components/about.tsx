@@ -3,7 +3,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 import Image from "next/image"
-import CommandMenu from "./terminal"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 export default function About() {
@@ -12,8 +11,7 @@ export default function About() {
     
 
     <>
-      <CommandMenu/>
-     <div className="grid grid-cols-12 mx-auto">
+     <div className="grid grid-cols-12 mx-auto" id="about">
       <div className="col-span-2 border border-slate-200/50"></div>
 
       <div className="col-span-8 border-t border-b border-slate-200/50 bg-white">

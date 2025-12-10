@@ -20,7 +20,7 @@ export default function Projects() {
   return (
     <>
     
-    <div className="grid grid-cols-12 mx-auto">
+    <div className="grid grid-cols-12 mx-auto" id="projects">
       <div className="col-span-2 border border-slate-100"></div>
 
       <div className="col-span-8 border-t border-b border-slate-100 bg-white">
