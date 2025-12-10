@@ -1,8 +1,6 @@
 "use client"
-import { useRef } from "react"
-import gsap from "gsap"
 import Spheres from "../elements/pit"
-import { Plus, BugPlay } from "lucide-react"
+
 
 
 export default function Landing() {

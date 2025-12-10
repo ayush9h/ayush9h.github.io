@@ -1,5 +1,4 @@
 "use client"
-import { useRef } from "react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
 import { ScrollTrigger } from "gsap/ScrollTrigger"

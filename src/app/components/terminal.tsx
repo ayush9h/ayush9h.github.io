@@ -6,7 +6,7 @@ export default function CommandMenu() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handleKeyDown = (e: { metaKey: any; ctrlKey: any; key: string; preventDefault: () => void }) => {
+    const handleKeyDown = (e:KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
         setOpen((prev) => !prev)
