@@ -37,11 +37,11 @@ export default function CommandMenu() {
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-transparent" onClick={()=>setOpen(false)}>
       <Command
           label="Command Menu"
-          className="w-full max-w-md rounded-xl bg-white border border-slate-200 shadow-[0_25px_60px_rgba(0,0,0,0.22),0_-12px_30px_rgba(0,0,0,0.12)] cursor-pointer overflow-hidden">
+          className="w-full max-w-md rounded-xl bg-white border border-slate-300 shadow-[0_25px_60px_rgba(0,0,0,0.22),0_-12px_30px_rgba(0,0,0,0.12)] cursor-pointer overflow-hidden">
         <Command.Input
           autoFocus
           placeholder="Type a command or search..."
-          className=" w-full p-3 border-b border-slate-300 text-sm outline-none placeholder:text-slate-400 font-mono text-black
+          className=" w-full p-3 border-b border-slate-300 text-sm outline-none placeholder:text-slate-400 font-mont text-black
           "
         />
 
