@@ -1,6 +1,6 @@
 "use client"
 
-import { Search, Github } from "lucide-react"
+import {MagnifyingGlassIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
 export default function Navbar() {
@@ -26,9 +26,9 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white shadow-sm cursor-pointer transition-all"
           >
-            <Search size={16} className="text-black" />
+            <MagnifyingGlassIcon  className="text-black" />
             <div className="flex items-center gap-1">
-              <kbd className="hidden sm:inline-flex px-1.5 py-0.5 rounded border border-slate-300 bg-zinc-100  text-xs font-mont shadow-md  text-black">
+              <kbd className="hidden sm:inline-flex px-1.5 py-0.5 rounded border border-slate-300 bg-zinc-100 text-xs font-mont shadow-md  text-black">
                 Ctrl
               </kbd>
               <kbd className="hidden sm:inline-flex px-1.5 py-0.5 rounded border border-slate-300 bg-zinc-100 text-xs font-mont shadow-md text-black">
@@ -44,7 +44,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="p-1.5 rounded-full border border-slate-300 bg-white shadow-sm cursor-pointer transition-all"
           >
-            <Github size={16} className="text-black" />
+            <GitHubLogoIcon className="text-black" />
           </Link>
 
         </div>

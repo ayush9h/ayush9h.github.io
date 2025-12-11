@@ -27,7 +27,7 @@ export default function About() {
       <div className="col-span-2 border border-slate-200/50"></div>
 
       <div className="col-span-8 border-t border-b border-slate-200/50 bg-white">
-        <p className="text-md p-4 text-zinc-600 font-mont">
+        <p className="text-md p-4 text-black font-mont">
           I&apos;m Ayush Kumar, a Computer Science Engineer with an interest in development, and creating solutions that balance innovation with simplicity. Exploring how technology can transform ideas into impactful products. My goal is to build solutions to complex scenarios while continuously learning and experiementing.
         </p>
       </div>
@@ -105,7 +105,7 @@ export default function About() {
     </div>
 
 
-    <div className="grid grid-cols-12 mx-auto">
+    <div className="grid grid-cols-12 mx-auto" id="accolades">
   <div className="col-span-2 border border-slate-200/50"></div>
 
   <div className="col-span-8 border-t border-b border-slate-200/50 bg-white">
@@ -126,12 +126,15 @@ export default function About() {
     </div>
 
     <div className="grid grid-cols-2 items-center">
-      <h1 className="text-md p-4 font-mont">Techfest&apos;22 IIT Bombay Zonals Qualified</h1>
+      <h1 className="text-md p-4 font-mont">
+        Selected as Application Engineer Following a Two-Week Hackathon
+      </h1>
+
       <Image
-        alt="Techfest Image"
-        src="/techfest.jpg"
-        width={90}
-        height={90}
+        alt="centific Image"
+        src="/centific.jpg"
+        width={110}
+        height={110}
         className="mx-auto object-contain"
       />
     </div>
