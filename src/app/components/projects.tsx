@@ -1,13 +1,7 @@
 "use client"
-import gsap from "gsap"
-import { SplitText } from "gsap/all"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { ArrowRight } from "lucide-react"
+import { ArrowRightIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
-import { useGSAP } from "@gsap/react"
-
-gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP)
-
+import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"
 export default function Projects() {
  
   const projects = [
@@ -19,22 +13,12 @@ export default function Projects() {
   return (
     <>
     
-    <div className="grid grid-cols-12 mx-auto" id="projects">
-      <div className="col-span-2 border border-slate-100"></div>
-
-      <div className="col-span-8 border-t border-b border-slate-100 bg-white">
-        <h1 className="text-3xl text-zinc-950 font-medium font-mont p-4">
-          Projects
-        </h1>
-      </div>
-      <div className="col-span-2 border border-slate-100"></div>
-    </div>
+    <SectionWrapper>
+      <SectionHeader title="Projects"></SectionHeader>
+    </SectionWrapper>
 
 
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-200/50"></div>
-
-      <div className="col-span-8 border-t  border-slate-200/50 bg-white">
+    <SectionWrapper>
 
         <div className="border-r border-slate-200/50">
             {projects.map((item,i) =>(
@@ -49,7 +33,7 @@ export default function Projects() {
                 <div
                   className="flex items-center gap-2 cursor-pointer hover:underline"
                 >
-                  <ArrowRight className="arrow w-5 h-5 text-black" />
+                  <ArrowRightIcon className="arrow w-5 h-5 text-black" />
                   <a target="_blank" href={item.link} className="link-text font-mont text-xl font-semibold">
                     {item.title}
                   </a>
@@ -73,17 +57,9 @@ export default function Projects() {
 
          </div>
        
-       </div>
-      <div className="col-span-2 border border-slate-200/50"></div>
-    </div>
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-
-      <div className="h-10 col-span-8  border-t border-b border-slate-200/50 bg-[image:var(--bg-background)]">
-      </div>
-
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-    </div>
+      </SectionWrapper>
+    
+    <SectionDivider/>
 
     </>
   )

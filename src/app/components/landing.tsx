@@ -1,16 +1,12 @@
 "use client"
 import Spheres from "../elements/pit"
-
-
-
+import { SectionDivider } from "./compstruct"
 export default function Landing() {
  
 
   return (
     <>
 
-    
-    {/* Intro */}
     <div className="grid grid-cols-12 mx-auto">
       <div className="col-span-2 border border-slate-200/50"></div>
 
@@ -22,7 +18,7 @@ export default function Landing() {
 
       <div className="col-span-2 border border-slate-200/50"></div>
     </div>
-    {/* Interactive Spheres */}
+
     <div className="grid grid-cols-12 mx-auto">
       <div className="col-span-2 border border-slate-200/50"></div>
 
@@ -33,14 +29,7 @@ export default function Landing() {
       </div>
       <div className="col-span-2 border border-slate-200/50"></div>
     </div>
-     <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-
-      <div className="h-10 col-span-8  border-t border-b border-slate-200/50 bg-[image:var(--bg-background)]">
-      </div>
-
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-    </div>
+    <SectionDivider/>
 
 
     </>

@@ -1,5 +1,5 @@
 "use client"
-
+import { SectionHeader, SectionWrapper, SectionDivider } from "./compstruct"
 export default function Connect() {
  
  
@@ -11,34 +11,20 @@ export default function Connect() {
 
   return (
     <>     
-    <div className="grid grid-cols-12 mx-auto" id="connect">
-      <div className="col-span-2 border border-slate-100"></div>
-
-      <div className="col-span-8 border-t border-b border-slate-100 bg-white">
-        <h1 className="text-3xl text-zinc-950 font-medium font-mont p-4">
-          Connect
-        </h1>
-      </div>
-      <div className="col-span-2 border border-slate-100"></div>
-    </div>
+    <SectionWrapper>
+      <SectionHeader title="Connect"></SectionHeader>
+    </SectionWrapper>
 
 
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-100"></div>
-
-      <div className="col-span-8 border-t border-b border-slate-100 bg-white">
+    <SectionWrapper>
         <h1 className="text-2xl md:text-8xl text-center uppercase text-zinc-950 font-medium font-mont p-4">
           Ayush Kumar
         </h1>
-      </div>
-      <div className="col-span-2 border border-slate-100"></div>
-    </div>
+    </SectionWrapper>
 
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-100"></div>
+    <SectionWrapper>
 
-      <div className="col-span-8 grid grid-cols-3 border-t border-b border-slate-100 bg-white p-4">
-
+      <div className="grid grid-cols-3 p-4">
           {links.map((link, i) => (
           <a
             key={i}
@@ -54,79 +40,16 @@ export default function Connect() {
           
           </a>
         ))}
-      </div>
+        </div>
+      </SectionWrapper>
 
-
-      <div className="col-span-2 border border-slate-100"></div>
-    </div>
-
-
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-100"></div>
-
-      <div className="col-span-8 border-t border-b border-slate-100 bg-white">
+      <SectionWrapper>
         <h1 className="text-md text-center text-zinc-400/65 font-mont p-4">
           Inspired by chanhdai.com & tailwindcss.com
         </h1>
-      </div>
-      <div className="col-span-2 border border-slate-100"></div>
-    </div>
+      </SectionWrapper>
 
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-
-      <div className="h-10 col-span-8  border-t border-b border-slate-200/50 bg-[image:var(--bg-background)]">
-      </div>
-
-      <div className="col-span-2 border border-slate-200/50 bg-[image:var(--bg-background)]"></div>
-    </div>
+        <SectionDivider/>
 </>
-
-
-
-
-    // <div
-    //   id="connect"
-    //   className="mt-30 relative bg-zinc-900 min-h-screen flex flex-col items-center justify-center space-y-12"
-    // >
-    //   <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-
-    //   <div
-    //     onClick={scrollToTop}
-    //     className="flex flex-col items-center cursor-pointer group"
-    //   >
-    //     <div className="w-12 h-12 flex items-center justify-center border-2 border-white rounded-xl group-hover:bg-white transition-all duration-300">
-    //       <ArrowUp className="w-6 h-6 text-white group-hover:text-black transition-all duration-300" />
-    //     </div>
-    //     <span className="mt-2 text-sm text-white font-mont uppercase group-hover:text-gray-300 transition-all">
-    //       Back to top
-    //     </span>
-    //   </div>
-
-    //   <h1
-    //     className="text-[5rem] md:text-[15rem] font-bebas text-center 
-    //                bg-gradient-to-t from-white to-white/30 bg-clip-text text-transparent leading-none"
-    //   >
-    //     Let&apos;s Connect
-    //   </h1>
-
-    //   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl h-20 items-center">
-    //     {links.map((link, i) => (
-    //       <a
-    //         key={i}
-    //         href={link.url}
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //         className="flex items-center justify-center h-full cursor-target 
-    //                    hover:bg-white hover:text-black 
-    //                    transition-all duration-300 
-    //                    text-zinc-500 font-mont space-x-2 rounded-md px-4"
-    //       >
-    //         <span className="font-mont uppercase font-bold">{link.name}</span>
-    //         <ArrowRight className="arrow w-5 h-5 text-black" />
-    //       </a>
-    //     ))}
-    //   </div>
-    // </div>
   )
 }
