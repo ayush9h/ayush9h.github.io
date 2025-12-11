@@ -14,7 +14,7 @@ export default function Projects() {
     <>
     
     <SectionWrapper>
-      <SectionHeader title="Projects"></SectionHeader>
+      <SectionHeader title="Projects" id="projects"></SectionHeader>
     </SectionWrapper>
 
 

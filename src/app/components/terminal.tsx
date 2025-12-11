@@ -98,22 +98,34 @@ export default function CommandMenu() {
         >
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
             <LinkedInLogoIcon className='text-blue-500' />
-            <Link href='https://www.linkedin.com/in/ayush-kumar-88b883239/'>Linkedin</Link>
+            <Link             
+            target="_blank"
+            rel="noopener noreferrer"
+             href='https://www.linkedin.com/in/ayush-kumar-88b883239/'>Linkedin</Link>
           </Command.Item>
 
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
             <GitHubLogoIcon />
-             <Link href='https://github.com/ayush9h'>Github</Link>
+             <Link             
+             target="_blank"
+             rel="noopener noreferrer" 
+             href='https://github.com/ayush9h'>Github</Link>
           </Command.Item>
 
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
             <CodeSandboxLogoIcon className='text-yellow-500'  />
-            <Link href="https://leetcode.com/u/ayukr_2002">Leetcode</Link>
+            <Link             
+            target="_blank"
+            rel="noopener noreferrer" 
+            href="https://leetcode.com/u/ayukr_2002">Leetcode</Link>
           </Command.Item>
 
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
             <CodeIcon className='text-red-500' />
-            <Link href="https://codeforces.com/profile/ayush2025">Codeforces</Link>
+            <Link             
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://codeforces.com/profile/ayush2025">Codeforces</Link>
           </Command.Item>
         </Command.Group>
 

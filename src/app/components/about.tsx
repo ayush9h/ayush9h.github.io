@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
     <SectionWrapper>
-    <SectionHeader title="About"></SectionHeader>
+    <SectionHeader title="About" id="about"></SectionHeader>
     </SectionWrapper>
 
 
@@ -21,7 +21,7 @@ export default function About() {
 
   
     <SectionWrapper>
-      <SectionHeader title="What I do"/>
+      <SectionHeader title="What I do" id="What I do"/>
     </SectionWrapper>
 
     <SectionWrapper>
@@ -43,7 +43,7 @@ export default function About() {
     
 
     <SectionWrapper>
-      <SectionHeader title="Accolades"></SectionHeader>
+      <SectionHeader title="Accolades" id="accolades"></SectionHeader>
     </SectionWrapper>
 
 

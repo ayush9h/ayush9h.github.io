@@ -12,7 +12,7 @@ export default function Connect() {
   return (
     <>     
     <SectionWrapper>
-      <SectionHeader title="Connect"></SectionHeader>
+      <SectionHeader title="Connect" id="connect"></SectionHeader>
     </SectionWrapper>
 
 
