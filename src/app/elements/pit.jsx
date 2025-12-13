@@ -83,24 +83,23 @@ const Spheres = ({ className = "" }) => {
         forceSphere.z = 0
       }
     }
-    window.addEventListener("mousemove", onMouseMove)
 
+    canvas.addEventListener("mousemove", onMouseMove)
     let colorIndex = 0
     const colors = [0xffff00, 0xff0000, 0x00ff00]
     const onClick = () => {
       colorIndex = (colorIndex + 1) % colors.length
       materials[1].color.setHex(colors[colorIndex])
     }
-    window.addEventListener("click", onClick)
+    canvas.addEventListener("click", onClick)
 
     // ----- Animation -----
-    const clock = new THREE.Clock()
     const minDist = radius * 2
     const minDistSq = minDist * minDist
 
     const animate = () => {
       requestAnimationFrame(animate)
-      const delta = clock.getDelta()
+      const delta = 0.05
 
       for (const a of spheres) {
         const distToForce = a.position.distanceTo(forceSphere)
@@ -109,7 +108,7 @@ const Spheres = ({ className = "" }) => {
           const push = (forceRadius - distToForce) * 0.4
           a.position.addScaledVector(dir, push)
         } else {
-          a.position.lerp(a.userData.target, delta * 0.15)
+          a.position.lerp(a.userData.target,  delta * 0.15)
         }
       }
 
@@ -164,9 +163,9 @@ const Spheres = ({ className = "" }) => {
 
     // ----- Cleanup -----
     return () => {
-      window.removeEventListener("resize", handleResize)
-      window.removeEventListener("mousemove", onMouseMove)
-      window.removeEventListener("click", onClick)
+      canvas.removeEventListener("resize", handleResize)
+      canvas.removeEventListener("mousemove", onMouseMove)
+      canvas.removeEventListener("click", onClick)
       renderer.dispose()
       geometry.dispose()
       materials.forEach((m) => m.dispose())
