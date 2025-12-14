@@ -1,7 +1,7 @@
 import { Command, CommandSeparator } from 'cmdk'
 import { useEffect, useState } from 'react'
 import { LinkedInLogoIcon,GitHubLogoIcon, GlobeIcon, CodeIcon, CodeSandboxLogoIcon } from '@radix-ui/react-icons'
-import { User, Folder, Award } from 'lucide-react'
+import { User, Folder, Award, BriefcaseBusinessIcon } from 'lucide-react'
 import Link from 'next/link'
 export default function CommandMenu() {
   const [open, setOpen] = useState(false)
@@ -64,6 +64,16 @@ export default function CommandMenu() {
               <User size={16} />
               About
             </Command.Item>
+
+
+            <Command.Item
+              onSelect={() => goTo('experience')}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100"
+            >
+              <BriefcaseBusinessIcon size={16} />
+              Experience
+            </Command.Item>
+
 
             <Command.Item
               onSelect={() => goTo('accolades')}
