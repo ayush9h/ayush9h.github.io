@@ -14,12 +14,27 @@ export default function About() {
       </SectionWrapper>
 
       <SectionWrapper>
-        <p className="text-base px-4 py-3 text-black font-mont leading-relaxed">
-          I&apos;m Ayush Kumar, a Computer Science Engineer with an interest in
-          development and creating solutions that balance innovation with
-          simplicity. I enjoy exploring how technology transforms ideas into
-          impactful products while continuously learning and experimenting.
-        </p>
+
+       <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont">
+          <li>
+            Backend engineer building <span className="font-semibold">agentic systems</span>,
+            <span className="font-semibold"> RAG pipelines</span>, and
+            <span className="font-semibold"> backend services</span> with a strong focus on performance, and reliability.
+          </li>
+          <li>
+            Experienced with <span className="font-semibold">Python, FastAPI, LangGraph, LangChain, Redis,</span> and <span className="font-semibold">PostgreSQL</span>, designing
+            workflow-driven architectures.
+          </li>
+          <li>
+            Currently contributing to an <span className="font-semibold">enterprise AI assistant</span> under the Office of the CIO, enabling automation and analytics for
+            <span className="font-semibold"> Finance, HR,</span> and
+            <span className="font-semibold"> Legal</span> teams.
+          </li>
+          <li>
+            Passionate about <span className="font-semibold">transforming ideas into impactful products</span> through continuous learning, experimentation, and hands-on engineering.
+          </li>
+        </ul>
+
       </SectionWrapper>
 
       <SectionDivider />
