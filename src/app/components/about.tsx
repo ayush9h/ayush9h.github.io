@@ -15,7 +15,7 @@ export default function About() {
 
       <SectionWrapper>
 
-       <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont">
+       <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-justify">
           <li>
             Backend engineer building <span className="font-semibold">agentic systems</span>,
             <span className="font-semibold"> RAG pipelines</span>, and

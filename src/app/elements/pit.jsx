@@ -1,178 +1,144 @@
-"use client"
-import { useRef, useEffect } from "react"
-import * as THREE from "three"
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js"
-import gsap from "gsap"
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Environment, Sphere, useCursor } from "@react-three/drei";
+import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
+import { useRef, useState, useEffect } from "react";
+import * as THREE from "three";
 
-const Spheres = ({ className = "" }) => {
-  const canvasRef = useRef(null)
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    canvas.style.opacity = 0
-
-    // ----- Scene & Camera -----
-    const scene = new THREE.Scene()
-    const width = canvas.clientWidth || window.innerWidth
-    const height = canvas.clientHeight || window.innerHeight
-    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 200)
-    camera.position.z = 60
-
-    // ----- Renderer -----
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
-    renderer.setSize(width, height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    renderer.toneMapping = THREE.ACESFilmicToneMapping
-    renderer.outputColorSpace = THREE.SRGBColorSpace
-    renderer.shadowMap.enabled = true
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap
-
-    // ----- Lights -----
-    scene.add(new THREE.AmbientLight(0xffffff, 0.35))
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4)
-    directionalLight.position.set(15, 25, 15)
-    directionalLight.castShadow = true
-    directionalLight.shadow.mapSize.width = 1024
-    directionalLight.shadow.mapSize.height = 1024
-    directionalLight.shadow.camera.near = 0.85
-    scene.add(directionalLight)
-
-    // ----- Spheres -----
-    const spheres = []
-    const radius = 8
-    const geometry = new THREE.SphereGeometry(radius, 64, 64)
-    const materials = [
-      new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.25, metalness: 0.8, envMapIntensity: 1.0 }),
-      new THREE.MeshStandardMaterial({ color: 0x2266cc, roughness: 0.15, metalness: 0.8, envMapIntensity: 0.9 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35, metalness: 0.8, envMapIntensity: 1.2 }),
-    ]
-
-    const areaSize = 40
-    for (let i = 0; i < 25; i++) {
-      const sphere = new THREE.Mesh(geometry, materials[i % 3])
-      const pos = new THREE.Vector3(
-        (Math.random() - 0.5) * areaSize * 0.25,
-        (Math.random() - 0.5) * areaSize * 0.5,
-        0
-      )
-      sphere.position.copy(pos)
-      sphere.userData.target = pos.clone()
-      spheres.push(sphere)
-      scene.add(sphere)
-      sphere.castShadow = true
-      sphere.receiveShadow = true
-    }
-
-    // ----- Interaction -----
-    const raycaster = new THREE.Raycaster()
-    const mouse = new THREE.Vector2()
-    const forceSphere = new THREE.Vector3(0, 0, 0)
-    const forceRadius = radius * 2.2
-    const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
-    const intersection = new THREE.Vector3()
-
-    const onMouseMove = (event) => {
-      const rect = canvas.getBoundingClientRect()
-      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
-      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
-      raycaster.setFromCamera(mouse, camera)
-      if (raycaster.ray.intersectPlane(plane, intersection)) {
-        forceSphere.copy(intersection)
-        forceSphere.z = 0
-      }
-    }
-
-    canvas.addEventListener("mousemove", onMouseMove)
-    let colorIndex = 0
-    const colors = [0xffff00, 0xff0000, 0x00ff00]
-    const onClick = () => {
-      colorIndex = (colorIndex + 1) % colors.length
-      materials[1].color.setHex(colors[colorIndex])
-    }
-    canvas.addEventListener("click", onClick)
-
-    // ----- Animation -----
-    const minDist = radius * 2
-    const minDistSq = minDist * minDist
-
-    const animate = () => {
-      requestAnimationFrame(animate)
-      const delta = 0.05
-
-      for (const a of spheres) {
-        const distToForce = a.position.distanceTo(forceSphere)
-        if (distToForce < forceRadius) {
-          const dir = a.position.clone().sub(forceSphere).normalize()
-          const push = (forceRadius - distToForce) * 0.4
-          a.position.addScaledVector(dir, push)
-        } else {
-          a.position.lerp(a.userData.target,  delta * 0.15)
-        }
-      }
-
-      for (let i = 0; i < spheres.length; i++) {
-        const a = spheres[i]
-        for (let j = i + 1; j < spheres.length; j++) {
-          const b = spheres[j]
-          const dx = a.position.x - b.position.x
-          const dy = a.position.y - b.position.y
-          const d2 = dx * dx + dy * dy
-          if (d2 > 1e-8 && d2 < minDistSq) {
-            const d = Math.sqrt(d2)
-            const overlap = (minDist - d) * 0.5
-            const nx = dx / d
-            const ny = dy / d
-            a.position.x += nx * overlap
-            a.position.y += ny * overlap
-            b.position.x -= nx * overlap
-            b.position.y -= ny * overlap
-          }
-        }
-      }
-
-      for (const a of spheres) {
-        a.rotation.x += 0.001
-        a.rotation.y += 0.0015
-        a.rotation.z = 0
-      }
-
-      renderer.render(scene, camera)
-    }
-
-    // ----- HDR Loading with fade-in -----
-    new RGBELoader().load("/studio_small_09_4k.hdr", (texture) => {
-      texture.mapping = THREE.EquirectangularReflectionMapping
-      scene.environment = texture
-      renderer.compileAsync(scene, camera).then(() => {
-        animate()
-        gsap.to(canvas, { opacity: 1, duration: 1 })
-      })
-    })
-
-    // ----- Resize -----
-    const handleResize = () => {
-      const w = canvas.clientWidth || window.innerWidth
-      const h = canvas.clientHeight || window.innerHeight
-      renderer.setSize(w, h)
-      camera.aspect = w / h
-      camera.updateProjectionMatrix()
-    }
-    window.addEventListener("resize", handleResize)
-
-    // ----- Cleanup -----
-    return () => {
-      canvas.removeEventListener("resize", handleResize)
-      canvas.removeEventListener("mousemove", onMouseMove)
-      canvas.removeEventListener("click", onClick)
-      renderer.dispose()
-      geometry.dispose()
-      materials.forEach((m) => m.dispose())
-    }
-  }, [])
-
-  return <canvas ref={canvasRef} className={`${className} w-full h-full`} />
+function Wall({ position, args }) {
+  return (
+    <>
+      <CuboidCollider position={position} args={args} />
+      <mesh position={position}>
+        <boxGeometry args={[args[0] * 2, args[1] * 2, args[2] * 2]} />
+        <meshStandardMaterial color="#ff6b6b" transparent opacity={0.3} />
+      </mesh>
+    </>
+  );
 }
 
-export default Spheres
+function Arena() {
+  return (
+    <RigidBody type="fixed" restitution={0.6} friction={0}>
+      <Wall position={[0, 0, -6]} args={[12, 1, 0.5]} />
+      <Wall position={[0, 0, 6]} args={[12, 1, 0.5]} />
+      
+      <Wall position={[-8, 0, 0]} args={[0.5, 1, 6]} />
+      <Wall position={[8, 0, 0]} args={[0.5, 1, 6]} />
+    </RigidBody>
+  );
+}
+
+function MouseGlider() {
+  const rigidBody = useRef();
+  const { viewport } = useThree();
+  const [hovered, setHover] = useState(false);
+  
+  useCursor(hovered);
+
+  useFrame(({ pointer }) => {
+    if (!rigidBody.current) return;
+    const x = (pointer.x * viewport.width) / 2;
+    const z = -(pointer.y * viewport.height) / 2;
+    rigidBody.current.setNextKinematicTranslation({ x, y: 0, z });
+  });
+
+  return (
+    <RigidBody 
+      ref={rigidBody} 
+      type="kinematicPosition" 
+      colliders="ball" 
+      position={[0, 0, 0]}
+    >
+      <CuboidCollider args={[1.5, 1.5, 1.5]} />
+      <Sphere 
+        args={[0.5, 16, 16]} 
+        onPointerOver={() => setHover(true)} 
+        onPointerOut={() => setHover(false)}
+      >
+        <meshStandardMaterial color="white" opacity={0.2} transparent/>
+      </Sphere>
+    </RigidBody>
+  );
+}
+
+function FloatingSpheres({ color, trigger }) {
+
+  const [spheres, setSpheres] = useState(() => {
+    return Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      x: (Math.random() - 0.5) * 8,
+      z: (Math.random() - 0.5) * 4,
+      blue: i % 2 === 0
+    }));
+  });
+
+  const bodies = useRef({}); 
+  useEffect(() => {
+    spheres.forEach((sphere) => {
+      const body = bodies.current[sphere.id];
+      if (body) {
+        const currentPos = body.translation();
+        const dir = new THREE.Vector3(currentPos.x, 0, currentPos.z).normalize();
+        body.applyImpulse(dir.multiplyScalar(30), true);
+      }
+    });
+  }, [trigger, spheres]);
+  const removeSphere = (id) => {
+    setSpheres((prev) => prev.filter((s) => s.id !== id));
+  };
+
+  return (
+    <group>
+      {spheres.map((d) => (
+        <RigidBody
+          key={d.id}
+          ref={(el) => (bodies.current[d.id] = el)}
+          position={[d.x, 0, d.z]} 
+          linearDamping={1}
+          angularDamping={1}
+          restitution={1.1}
+          colliders="ball"
+          enabledTranslations={[true, false, true]} 
+          onClick={(e) => {
+            e.stopPropagation(); 
+            removeSphere(d.id);  
+          }}
+          onPointerOver={() => { document.body.style.cursor = 'pointer'; }}
+          onPointerOut={() => { document.body.style.cursor = 'auto'; }}
+        >
+          <Sphere args={[0.6, 24, 24]}>
+            <meshStandardMaterial
+              color={d.blue ? color : "#111"}
+              metalness={0.7}
+              roughness={0.1}
+            />
+          </Sphere>
+        </RigidBody>
+      ))}
+    </group>
+  );
+}
+
+export default function Spheres() {
+  const colors = ["#1e40ff", "#ff0000", "#facc15"];
+  const [index, setIndex] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
+
+  return (
+    <Canvas
+      camera={{ position: [0, 10, 0], fov: 30 }} 
+      onPointerDown={() => {
+        setIndex((i) => (i + 1) % colors.length);
+        setClickCount((c) => c + 1);
+      }}
+    >
+      <Environment files="/studio_small_09_4k.hdr" intensity={0.6} />
+      <Physics gravity={[0, 0, 0]}>
+        <Arena />
+        <MouseGlider />
+        <FloatingSpheres color={colors[index]} trigger={clickCount} />
+      </Physics>
+    </Canvas>
+  );
+}

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import {Funnel_Display} from 'next/font/google'
+
+const funnel_display = Funnel_Display({subsets:['latin'], weight:'400'})
+
 export const metadata: Metadata = {
   title:{
     "default":"Ayush Kumar - Portfolio",
@@ -17,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="antialiased"
+        className={`${funnel_display.className}`}
       >
         {children}
       </body>

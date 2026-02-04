@@ -6,7 +6,8 @@ export default function Connect() {
   const links = [
     { name: "Github", url: "https://github.com/ayush9h" },
     { name: "Linkedin", url: "https://www.linkedin.com/in/ayush-kumar-88b883239/" },
-    { name: "LeetCode", url: "https://leetcode.com/u/ayukr_2002/" }
+    { name: "LeetCode", url: "https://leetcode.com/u/ayukr_2002/" },
+    { name: "Codeforces", url: "https://codeforces.com/profile/ayush2025/" }
   ]
 
   return (
@@ -24,7 +25,7 @@ export default function Connect() {
 
     <SectionWrapper>
 
-      <div className="grid grid-cols-3 p-4">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2  p-4">
           {links.map((link, i) => (
           <a
             key={i}

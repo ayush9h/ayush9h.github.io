@@ -22,7 +22,7 @@ export function SectionWrapper({
 
 export function SectionHeader({ title, id }: { title: string | ReactNode, id:string  }) {
   return (
-    <h1 className="text-3xl text-zinc-950 font-medium font-mont p-4" id={id}>
+    <h1 className="text-3xl text-zinc-950 font-medium font-mont p-2" id={id}>
       {title}
     </h1>
   );
