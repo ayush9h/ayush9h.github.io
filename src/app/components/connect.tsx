@@ -1,4 +1,3 @@
-"use client"
 import { SectionHeader, SectionWrapper, SectionDivider } from "./compstruct"
 export default function Connect() {
  

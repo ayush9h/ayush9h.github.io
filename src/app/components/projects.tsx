@@ -1,4 +1,3 @@
-"use client"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"

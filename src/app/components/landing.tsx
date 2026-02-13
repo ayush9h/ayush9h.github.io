@@ -1,4 +1,4 @@
-"use client"
+
 import Spheres from "../elements/pit"
 import { SectionDivider } from "./compstruct"
 export default function Landing() {

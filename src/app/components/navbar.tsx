@@ -1,20 +1,17 @@
-"use client"
-
-import {MagnifyingGlassIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
+import {MagnifyingGlassIcon, GitHubLogoIcon, SunIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
-
+import { SectionWrapper } from "./compstruct"
 export default function Navbar() {
   
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white border-b border-slate-100 grid grid-cols-12 mx-auto z-50">
-      
-      <div className="col-span-2 border-t border-b border-slate-200/50 flex items-center px-4" />
 
-      <div className="col-span-8 border border-slate-200/50 flex justify-between items-center p-2">
+    <SectionWrapper className="fixed top-0 left-0 w-full bg-white">
+      
+      <div className="flex justify-around items-center p-2">
         <h1 className="text-md font-mont font-bold text-black">AYUAR</h1>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-around">
 
           <div
             onClick={() => {
@@ -47,11 +44,12 @@ export default function Navbar() {
             <GitHubLogoIcon className="text-black" />
           </Link>
 
+          <SunIcon/>
+
         </div>
       </div>
 
-      <div className="col-span-2 border border-slate-200/50" />
       
-    </nav>
+    </SectionWrapper>
   )
 }
