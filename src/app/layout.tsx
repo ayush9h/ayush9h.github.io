@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import {Funnel_Display} from 'next/font/google'
+import {Geist} from 'next/font/google'
 
-const funnel_display = Funnel_Display({subsets:['latin'], weight:'400'})
+const funnel_display = Geist({subsets:['latin'], weight:'400'})
 
 export const metadata: Metadata = {
   title:{
