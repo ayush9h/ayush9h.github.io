@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
 import {Geist} from 'next/font/google'
 
 const funnel_display = Geist({subsets:['latin'], weight:'400'})

@@ -1,8 +1,9 @@
-import {MagnifyingGlassIcon, GitHubLogoIcon, SunIcon } from "@radix-ui/react-icons"
+import {MagnifyingGlassIcon, GitHubLogoIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { SectionWrapper } from "./compstruct"
+
 export default function Navbar() {
-  
+
 
   return (
 
@@ -25,10 +26,10 @@ export default function Navbar() {
           >
             <MagnifyingGlassIcon  className="text-black" />
             <div className="flex items-center gap-1">
-              <kbd className="sm:inline-flex rounded px-1 border border-slate-300 bg-slate-100 text-xs font-mont shadow-md  text-black">
+              <kbd className="sm:inline-flex rounded px-1 border border-slate-300 bg-slate-100 text-xs font-mont shadow-sm">
                 Ctrl
               </kbd>
-              <kbd className="sm:inline-flex rounded px-1 border border-slate-300 bg-slate-100 text-xs font-mont shadow-md text-black">
+              <kbd className="sm:inline-flex rounded px-1 border border-slate-300 bg-slate-100 text-xs font-mont shadow-sm">
                 K
               </kbd>
             </div>
@@ -43,8 +44,7 @@ export default function Navbar() {
           >
             <GitHubLogoIcon className="text-black h-4 w-4" />
           </Link>
-
-          <SunIcon className="cursor-pointer"/>
+          
 
         </div>
       </div>

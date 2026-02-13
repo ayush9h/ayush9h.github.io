@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"
 import { Accordion } from "@base-ui/react"
