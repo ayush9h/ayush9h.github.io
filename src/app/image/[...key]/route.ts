@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse} from 'next/server';
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 
 const s3client = new S3Client({
@@ -9,17 +9,22 @@ const s3client = new S3Client({
     },
 })
 
-export async function GET(req: NextRequest, {params} :{ params:{key:string[] } }) {
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ key: string[] }> }
+) {
     try{
-        const key = params.key.join("/");
+        const {key} = await params;
+        const fileKey = key.join("/");
         const command = new GetObjectCommand({
             Bucket:process.env.AWS_BUCKET_NAME,
-            Key:key
+            Key:fileKey
         });
 
         const data = await s3client.send(command)
-
-        const bytes = await new Response(data.Body as any).arrayBuffer();
+        
+        const body = data.Body!
+        const bytes = await body.transformToByteArray()
 
         return new NextResponse(Buffer.from(bytes), {
             headers:{
