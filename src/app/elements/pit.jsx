@@ -133,7 +133,7 @@ export default function Spheres() {
         setClickCount((c) => c + 1);
       }}
     >
-      <Environment files="/studio_small_09_4k.hdr" intensity={0.6} />
+      <Environment files="/image/studio_small_09_4k.hdr" intensity={0.6} />
       <Physics gravity={[0, 0, 0]}>
         <Arena />
         <MouseGlider />

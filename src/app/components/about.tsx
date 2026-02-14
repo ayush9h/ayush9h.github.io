@@ -44,7 +44,7 @@ export default function About() {
 
       <SectionWrapper>
         <div className="flex items-center p-4">
-          <Image src="/lt.jpg" height={40} width={40} alt="L&T logo" />
+          <Image src="/image/lt.jpg" height={40} width={40} alt="L&T logo" />
           <h2 className="text-base font-mont flex items-center gap-2">
             Larsen & Toubro Technology Services
             <span className="relative flex h-2 w-2">
@@ -127,7 +127,7 @@ export default function About() {
 
       <SectionWrapper>
         <div className="flex items-center p-4">
-          <Image src="/centific.png" height={40} width={40} alt="L&T logo" />
+          <Image src="/image/centific.png" height={40} width={40} alt="L&T logo" />
           <h2 className="text-base font-mont flex items-center gap-2">
             Centific Global Technologies
           </h2>
@@ -220,7 +220,7 @@ export default function About() {
           </p>
           <Image
             alt="MLH"
-            src="/mlh.png"
+            src="/image/mlh.png"
             width={90}
             height={90}
             className="mx-auto object-contain"
@@ -233,7 +233,7 @@ export default function About() {
           </p>
           <Image
             alt="Centific"
-            src="/centific.jpg"
+            src="/image/centific.jpg"
             width={110}
             height={110}
             className="mx-auto object-contain"

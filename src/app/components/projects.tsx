@@ -4,9 +4,9 @@ import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"
 export default function Projects() {
  
   const projects = [
-    { img: "/la.png", tech: "ReactJs, AutoGen, Redis, Celery ",  title: "LinkedIn Post Automator", link:"https://github.com/ayush9h/linkedin-post-automater" },
-    { img: "/stable.svg", tech: "Python, StableDiffusion, SAM, Streamlit UI",  title: "Stable SAM", link:"https://github.com/sankadash/StableSAM" },
-    { img: "/legal.svg", tech: "Python, NLTK, LLM, Data Visualization, Streamlit UI",  title: "Legal Digest", link:"https://github.com/ayush9h/LegalDigest" }
+    { img: '/image/la.png', tech: "ReactJs, AutoGen, Redis, Celery ",  title: "LinkedIn Post Automator", link:"https://github.com/ayush9h/linkedin-post-automater" },
+    { img: "/image/stable.svg", tech: "Python, StableDiffusion, SAM, Streamlit UI",  title: "Stable SAM", link:"https://github.com/sankadash/StableSAM" },
+    { img: "/image/legal.svg", tech: "Python, NLTK, LLM, Data Visualization, Streamlit UI",  title: "Legal Digest", link:"https://github.com/ayush9h/LegalDigest" }
   ]
 
   return (
