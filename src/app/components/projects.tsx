@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
-import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"
+import { SectionDivider, SectionHeader, SectionWrapper } from "../elements/compstruct"
 export default function Projects() {
  
   const projects = [

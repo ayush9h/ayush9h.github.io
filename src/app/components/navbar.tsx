@@ -1,6 +1,6 @@
 import {MagnifyingGlassIcon, GitHubLogoIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
-import { SectionWrapper } from "./compstruct"
+import { SectionWrapper } from "../elements/compstruct"
 
 export default function Navbar() {
 

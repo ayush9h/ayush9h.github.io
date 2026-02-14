@@ -1,4 +1,4 @@
-import { SectionHeader, SectionWrapper, SectionDivider } from "./compstruct"
+import { SectionHeader, SectionWrapper, SectionDivider } from "../elements/compstruct"
 export default function Connect() {
  
  

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SectionDivider, SectionHeader, SectionWrapper } from "./compstruct"
+import { SectionDivider, SectionHeader, SectionWrapper} from '../elements/compstruct'
 import { Accordion } from "@base-ui/react"
 import { PlusIcon, CodeIcon } from "@radix-ui/react-icons"
 

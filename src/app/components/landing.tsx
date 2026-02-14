@@ -1,6 +1,6 @@
 
 import Spheres from "../elements/pit"
-import { SectionDivider } from "./compstruct"
+import { SectionDivider } from "../elements/compstruct"
 export default function Landing() {
  
 
