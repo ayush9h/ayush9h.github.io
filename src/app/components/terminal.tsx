@@ -1,8 +1,9 @@
 import { Command, CommandSeparator } from 'cmdk'
 import { useEffect, useState } from 'react'
-import { LinkedInLogoIcon,GitHubLogoIcon, GlobeIcon, CodeIcon, CodeSandboxLogoIcon } from '@radix-ui/react-icons'
+import { LinkedInLogoIcon,GitHubLogoIcon, GlobeIcon } from '@radix-ui/react-icons'
 import { User, Folder, Award, BriefcaseBusinessIcon } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 export default function CommandMenu() {
   const [open, setOpen] = useState(false)
 
@@ -123,7 +124,8 @@ export default function CommandMenu() {
           </Command.Item>
 
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-            <CodeSandboxLogoIcon className='text-yellow-500'  />
+           
+            <Image src='/image/leetcode.png' height={15} width={15} alt="Coding Profile Image"/>
             <Link             
             target="_blank"
             rel="noopener noreferrer" 
@@ -131,7 +133,8 @@ export default function CommandMenu() {
           </Command.Item>
 
           <Command.Item className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-black data-[selected=true]:bg-slate-100">
-            <CodeIcon className='text-red-500' />
+    
+            <Image src='/image/codeforces.png' height={15} width={15} alt="Coding Profile Image"/>
             <Link             
             target="_blank"
             rel="noopener noreferrer"

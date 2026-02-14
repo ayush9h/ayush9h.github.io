@@ -1,4 +1,4 @@
-import {MagnifyingGlassIcon, GitHubLogoIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
+import {MagnifyingGlassIcon, GitHubLogoIcon, } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { SectionWrapper } from "../elements/compstruct"
 
@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
 
-    <SectionWrapper className="fixed top-0 left-0 w-full bg-white">
+    <SectionWrapper className="fixed top-0 left-0 w-full bg-white z-50">
       
       <div className="flex justify-between items-center p-2">
         <h1 className="text-md font-mont font-bold text-black ">AYUAR</h1>
