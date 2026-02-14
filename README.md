@@ -1,6 +1,6 @@
 # [AYUAR](https://ayush9h-github-io.vercel.app/) &middot; [![GitHub License](https://img.shields.io/github/license/ncdai/chanhdai.com?label=License)](https://github.com/ncdai/chanhdai.com/blob/main/LICENSE) ![GitHub Profile Views](https://gitviews.com/user/ayush9h.svg?style=flat&label-color=%23555&color=%23f59e0b)
 
-Minimal Portfolio inspired by chanhdai.com and tailwindcs..com
+Minimal Portfolio inspired by chanhdai.com and tailwindcss.com
 → Check out the live site: [ayuar](https://ayush9h-github-io.vercel.app/)
 
 ## Overview
