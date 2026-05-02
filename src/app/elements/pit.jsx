@@ -50,7 +50,7 @@ function MouseGlider() {
       colliders="ball" 
       position={[0, 0, 0]}
     >
-      <CuboidCollider args={[1.5, 1.5, 1.5]} />
+      <CuboidCollider args={[0.5, 0.2, 0.2]} />
       <Sphere 
         args={[0.5, 16, 16]} 
         onPointerOver={() => setHover(true)} 
