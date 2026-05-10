@@ -4,7 +4,6 @@ import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
 import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
-
 function Wall({ position, args }) {
   return (
     <>
@@ -22,7 +21,7 @@ function Arena() {
     <RigidBody type="fixed" restitution={0.6} friction={0}>
       <Wall position={[0, 0, -6]} args={[12, 1, 0.5]} />
       <Wall position={[0, 0, 6]} args={[12, 1, 0.5]} />
-      
+
       <Wall position={[-8, 0, 0]} args={[0.5, 1, 6]} />
       <Wall position={[8, 0, 0]} args={[0.5, 1, 6]} />
     </RigidBody>
@@ -33,7 +32,7 @@ function MouseGlider() {
   const rigidBody = useRef();
   const { viewport } = useThree();
   const [hovered, setHover] = useState(false);
-  
+
   useCursor(hovered);
 
   useFrame(({ pointer }) => {
@@ -44,42 +43,45 @@ function MouseGlider() {
   });
 
   return (
-    <RigidBody 
-      ref={rigidBody} 
-      type="kinematicPosition" 
-      colliders="ball" 
+    <RigidBody
+      ref={rigidBody}
+      type="kinematicPosition"
+      colliders="ball"
       position={[0, 0, 0]}
     >
       <CuboidCollider args={[0.5, 0.2, 0.2]} />
-      <Sphere 
-        args={[0.5, 16, 16]} 
-        onPointerOver={() => setHover(true)} 
+      <Sphere
+        args={[0.5, 16, 16]}
+        onPointerOver={() => setHover(true)}
         onPointerOut={() => setHover(false)}
       >
-        <meshStandardMaterial color="white" opacity={0.2} transparent/>
+        <meshStandardMaterial color="white" opacity={0.2} transparent />
       </Sphere>
     </RigidBody>
   );
 }
 
 function FloatingSpheres({ color, trigger }) {
-
   const [spheres, setSpheres] = useState(() => {
-    return Array.from({ length: 30 }, (_, i) => ({
+    return Array.from({ length: 40 }, (_, i) => ({
       id: i,
       x: (Math.random() - 0.5) * 8,
       z: (Math.random() - 0.5) * 4,
-      blue: i % 2 === 0
+      blue: i % 2 === 0,
     }));
   });
 
-  const bodies = useRef({}); 
+  const bodies = useRef({});
   useEffect(() => {
     spheres.forEach((sphere) => {
       const body = bodies.current[sphere.id];
       if (body) {
         const currentPos = body.translation();
-        const dir = new THREE.Vector3(currentPos.x, 0, currentPos.z).normalize();
+        const dir = new THREE.Vector3(
+          currentPos.x,
+          0,
+          currentPos.z,
+        ).normalize();
         body.applyImpulse(dir.multiplyScalar(30), true);
       }
     });
@@ -94,18 +96,22 @@ function FloatingSpheres({ color, trigger }) {
         <RigidBody
           key={d.id}
           ref={(el) => (bodies.current[d.id] = el)}
-          position={[d.x, 0, d.z]} 
+          position={[d.x, 0, d.z]}
           linearDamping={1}
           angularDamping={1}
           restitution={1.1}
           colliders="ball"
-          enabledTranslations={[true, false, true]} 
+          enabledTranslations={[true, false, true]}
           onClick={(e) => {
-            e.stopPropagation(); 
-            removeSphere(d.id);  
+            e.stopPropagation();
+            removeSphere(d.id);
           }}
-          onPointerOver={() => { document.body.style.cursor = 'pointer'; }}
-          onPointerOut={() => { document.body.style.cursor = 'auto'; }}
+          onPointerOver={() => {
+            document.body.style.cursor = "pointer";
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = "auto";
+          }}
         >
           <Sphere args={[0.6, 24, 24]}>
             <meshStandardMaterial
@@ -127,7 +133,7 @@ export default function Spheres() {
 
   return (
     <Canvas
-      camera={{ position: [0, 10, 0], fov: 30 }} 
+      camera={{ position: [0, 10, 0], fov: 30 }}
       onPointerDown={() => {
         setIndex((i) => (i + 1) % colors.length);
         setClickCount((c) => c + 1);

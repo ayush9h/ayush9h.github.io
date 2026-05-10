@@ -4,6 +4,7 @@ Minimal Portfolio inspired by chanhdai.com and tailwindcss.com
 → Check out the live site: [ayuar](https://ayush9h-github-io.vercel.app/)
 
 ## Overview
+
 <img src="https://lh3.googleusercontent.com/d/1McY020YGIK4yfMXuQFogeU10ydjKDGiF=w1000?authuser=0" alt="Model Selection Interface" width="1000">
 
 ### Stack
@@ -26,4 +27,4 @@ Licensed under the [MIT license](./LICENSE).
 - [Base UI](https://base-ui.com)
 - [shadcn/ui](https://ui.shadcn.com)
 - [Lucide](https://lucide.dev)
-- And many other open-source libraries used in `package.json`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+- And many other open-source libraries used in `package.json`
