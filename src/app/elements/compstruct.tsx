@@ -41,12 +41,21 @@ export function SectionHeader({
 
 export function SectionDivider() {
   return (
-    <div className="grid grid-cols-12 mx-auto bg-white dark:bg-black ">
-      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
+    <div className="grid grid-cols-12 mx-auto bg-white dark:bg-black">
+      <div
+        className=" col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background-light)] dark:bg-[image:var(--bg-background-dark)]
+        "
+      ></div>
 
-      <div className="col-span-8 h-10 border-t border-b border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
+      <div
+        className=" col-span-8 h-10 border-t border-b border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background-light)] dark:bg-[image:var(--bg-background-dark)]
+        "
+      ></div>
 
-      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
+      <div
+        className="col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background-light)] dark:bg-[image:var(--bg-background-dark)]
+        "
+      ></div>
     </div>
   );
 }

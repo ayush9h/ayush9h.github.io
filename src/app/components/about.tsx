@@ -15,7 +15,7 @@ export default function About() {
       </SectionWrapper>
 
       <SectionWrapper>
-        <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-justify text-stone-700 dark:text-stone-300">
+        <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-stone-700 dark:text-stone-300">
           <li>
             Backend engineer building{" "}
             <span className="font-semibold">agentic systems</span>,
@@ -64,7 +64,12 @@ export default function About() {
       {/* L&T */}
       <SectionWrapper>
         <div className="flex items-center p-4">
-          <Image src="/image/lt-logo.png" height={40} width={40} alt="L&T logo" />
+          <Image
+            src="/image/lt-logo.png"
+            height={40}
+            width={40}
+            alt="L&T logo"
+          />
 
           <h2 className="text-base font-mont flex items-center gap-2 text-stone-900 dark:text-stone-100">
             Larsen & Toubro Technology Services
@@ -94,7 +99,7 @@ export default function About() {
               <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45 text-stone-700 dark:text-stone-300" />
             </Accordion.Trigger>
 
-            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out text-justify">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
                   Contributing to development and migration of monolithic
@@ -254,7 +259,7 @@ export default function About() {
               <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45 text-stone-700 dark:text-stone-300" />
             </Accordion.Trigger>
 
-            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out text-justify">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
                   Designed and deployed a scalable, queue-based application

@@ -113,11 +113,11 @@ function FloatingSpheres({ color, trigger }) {
             document.body.style.cursor = "auto";
           }}
         >
-          <Sphere args={[0.6, 24, 24]}>
+          <Sphere args={[0.6, 64, 64]}>
             <meshStandardMaterial
-              color={d.blue ? color : "#111"}
-              metalness={0.7}
-              roughness={0.1}
+              color={d.blue ? color : "#111111"}
+              metalness={d.blue ? 0.9 : 0}
+              roughness={d.blue ? 0.1 : 0.5}
             />
           </Sphere>
         </RigidBody>

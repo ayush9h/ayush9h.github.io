@@ -50,9 +50,7 @@ export default function Navbar() {
 
     clickAudioRef.current.currentTime = 0;
 
-    clickAudioRef.current
-      .play()
-      .catch(() => {});
+    clickAudioRef.current.play().catch(() => {});
   };
 
   const toggleTheme = () => {
@@ -115,7 +113,7 @@ export default function Navbar() {
             <GitHubLogoIcon className="text-stone-900 dark:text-stone-100 h-4 w-4" />
           </Link>
 
-           <button
+          <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer"
           >
