@@ -15,7 +15,7 @@ export default function About() {
       </SectionWrapper>
 
       <SectionWrapper>
-        <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-justify">
+        <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-justify text-stone-700 dark:text-stone-300">
           <li>
             Backend engineer building{" "}
             <span className="font-semibold">agentic systems</span>,
@@ -23,6 +23,7 @@ export default function About() {
             <span className="font-semibold"> backend services</span> with a
             strong focus on performance, and reliability.
           </li>
+
           <li>
             Experienced with{" "}
             <span className="font-semibold">
@@ -31,6 +32,7 @@ export default function About() {
             and <span className="font-semibold">PostgreSQL</span>, designing
             agentic workflows for enterprise teams for automation.
           </li>
+
           <li>
             Currently contributing to an{" "}
             <span className="font-semibold">
@@ -41,6 +43,7 @@ export default function About() {
             <span className="font-semibold"> Finance, HR,</span> and
             <span className="font-semibold"> Legal</span> teams.
           </li>
+
           <li>
             Passionate about{" "}
             <span className="font-semibold">
@@ -61,8 +64,9 @@ export default function About() {
       {/* L&T */}
       <SectionWrapper>
         <div className="flex items-center p-4">
-          <Image src="/image/lt.jpg" height={40} width={40} alt="L&T logo" />
-          <h2 className="text-base font-mont flex items-center gap-2">
+          <Image src="/image/lt-logo.png" height={40} width={40} alt="L&T logo" />
+
+          <h2 className="text-base font-mont flex items-center gap-2 text-stone-900 dark:text-stone-100">
             Larsen & Toubro Technology Services
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75 animate-ping" />
@@ -71,26 +75,26 @@ export default function About() {
           </h2>
         </div>
 
-        <Accordion.Root className="text-black p-4">
+        <Accordion.Root className="text-stone-900 dark:text-stone-100 p-4">
           <Accordion.Item>
             <Accordion.Trigger className="group flex w-full items-center justify-between text-left font-mont pl-[9px] cursor-pointer">
               <div className="flex items-center gap-3">
-                <div className="flex h-5 w-5 items-center justify-center rounded-md border border-stone-300 bg-stone-200">
-                  <CodeIcon className="h-3 w-3 text-stone-600" />
+                <div className="flex h-5 w-5 items-center justify-center rounded-md border border-stone-300 dark:border-stone-700 bg-stone-200 dark:bg-black">
+                  <CodeIcon className="h-3 w-3 text-stone-600 dark:text-stone-300" />
                 </div>
 
-                <p className="text-base">
+                <p className="text-base text-stone-900 dark:text-stone-100">
                   Backend Developer
-                  <span className="ml-2 text-sm text-gray-400">
+                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">
                     | 07.2025 – Present
                   </span>
                 </p>
               </div>
 
-              <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45" />
+              <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45 text-stone-700 dark:text-stone-300" />
             </Accordion.Trigger>
 
-            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-black transition-[height] ease-out text-justify">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out text-justify">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
                   Contributing to development and migration of monolithic
@@ -180,23 +184,7 @@ export default function About() {
                   </span>{" "}
                   to identify{" "}
                   <span className="font-semibold">price inconsistencies</span>{" "}
-                  across purchase orders and varying payment terms. Performed{" "}
-                  <span className="font-semibold">
-                    historical vendor and pricing analysis
-                  </span>{" "}
-                  to detect{" "}
-                  <span className="font-semibold">PO-level anomalies</span>,
-                  generate detailed analytical reports, and recommend{" "}
-                  <span className="font-semibold">
-                    optimal pricing benchmarks
-                  </span>{" "}
-                  based on historical trends, payment structures, and vendor
-                  performance history, improving{" "}
-                  <span className="font-semibold">cost visibility</span> and{" "}
-                  <span className="font-semibold">
-                    procurement decision-making
-                  </span>
-                  .
+                  across purchase orders and varying payment terms.
                 </li>
               </ul>
 
@@ -219,7 +207,8 @@ export default function About() {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-gray-300 px-3 py-1 text-sm font-mont text-gray-700 bg-white"
+                      className=" rounded-full border border-gray-300 dark:border-stone-700 px-3 py-1 text-sm font-mont text-gray-700 dark:text-stone-200 bg-white dark:bg-stone-950
+                      "
                     >
                       {tech}
                     </span>
@@ -235,36 +224,37 @@ export default function About() {
       <SectionWrapper>
         <div className="flex items-center p-4">
           <Image
-            src="/image/centific.png"
+            src="/image/centific-logo.png"
             height={40}
             width={40}
             alt="Centific logo"
           />
-          <h2 className="text-base font-mont flex items-center gap-2">
+
+          <h2 className="text-base font-mont flex items-center gap-2 text-stone-900 dark:text-stone-100">
             Centific Global Technologies
           </h2>
         </div>
 
-        <Accordion.Root className="text-black p-4">
+        <Accordion.Root className="text-stone-900 dark:text-stone-100 p-4">
           <Accordion.Item>
             <Accordion.Trigger className="group flex w-full items-center justify-between text-left font-mont pl-[9px] cursor-pointer">
               <div className="flex items-center gap-3">
-                <div className="flex h-5 w-5 items-center justify-center rounded-md border border-stone-300 bg-stone-200">
-                  <CodeIcon className="h-3 w-3 text-stone-600" />
+                <div className="flex h-5 w-5 items-center justify-center rounded-md border border-stone-300 dark:border-stone-700 bg-stone-200 dark:bg-black">
+                  <CodeIcon className="h-3 w-3 text-stone-600 dark:text-stone-300" />
                 </div>
 
-                <p className="text-base">
+                <p className="text-base text-stone-900 dark:text-stone-100">
                   Associate Application Engineer Intern
-                  <span className="ml-2 text-sm text-gray-400">
+                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">
                     | 10.2024 – 06.2025
                   </span>
                 </p>
               </div>
 
-              <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45" />
+              <PlusIcon className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[panel-open]:rotate-45 text-stone-700 dark:text-stone-300" />
             </Accordion.Trigger>
 
-            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-black transition-[height] ease-out text-justify">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out text-justify">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
                   Designed and deployed a scalable, queue-based application
@@ -339,6 +329,7 @@ export default function About() {
                   for enterprise development teams.
                 </li>
               </ul>
+
               <div className="mt-4 px-4">
                 <div className="flex flex-wrap gap-1">
                   {[
@@ -361,7 +352,8 @@ export default function About() {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-gray-300 px-3 py-1 text-sm font-mont text-gray-700 bg-white"
+                      className=" rounded-full border border-gray-300 dark:border-stone-700 px-3 py-1 text-sm font-mont text-gray-700 dark:text-stone-200 bg-white dark:bg-stone-950
+                "
                     >
                       {tech}
                     </span>
@@ -379,11 +371,11 @@ export default function About() {
         <SectionHeader title="Accolades & Certifications" id="accolades" />
       </SectionWrapper>
 
-      <SectionWrapper className="border-b border-stone-200/50">
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-stone-200/50">
+      <SectionWrapper className="border-b border-stone-200/50 dark:border-stone-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-stone-200/50 dark:divide-stone-800">
           {/* MLH */}
-          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50">
+          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50 dark:border-stone-900">
+            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
               <Image
                 alt="MLH"
                 src="/image/mlh.png"
@@ -394,22 +386,22 @@ export default function About() {
             </div>
 
             <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950">
+              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
                 MLH&apos;23 Hackhound Winner
               </h3>
 
-              <p className="font-mont text-base text-stone-500 mt-2">
+              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
                 AI/ML Category
               </p>
             </div>
           </div>
 
           {/* Centific */}
-          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50">
+          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50 dark:border-stone-900">
+            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
               <Image
                 alt="Centific"
-                src="/image/centific.jpg"
+                src="/image/centific-logo.png"
                 width={100}
                 height={100}
                 className="object-contain"
@@ -417,11 +409,11 @@ export default function About() {
             </div>
 
             <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950">
-                Application Engineer Intern Selection
+              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
+                Application Engineer Intern at Centific
               </h3>
 
-              <p className="font-mont text-base text-stone-500 mt-2">
+              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
                 Selected after a two-week hackathon
               </p>
             </div>
@@ -429,7 +421,7 @@ export default function About() {
 
           {/* Docker */}
           <div className="flex flex-col min-h-[200px]">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50">
+            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
               <Image
                 alt="Docker"
                 src="/image/docker-logo.png"
@@ -440,11 +432,11 @@ export default function About() {
             </div>
 
             <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950">
+              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
                 Docker Certification
               </h3>
 
-              <p className="font-mont text-base text-stone-500 mt-2">
+              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
                 Containerization & Deployment
               </p>
             </div>
@@ -452,7 +444,7 @@ export default function About() {
 
           {/* DeepLearning.AI */}
           <div className="flex flex-col min-h-[200px]">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50">
+            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
               <Image
                 alt="DeepLearning.AI"
                 src="/image/deeplearningai.png"
@@ -463,11 +455,11 @@ export default function About() {
             </div>
 
             <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950">
+              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
                 Agentic AI Certification
               </h3>
 
-              <p className="font-mont text-base text-stone-500 mt-2">
+              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
                 DeepLearning.AI
               </p>
             </div>

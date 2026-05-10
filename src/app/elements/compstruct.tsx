@@ -8,12 +8,16 @@ export function SectionWrapper({
   className?: string;
 }) {
   return (
-    <div className={`grid grid-cols-12 mx-auto ${className}`}>
-      <div className="col-span-2 border border-stone-200/50"></div>
-      <div className="col-span-8 border-t border-b border-stone-200/50 bg-white">
+    <div
+      className={`grid grid-cols-12 mx-auto bg-white dark:bg-black  ${className}`}
+    >
+      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900"></div>
+
+      <div className="col-span-8 border-t border-b border-stone-200/50 dark:border-stone-900 bg-white dark:bg-black ">
         {children}
       </div>
-      <div className="col-span-2 border border-stone-200/50"></div>
+
+      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900"></div>
     </div>
   );
 }
@@ -27,7 +31,7 @@ export function SectionHeader({
 }) {
   return (
     <h1
-      className="text-2xl text-stone-950 font-medium font-mont px-4 py-2"
+      className="text-2xl text-stone-950 dark:text-stone-100 font-medium font-mont px-4 py-2 "
       id={id}
     >
       {title}
@@ -37,10 +41,12 @@ export function SectionHeader({
 
 export function SectionDivider() {
   return (
-    <div className="grid grid-cols-12 mx-auto">
-      <div className="col-span-2 border border-stone-200/50 bg-[image:var(--bg-background)]"></div>
-      <div className="col-span-8 h-10 border-t border-b border-stone-200/50 bg-[image:var(--bg-background)]"></div>
-      <div className="col-span-2 border border-stone-200/50 bg-[image:var(--bg-background)]"></div>
+    <div className="grid grid-cols-12 mx-auto bg-white dark:bg-black ">
+      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
+
+      <div className="col-span-8 h-10 border-t border-b border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
+
+      <div className="col-span-2 border border-stone-200/50 dark:border-stone-900 bg-[image:var(--bg-background)]"></div>
     </div>
   );
 }
