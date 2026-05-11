@@ -1,16 +1,25 @@
-import { Command, CommandSeparator } from "cmdk";
+"use client";
+
+import { Command } from "cmdk";
 import { useEffect, useState } from "react";
-import {
-  LinkedInLogoIcon,
-  GitHubLogoIcon,
-  GlobeIcon,
-} from "@radix-ui/react-icons";
-import { User, Folder, Award, BriefcaseBusinessIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { LinkedInLogoIcon, GitHubLogoIcon, GlobeIcon, MagnifyingGlassIcon,} from "@radix-ui/react-icons";
+
+import { Award, BriefcaseBusinessIcon, FileText, Folder, Monitor, Moon, Sun, User,} from "lucide-react";
+import { useTheme } from "../providers/theme-provider";
+
+const itemClass =
+  "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-stone-900 dark:text-stone-100 data-[selected=true]:bg-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer";
+
+const headingClass =
+  "mt-4 mb-2 block px-3 text-xs font-mont text-stone-400 dark:text-stone-500";
+
 export default function CommandMenu() {
   const [open, setOpen] = useState(false);
+
+  const { theme, changeTheme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -26,17 +35,13 @@ export default function CommandMenu() {
 
     document.addEventListener("keydown", handleKeyDown);
 
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   useEffect(() => {
-    document.documentElement.style.scrollbarGutter = "stable";
-
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = open ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -51,317 +56,203 @@ export default function CommandMenu() {
     setOpen(false);
   };
 
+  const menuItems = [
+    {
+      label: "About",
+      icon: <User size={16} />,
+      action: () => goTo("about"),
+    },
+    {
+      label: "Work Experience",
+      icon: <BriefcaseBusinessIcon size={16} />,
+      action: () => goTo("experience"),
+    },
+    {
+      label: "Accolades & Certifications",
+      icon: <Award size={16} />,
+      action: () => goTo("accolades"),
+    },
+    {
+      label: "Projects",
+      icon: <Folder size={16} />,
+      action: () => goTo("projects"),
+    },
+    {
+      label: "Connect",
+      icon: <GlobeIcon />,
+      action: () => goTo("connect"),
+    },
+  ];
+
+  const socialItems = [
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/ayush-kumar-88b883239/",
+      icon: <LinkedInLogoIcon className="text-blue-500" />,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/ayush9h",
+      icon: <GitHubLogoIcon />,
+    },
+    {
+      label: "LeetCode",
+      href: "https://leetcode.com/u/ayukr_2002",
+      icon: (
+        <Image
+          src="/image/leetcode.png"
+          height={15}
+          width={15}
+          alt="LeetCode"
+        />
+      ),
+    },
+    {
+      label: "Codeforces",
+      href: "https://codeforces.com/profile/ayush2025",
+      icon: (
+        <Image
+          src="/image/codeforces-logo.png"
+          height={15}
+          width={15}
+          alt="Codeforces"
+        />
+      ),
+    },
+  ];
+
+  const themeItems = [
+    {
+      label: "System",
+      value: "system",
+      icon: <Monitor size={16} />,
+    },
+    {
+      label: "Light",
+      value: "light",
+      icon: <Sun size={16} />,
+    },
+    {
+      label: "Dark",
+      value: "dark",
+      icon: <Moon size={16} />,
+    },
+  ] as const;
+
+  const otherItems = [
+    {
+      label: "llms.txt",
+      href: "/llms.txt",
+      icon: <FileText size={16} />,
+    },
+  ];
+
   if (!open) return null;
 
   return (
     <div
-      className="
-        fixed inset-0 z-50
-        flex items-start justify-center
-        pt-32
-        bg-black/10 dark:bg-black/40
-        backdrop-blur-sm
-         duration-300
-      "
       onClick={() => setOpen(false)}
+      className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-stone-950/10 dark:bg-stone-950/40 backdrop-blur-xs"
     >
       <Command
         label="Command Menu"
         onClick={(e) => e.stopPropagation()}
-        className="
-          w-full max-w-md
-          rounded-xl
-          bg-white dark:bg-stone-950
-          border border-stone-300 dark:border-stone-900
-          shadow-[0_25px_60px_rgba(0,0,0,0.22),0_-12px_30px_rgba(0,0,0,0.12)]
-          overflow-hidden
-          
-        "
+        className="w-full max-w-[30rem] overflow-hidden rounded-xl border border-stone-300 bg-white dark:border-stone-900 dark:bg-stone-950"
       >
-        <Command.Input
-          autoFocus
-          placeholder="Type a command or search..."
-          className="
-            w-full p-3
-            border-b border-stone-300 dark:border-stone-900
-            bg-white dark:bg-stone-950
-            text-sm
-            outline-none
-            placeholder:text-stone-400 dark:placeholder:text-stone-500
-            font-mont
-            text-stone-900 dark:text-stone-100
-            
-          "
-        />
+        <div className="relative border-b border-stone-300 dark:border-stone-900">
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400 dark:text-stone-500" />
+
+          <Command.Input
+            autoFocus
+            placeholder="Type a command or search..."
+            className="w-full bg-white py-3 pl-10 pr-3 text-sm font-mont text-stone-900 outline-none placeholder:text-stone-400 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500"
+          />
+        </div>
 
         <Command.List
           onWheel={(e) => e.stopPropagation()}
-          className="
-            p-2
-            max-h-80
-            overflow-y-auto
-            space-y-6
-            bg-white dark:bg-stone-950
-            
-          "
+          className="max-h-80 space-y-6 overflow-y-auto bg-white p-2 [scrollbar-width:none] [-ms-overflow-style:none] dark:bg-stone-950 [&::-webkit-scrollbar]:hidden"
         >
           <Command.Empty className="p-2 text-sm font-mono text-stone-900 dark:text-stone-100">
             No results found.
           </Command.Empty>
 
-          <Command.Group
-            heading={
-              <span className="mt-4 mb-2 font-mont text-xs text-stone-400 dark:text-stone-500 block px-3">
-                Menu
-              </span>
-            }
-          >
-            <Command.Item
-              onSelect={() => goTo("about")}
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <User size={16} />
-              About
-            </Command.Item>
-
-            <Command.Item
-              onSelect={() => goTo("experience")}
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <BriefcaseBusinessIcon size={16} />
-              Work Experience
-            </Command.Item>
-
-            <Command.Item
-              onSelect={() => goTo("accolades")}
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <Award size={16} />
-              Accolades & Certifications
-            </Command.Item>
-
-            <Command.Item
-              onSelect={() => goTo("projects")}
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <Folder size={16} />
-              Projects
-            </Command.Item>
-
-            <Command.Item
-              onSelect={() => goTo("connect")}
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <GlobeIcon />
-              Connect
-            </Command.Item>
+          <Command.Group heading={<span className={headingClass}>Menu</span>}>
+            {menuItems.map((item) => (
+              <Command.Item
+                key={item.label}
+                onSelect={item.action}
+                className={itemClass}
+              >
+                {item.icon}
+                {item.label}
+              </Command.Item>
+            ))}
           </Command.Group>
 
-          <CommandSeparator className="h-px bg-stone-200 dark:bg-stone-800" />
-
           <Command.Group
-            heading={
-              <span className="font-mont text-xs text-stone-400 dark:text-stone-500 block px-3 mt-4 mb-2">
-                Social Links
-              </span>
-            }
+            heading={<span className={headingClass}>Social Links</span>}
           >
-            <Command.Item
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <LinkedInLogoIcon className="text-blue-500" />
+            {socialItems.map((item) => (
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={item.label}
+                >
+ 
+                <Command.Item className={itemClass}>
+                {item.icon}
 
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/ayush-kumar-88b883239/"
-              >
-                Linkedin
-              </Link>
-            </Command.Item>
-
-            <Command.Item
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <GitHubLogoIcon />
-
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/ayush9h"
-              >
-                Github
-              </Link>
-            </Command.Item>
-
-            <Command.Item
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <Image
-                src="/image/leetcode.png"
-                height={15}
-                width={15}
-                alt="Coding Profile Image"
-              />
-
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://leetcode.com/u/ayukr_2002"
-              >
-                Leetcode
-              </Link>
-            </Command.Item>
-
-            <Command.Item
-              className="
-                flex items-center gap-3
-                px-3 py-2
-                rounded-md
-                text-sm
-                font-mont
-                text-stone-900 dark:text-stone-100
-                data-[selected=true]:bg-stone-100
-                dark:data-[selected=true]:bg-black
-                 duration-200
-                cursor-pointer
-              "
-            >
-              <Image
-                src="/image/codeforces.png"
-                height={15}
-                width={15}
-                alt="Coding Profile Image"
-              />
-
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://codeforces.com/profile/ayush2025"
-              >
-                Codeforces
-              </Link>
-            </Command.Item>
+                  {item.label}
+                </Command.Item>
+                </Link>
+            ))}
           </Command.Group>
 
-          <CommandSeparator className="h-px bg-stone-200 dark:bg-stone-800" />
+          <Command.Group heading={<span className={headingClass}>Theme</span>}>
+            {themeItems.map((item) => (
+              <Command.Item
+                key={item.value}
+                onSelect={() => changeTheme(item.value)}
+                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-mont text-stone-900 data-[selected=true]:bg-stone-100 dark:text-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  {item.icon}
+                  {item.label}
+                </div>
+
+                {theme === item.value && (
+                  <div className="h-2 w-2 rounded-full bg-stone-900 dark:bg-stone-100" />
+                )}
+              </Command.Item>
+            ))}
+          </Command.Group>
+
+          <Command.Group heading={<span className={headingClass}>Others</span>}>
+            {otherItems.map((item) => (
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={item.label}
+                >
+                  <Command.Item  className={itemClass}>
+                    {item.icon}
+
+                    {item.label}
+                  </Command.Item>
+                </Link>
+            ))}
+          </Command.Group>
         </Command.List>
 
-        <div
-          className="
-            relative
-            flex items-center justify-end gap-2
-            p-3 mt-2
-            border-t border-t-stone-300 dark:border-t-stone-800
-            bg-white dark:bg-stone-950
-            
-          "
-        >
+        <div className="flex items-center justify-end gap-2 border-t border-t-stone-300 bg-white p-3 shadow-xl dark:border-t-stone-800 dark:bg-stone-950">
           <span className="text-xs font-semibold font-mont text-stone-400 dark:text-stone-500">
             Exit
           </span>
 
-          <kbd
-            className="
-              px-2 py-0.5
-              rounded-md
-              border border-stone-300 dark:border-stone-700
-              bg-stone-100 dark:bg-black
-              text-xs
-              font-mont
-              shadow-md
-              text-stone-900 dark:text-stone-100
-              
-            "
-          >
+          <kbd className="rounded-md border border-stone-300 bg-stone-100 px-2 py-0.5 text-xs font-mont text-stone-900 shadow-md dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100">
             Esc
           </kbd>
         </div>
