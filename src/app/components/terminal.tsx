@@ -5,16 +5,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { LinkedInLogoIcon, GitHubLogoIcon, GlobeIcon, MagnifyingGlassIcon,} from "@radix-ui/react-icons";
+import { LinkedInLogoIcon, GitHubLogoIcon, GlobeIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
-import { Award, BriefcaseBusinessIcon, FileText, Folder, Monitor, Moon, Sun, User,} from "lucide-react";
+import { Award, BriefcaseBusinessIcon, FileText, Folder, Monitor, Moon, Sun, User } from "lucide-react";
 import { useTheme } from "../providers/theme-provider";
 
 const itemClass =
   "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-stone-900 dark:text-stone-100 data-[selected=true]:bg-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer";
 
-const headingClass =
-  "mt-4 mb-2 block px-3 text-xs font-mont text-stone-400 dark:text-stone-500";
+const headingClass = "mt-4 mb-2 block px-3 text-xs font-mont text-stone-400 dark:text-stone-500";
 
 export default function CommandMenu() {
   const [open, setOpen] = useState(false);
@@ -98,26 +97,12 @@ export default function CommandMenu() {
     {
       label: "LeetCode",
       href: "https://leetcode.com/u/ayukr_2002",
-      icon: (
-        <Image
-          src="/image/leetcode.png"
-          height={15}
-          width={15}
-          alt="LeetCode"
-        />
-      ),
+      icon: <Image src="/profiles/leet.png" height={15} width={15} alt="LeetCode" />,
     },
     {
       label: "Codeforces",
       href: "https://codeforces.com/profile/ayush2025",
-      icon: (
-        <Image
-          src="/image/codeforces-logo.png"
-          height={15}
-          width={15}
-          alt="Codeforces"
-        />
-      ),
+      icon: <Image src="/profiles/codeforces.png" height={15} width={15} alt="Codeforces" />,
     },
   ];
 
@@ -179,34 +164,22 @@ export default function CommandMenu() {
 
           <Command.Group heading={<span className={headingClass}>Menu</span>}>
             {menuItems.map((item) => (
-              <Command.Item
-                key={item.label}
-                onSelect={item.action}
-                className={itemClass}
-              >
+              <Command.Item key={item.label} onSelect={item.action} className={itemClass}>
                 {item.icon}
                 {item.label}
               </Command.Item>
             ))}
           </Command.Group>
 
-          <Command.Group
-            heading={<span className={headingClass}>Social Links</span>}
-          >
+          <Command.Group heading={<span className={headingClass}>Social Links</span>}>
             {socialItems.map((item) => (
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={item.label}
-                >
- 
+              <Link href={item.href} target="_blank" rel="noopener noreferrer" key={item.label}>
                 <Command.Item className={itemClass}>
-                {item.icon}
+                  {item.icon}
 
                   {item.label}
                 </Command.Item>
-                </Link>
+              </Link>
             ))}
           </Command.Group>
 
@@ -222,35 +195,26 @@ export default function CommandMenu() {
                   {item.label}
                 </div>
 
-                {theme === item.value && (
-                  <div className="h-2 w-2 rounded-full bg-stone-900 dark:bg-stone-100" />
-                )}
+                {theme === item.value && <div className="h-2 w-2 rounded-full bg-stone-900 dark:bg-stone-100" />}
               </Command.Item>
             ))}
           </Command.Group>
 
           <Command.Group heading={<span className={headingClass}>Others</span>}>
             {otherItems.map((item) => (
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={item.label}
-                >
-                  <Command.Item  className={itemClass}>
-                    {item.icon}
+              <Link href={item.href} target="_blank" rel="noopener noreferrer" key={item.label}>
+                <Command.Item className={itemClass}>
+                  {item.icon}
 
-                    {item.label}
-                  </Command.Item>
-                </Link>
+                  {item.label}
+                </Command.Item>
+              </Link>
             ))}
           </Command.Group>
         </Command.List>
 
         <div className="flex items-center justify-end gap-2 border-t border-t-stone-300 bg-white p-3 shadow-xl dark:border-t-stone-800 dark:bg-stone-950">
-          <span className="text-xs font-semibold font-mont text-stone-400 dark:text-stone-500">
-            Exit
-          </span>
+          <span className="text-xs font-semibold font-mont text-stone-400 dark:text-stone-500">Exit</span>
 
           <kbd className="rounded-md border border-stone-300 bg-stone-100 px-2 py-0.5 text-xs font-mont text-stone-900 shadow-md dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100">
             Esc

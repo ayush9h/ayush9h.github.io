@@ -1,28 +1,24 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
-import {
-  SectionDivider,
-  SectionHeader,
-  SectionWrapper,
-} from "../elements/compstruct";
+import { SectionDivider, SectionHeader, SectionWrapper } from "../elements/compstruct";
 import Link from "next/link";
 
 export default function Projects() {
   const projects = [
     {
-      img: "/image/la.png",
+      img: "/projects/linkauto.png",
       tech: "ReactJs, AutoGen, Redis, Celery",
       title: "LinkedIn Post Automator",
       link: "https://github.com/ayush9h/linkedin-post-automater",
     },
     {
-      img: "/image/stable.svg",
+      img: "/projects/stable.svg",
       tech: "Python, StableDiffusion, SAM, Streamlit UI",
       title: "Stable SAM",
       link: "https://github.com/sankadash/StableSAM",
     },
     {
-      img: "/image/legal.svg",
+      img: "/projects/legal.svg",
       tech: "Python, NLTK, LLM, Data Visualization, Streamlit UI",
       title: "Legal Digest",
       link: "https://github.com/ayush9h/LegalDigest",
@@ -53,9 +49,7 @@ export default function Projects() {
                 />
               </div>
 
-              <p className="font-mont text-lg text-gray-500 dark:text-stone-400 ">
-                {item.tech}
-              </p>
+              <p className="font-mont text-lg text-gray-500 dark:text-stone-400 ">{item.tech}</p>
 
               <div className="flex items-center gap-2 cursor-pointer hover:underline">
                 <ArrowRightIcon className="arrow w-5 h-5 text-stone-900 dark:text-stone-100 " />

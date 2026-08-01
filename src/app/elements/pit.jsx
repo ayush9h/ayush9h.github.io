@@ -43,18 +43,9 @@ function MouseGlider() {
   });
 
   return (
-    <RigidBody
-      ref={rigidBody}
-      type="kinematicPosition"
-      colliders="ball"
-      position={[0, 0, 0]}
-    >
+    <RigidBody ref={rigidBody} type="kinematicPosition" colliders="ball" position={[0, 0, 0]}>
       <CuboidCollider args={[0.5, 0.2, 0.2]} />
-      <Sphere
-        args={[0.5, 16, 16]}
-        onPointerOver={() => setHover(true)}
-        onPointerOut={() => setHover(false)}
-      >
+      <Sphere args={[0.5, 16, 16]} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)}>
         <meshStandardMaterial color="white" opacity={0.2} transparent />
       </Sphere>
     </RigidBody>
@@ -77,11 +68,7 @@ function FloatingSpheres({ color, trigger }) {
       const body = bodies.current[sphere.id];
       if (body) {
         const currentPos = body.translation();
-        const dir = new THREE.Vector3(
-          currentPos.x,
-          0,
-          currentPos.z,
-        ).normalize();
+        const dir = new THREE.Vector3(currentPos.x, 0, currentPos.z).normalize();
         body.applyImpulse(dir.multiplyScalar(30), true);
       }
     });
@@ -114,11 +101,7 @@ function FloatingSpheres({ color, trigger }) {
           }}
         >
           <Sphere args={[0.6, 64, 64]}>
-            <meshStandardMaterial
-              color={d.blue ? color : "#111"}
-              metalness={0.9}
-              roughness={0.1}
-            />
+            <meshStandardMaterial color={d.blue ? color : "#111"} metalness={0.9} roughness={0.1} />
           </Sphere>
         </RigidBody>
       ))}
@@ -139,7 +122,7 @@ export default function Spheres() {
         setClickCount((c) => c + 1);
       }}
     >
-      <Environment files="/image/studio_small_09_4k.hdr" intensity={0.6} />
+      <Environment files="/studio_small_09_4k.hdr" intensity={0.6} />
       <Physics gravity={[0, 0, 0]}>
         <Arena />
         <MouseGlider />
