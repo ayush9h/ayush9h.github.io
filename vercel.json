@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/aletheia", "destination": "https://aletheiagpt.vercel.app/aletheia" },
+    { "source": "/aletheia/:path*", "destination": "https://aletheiagpt.vercel.app/aletheia/:path*" }
+  ]
+}
