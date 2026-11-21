@@ -1,12 +1,15 @@
-import StackIcon, { type IconName } from "tech-stack-icons";
+import StackIcon from "../elements/stack-icon";
+import { type StackIconName } from "../elements/stack-icons";
 import {
   SectionDivider,
   SectionHeader,
   SectionWrapper,
 } from "../elements/compstruct";
 
-// icon is optional: tech-stack-icons has no logo for a few of these
-const stack: { label: string; items: { name: string; icon?: IconName }[] }[] = [
+const stack: {
+  label: string;
+  items: { name: string; icon?: StackIconName }[];
+}[] = [
   {
     label: "Languages",
     items: [

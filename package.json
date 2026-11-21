@@ -24,7 +24,6 @@
     "r3f-perf": "^7.2.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tech-stack-icons": "^3.7.4",
     "three": "^0.179.1"
   },
   "devDependencies": {
@@ -36,6 +35,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
     "tailwindcss": "^4.1.12",
+    "tech-stack-icons": "^3.7.4",
     "typescript": "^5"
   }
 }
