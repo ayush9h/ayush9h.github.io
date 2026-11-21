@@ -12,8 +12,8 @@ const stack: { label: string; items: Item[] }[] = [
     label: "Languages",
     items: [
       { name: "Python", icon: "logos:python", dark: "white" },
-      { name: "TypeScript", icon: "logos:typescript-icon", dark: "white" },
-      { name: "JavaScript", icon: "logos:javascript", dark: "white" },
+      { name: "TypeScript", icon: "logos:typescript-icon", dark: "invert" },
+      { name: "JavaScript", icon: "logos:javascript", dark: "invert" },
       { name: "C++", icon: "logos:c-plusplus", dark: "white" },
     ],
   },
@@ -21,7 +21,7 @@ const stack: { label: string; items: Item[] }[] = [
     label: "Frontend",
     items: [
       { name: "React", icon: "logos:react", dark: "white" },
-      { name: "Next.js", icon: "logos:nextjs-icon", dark: "white" },
+      { name: "Next.js", icon: "logos:nextjs-icon", dark: "invert" },
       { name: "Angular", icon: "logos:angular-icon", dark: "white" },
       { name: "Tailwind CSS", icon: "logos:tailwindcss-icon", dark: "white" },
       { name: "shadcn/ui", icon: "hugeicons:shadcn", dark: "white" },
