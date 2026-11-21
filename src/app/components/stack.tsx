@@ -23,7 +23,7 @@ const stack: { label: string; items: { name: string; icon?: IconName }[] }[] = [
       { name: "Next.js", icon: "nextjs" },
       { name: "Angular", icon: "angular" },
       { name: "Tailwind CSS", icon: "tailwindcss" },
-      { name: "Zod", icon: "zod" },
+      { name: "shadcn/ui", icon: "shadcnui" },
     ],
   },
   {
@@ -58,6 +58,7 @@ const stack: { label: string; items: { name: string; icon?: IconName }[] }[] = [
       { name: "Kubernetes", icon: "kubernetes" },
       { name: "AWS", icon: "aws" },
       { name: "Azure", icon: "azure" },
+      { name: "Render", icon: "render" },
     ],
   },
   {
@@ -66,6 +67,8 @@ const stack: { label: string; items: { name: string; icon?: IconName }[] }[] = [
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
       { name: "Playwright & BeautifulSoup", icon: "playwright" },
+      { name: "Claude", icon: "claude" },
+      { name: "PostHog", icon: "posthog" },
     ],
   },
 ];
