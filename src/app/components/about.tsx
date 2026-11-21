@@ -1,7 +1,53 @@
 import Image from "next/image";
-import { SectionDivider, SectionHeader, SectionWrapper } from "../elements/compstruct";
+import {
+  SectionDivider,
+  SectionHeader,
+  SectionWrapper,
+  Tip,
+} from "../elements/compstruct";
 import { Accordion } from "@base-ui/react";
 import { PlusIcon, CodeIcon } from "@radix-ui/react-icons";
+
+// w/h are the files' real pixel dimensions; cap is the rendered max width,
+// tuned per logo so a wide lockup and a square mark look equally weighted
+const accolades = [
+  {
+    img: "/certs/mlh.png",
+    alt: "MLH",
+    w: 622,
+    h: 263,
+    cap: 150,
+    title: "MLH'23 Hackhound Winner",
+    sub: "AI/ML Category",
+  },
+  {
+    img: "/company/centific.png",
+    alt: "Centific",
+    w: 500,
+    h: 500,
+    cap: 80,
+    title: "Application Engineer Intern at Centific",
+    sub: "Selected after a two-week hackathon",
+  },
+  {
+    img: "/certs/docker.png",
+    alt: "Docker",
+    w: 1346,
+    h: 1063,
+    cap: 95,
+    title: "Docker Certification",
+    sub: "Containerization & Deployment",
+  },
+  {
+    img: "/certs/deeplearningai.png",
+    alt: "DeepLearning.AI",
+    w: 860,
+    h: 108,
+    cap: 210,
+    title: "Agentic AI Certification",
+    sub: "DeepLearning.AI",
+  },
+];
 
 export default function About() {
   return (
@@ -13,28 +59,40 @@ export default function About() {
       <SectionWrapper>
         <ul className="list-disc p-4 pl-[35px] space-y-3 font-mont text-stone-700 dark:text-stone-300">
           <li>
-            Backend engineer building <span className="font-semibold">agentic systems</span>,
+            Backend engineer building{" "}
+            <span className="font-semibold">agentic systems</span>,
             <span className="font-semibold"> RAG pipelines</span>, and
-            <span className="font-semibold"> backend services</span> with a strong focus on performance, and
-            reliability.
+            <span className="font-semibold"> backend services</span> with a
+            strong focus on performance, and reliability.
           </li>
 
           <li>
-            Experienced with <span className="font-semibold">Python, FastAPI, LangGraph, LangChain, Redis,</span> and{" "}
-            <span className="font-semibold">PostgreSQL</span>, designing agentic workflows for enterprise teams for
-            automation.
+            Experienced with{" "}
+            <span className="font-semibold">
+              Python, FastAPI, LangGraph, LangChain, Redis,
+            </span>{" "}
+            and <span className="font-semibold">PostgreSQL</span>, designing
+            agentic workflows for enterprise teams for automation.
           </li>
 
           <li>
-            Currently contributing to an <span className="font-semibold">enterprise agentic AI assistant</span> under
-            the Office of the CIO, enabling workflow automation and CXO analytics for
+            Currently contributing to an{" "}
+            <span className="font-semibold">
+              enterprise agentic AI assistant
+            </span>{" "}
+            under the Office of the CIO, enabling workflow automation and CXO
+            analytics for
             <span className="font-semibold"> Finance, HR,</span> and
             <span className="font-semibold"> Legal</span> teams.
           </li>
 
           <li>
-            Passionate about <span className="font-semibold">transforming ideas into impactful products</span> through
-            continuous learning, experimentation, and hands-on engineering.
+            Passionate about{" "}
+            <span className="font-semibold">
+              transforming ideas into impactful products
+            </span>{" "}
+            through continuous learning, experimentation, and hands-on
+            engineering.
           </li>
         </ul>
       </SectionWrapper>
@@ -69,7 +127,9 @@ export default function About() {
 
                 <p className="text-base text-stone-900 dark:text-stone-100">
                   Backend Developer
-                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">| 07.2025 – Present</span>
+                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">
+                    | 07.2025 – Present
+                  </span>
                 </p>
               </div>
 
@@ -79,54 +139,94 @@ export default function About() {
             <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
-                  Contributing to development and migration of monolithic services into{" "}
-                  <span className="font-semibold">microservices architecture</span> integrating{" "}
-                  <span className="font-semibold">Azure Service Bus</span> for streaming and queue based request
-                  orchestration. Building enterprise <span className="font-semibold">agentic AI workflows</span> for
-                  Legal, HR and Finance teams. Optimizing{" "}
-                  <span className="font-semibold">stateful multi-agent workflows</span>, reducing average response
-                  latency from <span className="font-semibold">20s to 8s</span> and improving{" "}
+                  Contributing to development and migration of monolithic
+                  services into{" "}
+                  <span className="font-semibold">
+                    microservices architecture
+                  </span>{" "}
+                  integrating{" "}
+                  <span className="font-semibold">Azure Service Bus</span> for
+                  streaming and queue based request orchestration. Building
+                  enterprise{" "}
+                  <span className="font-semibold">agentic AI workflows</span>{" "}
+                  for Legal, HR and Finance teams. Optimizing{" "}
+                  <span className="font-semibold">
+                    stateful multi-agent workflows
+                  </span>
+                  , reducing average response latency from{" "}
+                  <span className="font-semibold">20s to 8s</span> and improving{" "}
                   <span className="font-semibold">traceability</span>.
                 </li>
 
                 <li>
-                  Developed <span className="font-semibold">HR Agent</span> by implementing{" "}
-                  <span className="font-semibold">semantic similarity search</span> combined with{" "}
-                  <span className="font-semibold">metadata-aware reranking</span> and{" "}
-                  <span className="font-semibold">filter-based retrieval</span> through{" "}
-                  <span className="font-semibold">Azure Search</span>. Integrated{" "}
-                  <span className="font-semibold">Redis</span> to optimize repeated policy queries, reducing{" "}
+                  Developed <span className="font-semibold">HR Agent</span> by
+                  implementing{" "}
+                  <span className="font-semibold">
+                    semantic similarity search
+                  </span>{" "}
+                  combined with{" "}
+                  <span className="font-semibold">
+                    metadata-aware reranking
+                  </span>{" "}
+                  and{" "}
+                  <span className="font-semibold">filter-based retrieval</span>{" "}
+                  through <span className="font-semibold">Azure Search</span>.
+                  Integrated <span className="font-semibold">Redis</span> to
+                  optimize repeated policy queries, reducing{" "}
                   <span className="font-semibold">response time</span>.
                 </li>
 
                 <li>
-                  Built <span className="font-semibold">NDA Agent</span> for Legal teams to automate the process of
-                  reviewing NDA documents by highlighting <span className="font-semibold">vulnerable clauses</span> and
-                  applying <span className="font-semibold">track changes</span> according to Legal Playbook. This
-                  reduced review time from <span className="font-semibold">2 hours to 30 minutes</span>.
+                  Built <span className="font-semibold">NDA Agent</span> for
+                  Legal teams to automate the process of reviewing NDA documents
+                  by highlighting{" "}
+                  <span className="font-semibold">vulnerable clauses</span> and
+                  applying <span className="font-semibold">track changes</span>{" "}
+                  according to Legal Playbook. This reduced review time from{" "}
+                  <span className="font-semibold">2 hours to 30 minutes</span>.
                 </li>
 
                 <li>
-                  Built <span className="font-semibold">Earnings Call Automation</span>, analyzing quarterly results
-                  through audio recordings for <span className="font-semibold">10+ peer companies</span> and providing{" "}
-                  <span className="font-semibold">structured summarization</span>. Integrated{" "}
-                  <span className="font-semibold">Power Automate</span> to deliver summaries through emails to CXOs.
-                  Reduced manual review time from <span className="font-semibold">1 hour to 15 minutes</span>.
+                  Built{" "}
+                  <span className="font-semibold">
+                    Earnings Call Automation
+                  </span>
+                  , analyzing quarterly results through audio recordings for{" "}
+                  <span className="font-semibold">10+ peer companies</span> and
+                  providing{" "}
+                  <span className="font-semibold">
+                    structured summarization
+                  </span>
+                  . Integrated{" "}
+                  <span className="font-semibold">Power Automate</span> to
+                  deliver summaries through emails to CXOs. Reduced manual
+                  review time from{" "}
+                  <span className="font-semibold">1 hour to 15 minutes</span>.
                 </li>
 
                 <li>
-                  Built <span className="font-semibold">end-to-end forecasting pipelines</span> for multiple
-                  forecastable VDUs using <span className="font-semibold">XGBoost</span>, achieving approximately{" "}
-                  <span className="font-semibold">2% MAPE</span>. Deployed models through{" "}
-                  <span className="font-semibold">Azure ML Studio</span> and developed interactive{" "}
-                  <span className="font-semibold">Power BI dashboards</span> for real-time financial visibility and
-                  reporting.
+                  Built{" "}
+                  <span className="font-semibold">
+                    end-to-end forecasting pipelines
+                  </span>{" "}
+                  for multiple forecastable VDUs using{" "}
+                  <span className="font-semibold">XGBoost</span>, achieving
+                  approximately <span className="font-semibold">2% MAPE</span>.
+                  Deployed models through{" "}
+                  <span className="font-semibold">Azure ML Studio</span> and
+                  developed interactive{" "}
+                  <span className="font-semibold">Power BI dashboards</span> for
+                  real-time financial visibility and reporting.
                 </li>
 
                 <li>
-                  Developed a <span className="font-semibold">data-driven spend analytics solution</span> to identify{" "}
-                  <span className="font-semibold">price inconsistencies</span> across purchase orders and varying
-                  payment terms.
+                  Developed a{" "}
+                  <span className="font-semibold">
+                    data-driven spend analytics solution
+                  </span>{" "}
+                  to identify{" "}
+                  <span className="font-semibold">price inconsistencies</span>{" "}
+                  across purchase orders and varying payment terms.
                 </li>
               </ul>
 
@@ -165,7 +265,12 @@ export default function About() {
       {/* Centific */}
       <SectionWrapper>
         <div className="flex items-center p-4">
-          <Image src="/company/centific.png" height={40} width={40} alt="Centific logo" />
+          <Image
+            src="/company/centific.png"
+            height={40}
+            width={40}
+            alt="Centific logo"
+          />
 
           <h2 className="text-base font-mont flex items-center gap-2 text-stone-900 dark:text-stone-100">
             Centific Global Technologies
@@ -182,7 +287,9 @@ export default function About() {
 
                 <p className="text-base text-stone-900 dark:text-stone-100">
                   Associate Application Engineer Intern
-                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">| 10.2024 – 06.2025</span>
+                  <span className="ml-2 text-sm text-gray-400 dark:text-stone-500">
+                    | 10.2024 – 06.2025
+                  </span>
                 </p>
               </div>
 
@@ -192,46 +299,76 @@ export default function About() {
             <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-stone-700 dark:text-stone-300 transition-[height] ease-out">
               <ul className="list-disc pl-[60px] font-mont mt-4 space-y-2">
                 <li>
-                  Designed and deployed a scalable, queue-based application logging and monitoring framework using the
-                  ELK stack (Elasticsearch, Logstash) to capture logs across AI services, scheduler jobs, and modular
-                  pipelines. Implemented structured JSON logging, log level standardization, and optimized shard
-                  allocation strategies for efficient log ingestion and retrieval. Built interactive user interface
-                  dashboards for stakeholders to monitor <span className="font-semibold">service-level metrics</span>,{" "}
+                  Designed and deployed a scalable, queue-based application
+                  logging and monitoring framework using the ELK stack
+                  (Elasticsearch, Logstash) to capture logs across AI services,
+                  scheduler jobs, and modular pipelines. Implemented structured
+                  JSON logging, log level standardization, and optimized shard
+                  allocation strategies for efficient log ingestion and
+                  retrieval. Built interactive user interface dashboards for
+                  stakeholders to monitor{" "}
+                  <span className="font-semibold">service-level metrics</span>,{" "}
                   <span className="font-semibold">user activity</span>,{" "}
                   <span className="font-semibold">error trends</span>, and{" "}
-                  <span className="font-semibold">performance bottlenecks</span> in real time.
+                  <span className="font-semibold">performance bottlenecks</span>{" "}
+                  in real time.
                 </li>
 
                 <li>
                   Designed and produced{" "}
-                  <span className="font-semibold">10 Retrieval-Augmented Generation (RAG) pipelines</span> for diverse
-                  stakeholders, integrating multiple vector databases with dynamic storage selection (
-                  <span className="font-semibold">Pinecone, ChromaDB</span> etc.) based on use-case requirements.
-                  Designed efficient <span className="font-semibold">indexing strategies</span>,{" "}
-                  <span className="font-semibold">chunking mechanisms</span>, and{" "}
-                  <span className="font-semibold">hybrid retrieval workflows</span> to support ingestion and contextual
-                  retrieval of IT governance and data privacy documentation.
+                  <span className="font-semibold">
+                    10 Retrieval-Augmented Generation (RAG) pipelines
+                  </span>{" "}
+                  for diverse stakeholders, integrating multiple vector
+                  databases with dynamic storage selection (
+                  <span className="font-semibold">Pinecone, ChromaDB</span>{" "}
+                  etc.) based on use-case requirements. Designed efficient{" "}
+                  <span className="font-semibold">indexing strategies</span>,{" "}
+                  <span className="font-semibold">chunking mechanisms</span>,
+                  and{" "}
+                  <span className="font-semibold">
+                    hybrid retrieval workflows
+                  </span>{" "}
+                  to support ingestion and contextual retrieval of IT governance
+                  and data privacy documentation.
                 </li>
 
                 <li>
-                  Developed and productionized <span className="font-semibold">35 RESTful APIs</span> powering AI
-                  backend services as well as core application modules, including pipeline graph visualization, pipeline
-                  creation, editing and deletion workflows, and real-time metrics dashboards. Ensured{" "}
+                  Developed and productionized{" "}
+                  <span className="font-semibold">35 RESTful APIs</span>{" "}
+                  powering AI backend services as well as core application
+                  modules, including pipeline graph visualization, pipeline
+                  creation, editing and deletion workflows, and real-time
+                  metrics dashboards. Ensured{" "}
                   <span className="font-semibold">modular architecture</span>,{" "}
                   <span className="font-semibold">scalability</span>, and{" "}
-                  <span className="font-semibold">clean service abstractions</span>. Maintained over{" "}
-                  <span className="font-semibold">90% code coverage</span> through comprehensive unit and integration
-                  testing using PyTest.
+                  <span className="font-semibold">
+                    clean service abstractions
+                  </span>
+                  . Maintained over{" "}
+                  <span className="font-semibold">90% code coverage</span>{" "}
+                  through comprehensive unit and integration testing using
+                  PyTest.
                 </li>
 
                 <li>
                   Fine-tuned large language models including{" "}
-                  <span className="font-semibold">Amazon Nova series via Amazon Bedrock</span>, and additionally
-                  fine-tuned <span className="font-semibold">DeepSeek-Coder-6.7B</span> and{" "}
-                  <span className="font-semibold">CodeLlama-Instruct</span> models using RunPod based on internal
-                  guidelines for coding standards, enabling more accurate{" "}
-                  <span className="font-semibold">domain-aligned code generation</span> and{" "}
-                  <span className="font-semibold">automated debugging support</span> for enterprise development teams.
+                  <span className="font-semibold">
+                    Amazon Nova series via Amazon Bedrock
+                  </span>
+                  , and additionally fine-tuned{" "}
+                  <span className="font-semibold">DeepSeek-Coder-6.7B</span> and{" "}
+                  <span className="font-semibold">CodeLlama-Instruct</span>{" "}
+                  models using RunPod based on internal guidelines for coding
+                  standards, enabling more accurate{" "}
+                  <span className="font-semibold">
+                    domain-aligned code generation
+                  </span>{" "}
+                  and{" "}
+                  <span className="font-semibold">
+                    automated debugging support
+                  </span>{" "}
+                  for enterprise development teams.
                 </li>
               </ul>
 
@@ -273,86 +410,46 @@ export default function About() {
       <SectionDivider />
 
       <SectionWrapper>
-        <SectionHeader title="Accolades & Certifications" id="accolades" />
+        <SectionHeader
+          title="Accolades & Certifications"
+          id="accolades"
+          className="py-1"
+        />
       </SectionWrapper>
 
-      <SectionWrapper className="border-b border-stone-200/50 dark:border-stone-900">
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-stone-200/50 dark:divide-stone-800">
-          {/* MLH */}
-          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50 dark:border-stone-900">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
-              <Image alt="MLH" src="/certs/mlh.png" width={100} height={100} className="object-contain" />
+      <SectionWrapper>
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          {accolades.map((item, i) => (
+            <div
+              key={item.title}
+              className={`group flex flex-col items-center justify-center gap-6 p-8 min-h-[220px] border-b border-stone-200/50 dark:border-stone-900 ${
+                i % 2 === 0 ? "sm:border-r" : ""
+              }`}
+            >
+              {/* fixed-height box: logos differ in aspect ratio, so without it
+                  every caption lands at a different height across cells */}
+              <Tip label={item.alt} className="h-20 items-center justify-center">
+                <Image
+                  alt={item.alt}
+                  src={item.img}
+                  width={item.w}
+                  height={item.h}
+                  style={{ maxWidth: item.cap }}
+                  className="max-h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-[filter] duration-500"
+                />
+              </Tip>
+
+              <div className="text-center space-y-1">
+                <h3 className="font-mont text-sm leading-snug text-stone-950 dark:text-stone-100">
+                  {item.title}
+                </h3>
+
+                <p className="font-mont text-sm leading-snug text-stone-500 dark:text-stone-400">
+                  {item.sub}
+                </p>
+              </div>
             </div>
-
-            <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
-                MLH&apos;23 Hackhound Winner
-              </h3>
-
-              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">AI/ML Category</p>
-            </div>
-          </div>
-
-          {/* Centific */}
-          <div className="flex flex-col min-h-[200px] border-b border-stone-200/50 dark:border-stone-900">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
-              <Image alt="Centific" src="/company/centific.png" width={100} height={100} className="object-contain" />
-            </div>
-
-            <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
-                Application Engineer Intern at Centific
-              </h3>
-
-              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
-                Selected after a two-week hackathon
-              </p>
-            </div>
-          </div>
-
-          {/* Docker */}
-          <div className="flex flex-col min-h-[200px]">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
-              <Image
-                alt="Docker"
-                src="/certs/docker.png"
-                width={75}
-                height={75}
-                className="object-contain rounded-md"
-              />
-            </div>
-
-            <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
-                Docker Certification
-              </h3>
-
-              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">
-                Containerization & Deployment
-              </p>
-            </div>
-          </div>
-
-          {/* DeepLearning.AI */}
-          <div className="flex flex-col min-h-[200px]">
-            <div className="flex-1 flex items-center justify-center border-b border-stone-200/50 dark:border-stone-900">
-              <Image
-                alt="DeepLearning.AI"
-                src="/certs/deeplearningai.png"
-                width={120}
-                height={120}
-                className="object-contain"
-              />
-            </div>
-
-            <div className="p-4 text-center">
-              <h3 className="font-mont text-base leading-snug text-stone-950 dark:text-stone-100">
-                Agentic AI Certification
-              </h3>
-
-              <p className="font-mont text-base text-stone-500 dark:text-stone-400 mt-2">DeepLearning.AI</p>
-            </div>
-          </div>
+          ))}
         </div>
       </SectionWrapper>
 

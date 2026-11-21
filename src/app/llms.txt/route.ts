@@ -45,6 +45,27 @@ Currently contributing to an enterprise AI assistant under the Office of the CIO
 - Enterprise automation
 
 
+## Stack
+
+Languages:
+- Python, TypeScript, JavaScript, C++
+
+Frontend:
+- React, Next.js, Angular, Tailwind CSS, Zod
+
+Backend & Database:
+- FastAPI, Flask, Node.js, Express.js, PostgreSQL, MongoDB, Redis, Prisma, Elasticsearch
+
+AI & Agents:
+- LangChain, LangGraph, FastMCP, AutoGen, PyTorch, Transformers, Scikit-Learn, NLTK, spaCy
+
+Infra & Cloud:
+- Docker, Kubernetes, AWS, Azure, ZenML, MLflow, Dramatiq
+
+Tooling:
+- Git, GitHub, Playwright, BeautifulSoup, PyTest, Logstash
+
+
 ## Work Experience
 
 ## Larsen & Toubro Technology Services
@@ -78,33 +99,40 @@ Work:
 
 ## Projects
 
-## LinkedIn Post Automator
+## Aletheia
 Repository:
-- https://github.com/ayush9h/linkedin-post-automater
+- https://github.com/ayush9h/aletheia
+
+Live Demo:
+- https://www.ayuar.dev/aletheia
 
 Tech Stack:
-- ReactJS
-- AutoGen
-- Redis
-- Celery
+- Next.js
+- FastAPI
+- LangGraph
+- Groq
+- PostgreSQL
 
 Description:
-Automates LinkedIn content generation and posting workflows using AI agents.
+Conversational AI platform built on LangGraph and Groq, with a Next.js frontend and a FastAPI backend.
 
 ---
 
-## Stable SAM
+## Finance MCP
 Repository:
-- https://github.com/sankadash/StableSAM
+- https://github.com/ayush9h/finance-mcp
+
+Live Demo:
+- https://financemcp-theta.vercel.app/
 
 Tech Stack:
-- Python
-- Stable Diffusion
-- Segment Anything Model (SAM)
-- Streamlit
+- TypeScript
+- Go
+- Model Context Protocol (MCP)
+- Web Scraping
 
 Description:
-Image segmentation and generative AI experimentation platform.
+A Model Context Protocol server for finance teams that scrapes links and reports from the investor pages of listed companies.
 
 ---
 

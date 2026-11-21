@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Landing from "./components/landing";
 import About from "./components/about";
 import Projects from "./components/projects";
+import Stack from "./components/stack";
 import Connect from "./components/connect";
 import Lenis from "lenis";
 import CommandMenu from "./components/terminal";
@@ -30,6 +31,7 @@ export default function Home() {
       <main className="pt-12">
         <Landing />
         <About />
+        <Stack />
         <Projects />
         <Connect />
       </main>
