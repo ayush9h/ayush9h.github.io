@@ -1,80 +1,98 @@
-import StackIcon from "../elements/stack-icon";
-import { type StackIconName } from "../elements/stack-icons";
+import { Icon } from "@iconify/react";
 import {
   SectionDivider,
   SectionHeader,
   SectionWrapper,
 } from "../elements/compstruct";
 
-const stack: {
-  label: string;
-  items: { name: string; icon?: StackIconName }[];
-}[] = [
+type Item = { name: string; icon?: string; dark?: "invert" | "white" };
+
+const stack: { label: string; items: Item[] }[] = [
   {
     label: "Languages",
     items: [
-      { name: "Python", icon: "python" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "JavaScript", icon: "js" },
-      { name: "C++", icon: "c++" },
+      { name: "Python", icon: "logos:python", dark: "white" },
+      { name: "TypeScript", icon: "logos:typescript-icon", dark: "white" },
+      { name: "JavaScript", icon: "logos:javascript", dark: "white" },
+      { name: "C++", icon: "logos:c-plusplus", dark: "white" },
     ],
   },
   {
     label: "Frontend",
     items: [
-      { name: "React", icon: "react" },
-      { name: "Next.js", icon: "nextjs" },
-      { name: "Angular", icon: "angular" },
-      { name: "Tailwind CSS", icon: "tailwindcss" },
-      { name: "shadcn/ui", icon: "shadcnui" },
+      { name: "React", icon: "logos:react", dark: "white" },
+      { name: "Next.js", icon: "logos:nextjs-icon", dark: "white" },
+      { name: "Angular", icon: "logos:angular-icon", dark: "white" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon", dark: "white" },
+      { name: "shadcn/ui", icon: "hugeicons:shadcn", dark: "white" },
     ],
   },
   {
-    label: "Backend & Database",
+    label: "Backend",
     items: [
-      { name: "Flask", icon: "flask" },
-      { name: "Node", icon: "nodejs" },
-      { name: "Express", icon: "expressjs" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MongoDB", icon: "mongodb" },
-      { name: "Redis", icon: "redis" },
-      { name: "Prisma", icon: "prisma" },
-      { name: "Elasticsearch", icon: "elastic" },
-      { name: "PyTest", icon: "pytest" },
+      { name: "FastAPI", icon: "logos:fastapi-icon", dark: "white" },
+      { name: "Flask", icon: "logos:flask", dark: "white" },
+      { name: "Node", icon: "logos:nodejs-icon", dark: "white" },
+      { name: "Express", icon: "devicon:express", dark: "white" },
+      { name: "PostgreSQL", icon: "logos:postgresql", dark: "white" },
+      { name: "MongoDB", icon: "logos:mongodb-icon", dark: "white" },
+      { name: "Redis", icon: "logos:redis", dark: "white" },
+      { name: "Prisma", icon: "logos:prisma", dark: "white" },
+      { name: "Elasticsearch", icon: "logos:elasticsearch", dark: "white" },
+      { name: "Logstash", icon: "logos:logstash", dark: "white" },
+      { name: "PyTest", icon: "devicon:pytest", dark: "white" },
     ],
   },
   {
     label: "AI & Agents",
     items: [
-      { name: "LangChain", icon: "langchain" },
-      { name: "LangGraph & MCP", icon: "langgraph" },
-      { name: "AutoGen", icon: "azureai" },
-      { name: "PyTorch", icon: "pytorch" },
-      { name: "Tensorflow", icon: "tensorflow" },
-      { name: "Scikit-Learn", icon: "scikitlearn" },
+      { name: "LangChain", icon: "logos:langchain-icon", dark: "white" },
+      {
+        name: "LangGraph",
+        icon: "thesvg-color:langgraph",
+        dark: "white",
+      },
+      { name: "CrewAI", icon: "thesvg-color:crewai", dark: "white" },
+      { name: "AzureAI", icon: "thesvg-color:azureai", dark: "white" },
+      { name: "MCP", icon: "bxl:mcp", dark: "white" },
+      { name: "PyTorch", icon: "logos:pytorch-icon", dark: "white" },
+      { name: "Tensorflow", icon: "logos:tensorflow", dark: "white" },
+      { name: "Scikit-Learn", icon: "devicon:scikitlearn", dark: "white" },
     ],
   },
   {
     label: "Infra & Cloud",
     items: [
-      { name: "Docker", icon: "docker" },
-      { name: "Kubernetes", icon: "kubernetes" },
-      { name: "AWS", icon: "aws" },
-      { name: "Azure", icon: "azure" },
-      { name: "Render", icon: "render" },
+      { name: "Docker", icon: "logos:docker-icon", dark: "white" },
+      { name: "Azure", icon: "logos:microsoft-azure", dark: "white" },
+      {
+        name: "Render",
+        icon: "vscode-icons:file-type-light-render",
+        dark: "white",
+      },
+      { name: "Kubernetes", icon: "logos:kubernetes", dark: "white" },
+      { name: "AWS", icon: "logos:aws", dark: "white" },
     ],
   },
   {
     label: "Tooling",
     items: [
-      { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "github" },
-      { name: "Playwright & BeautifulSoup", icon: "playwright" },
-      { name: "Claude", icon: "claude" },
-      { name: "PostHog", icon: "posthog" },
+      { name: "Git", icon: "logos:git-icon" },
+      { name: "GitHub", icon: "logos:github-icon", dark: "invert" },
+      { name: "Playwright", icon: "logos:playwright" },
+      { name: "Claude", icon: "logos:claude-icon" },
+      { name: "PostHog", icon: "logos:posthog-icon" },
+      { name: "Celery", icon: "thesvg-color:celery" },
     ],
   },
 ];
+
+const darkClass = (dark: Item["dark"]) =>
+  dark === "invert"
+    ? "dark:invert"
+    : dark === "white"
+      ? "dark:brightness-0 dark:invert"
+      : "";
 
 export default function Stack() {
   return (
@@ -107,9 +125,13 @@ export default function Stack() {
                     className="group flex items-center gap-1.5 rounded-full border border-stone-200 dark:border-stone-800 px-3 py-1 font-mont text-xs text-stone-600 dark:text-stone-300"
                   >
                     {item.icon && (
-                      <StackIcon
-                        name={item.icon}
-                        className="w-3.5 h-3.5 grayscale group-hover:grayscale-0 transition-[filter] duration-300"
+                      <Icon
+                        icon={item.icon}
+                        aria-hidden="true"
+                        // height-locked so wide wordmarks keep their shape
+                        className={`h-3.5 w-auto max-w-[2.75rem] shrink-0 grayscale group-hover:grayscale-0 transition-[filter] duration-300 ${darkClass(
+                          item.dark,
+                        )}`}
                       />
                     )}
 
