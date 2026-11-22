@@ -19,7 +19,7 @@ export default function ArrowUp() {
   return (
     <div
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-10 right-10 z-50 p-2 rounded-md cursor-pointer hover:bg-stone-200/60 hover:text-stone-900 group"
+      className="fixed bottom-10 right-10 z-50 p-2 rounded-lg cursor-pointer bg-stone-200/30 hover:bg-stone-200/50 hover:text-stone-900 group"
     >
       <ArrowUpIcon className="h-5 w-5 text-stone-400 group-hover:text-stone-900" />
     </div>

@@ -1,6 +1,10 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
-import { SectionDivider, SectionHeader, SectionWrapper } from "../elements/compstruct";
+import {
+  SectionDivider,
+  SectionHeader,
+  SectionWrapper,
+} from "../elements/compstruct";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -64,7 +68,7 @@ export default function Projects() {
                   height={item.h}
                   quality={90}
                   sizes="(max-width: 768px) 92vw, 67vw"
-                  className="w-full h-[22rem] object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-500"
+                  className="w-full h-[22rem] object-cover"
                 />
               </div>
 
@@ -106,24 +110,7 @@ export default function Projects() {
             <Link
               href="https://github.com/ayush9h"
               target="_blank"
-              className="
-                mt-2 mb-2 mx-auto
-                w-[10rem]
-                p-2
-                rounded-full
-                flex justify-center items-center text-center
-                font-mont
-                bg-gradient-to-b
-                from-stone-900 via-stone-800 to-gray-700
-                dark:from-stone-100 dark:via-stone-300 dark:to-white
-                hover:from-gray-800 hover:via-stone-900 hover:to-stone-900
-                dark:hover:from-stone-300 dark:hover:via-stone-100 dark:hover:to-white
-                shadow-md hover:shadow-xl
-                 duration-300
-                text-sm
-                text-stone-200 dark:text-stone-900
-                uppercase
-              "
+              className=" mt-2 mb-2 mx-auto w-[10rem] p-2 rounded-lg flex justify-center items-center text-center font-mont bg-gradient-to-b from-stone-900 via-stone-800 to-gray-700 dark:from-stone-100 dark:via-stone-300 dark:to-white hover:from-gray-800 hover:via-stone-900 hover:to-stone-900 dark:hover:from-stone-300 dark:hover:via-stone-100 dark:hover:to-white shadow-md hover:shadow-xl text-sm text-stone-200 dark:text-stone-900 uppercase"
             >
               see all projects
             </Link>

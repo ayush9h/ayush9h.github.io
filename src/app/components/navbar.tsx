@@ -57,7 +57,7 @@ export default function Navbar() {
               document.dispatchEvent(event);
             }}
             className="
-              flex items-center justify-center gap-1 rounded-full border border-stone-200 dark:border-stone-800 bg-stone-80/10 dark:bg-black/60 backdrop-blur-md px-1.5 py-1 shadow-sm hover:border-stone-300 dark:hover:border-stone-700 cursor-pointer
+              flex items-center justify-center gap-1 rounded-lg border border-stone-200 dark:border-stone-800 bg-stone-80/10 dark:bg-black/60 backdrop-blur-md px-1.5 py-1 shadow-sm hover:border-stone-300 dark:hover:border-stone-700 cursor-pointer
             "
           >
             <MagnifyingGlassIcon
@@ -95,7 +95,7 @@ export default function Navbar() {
               href="https://github.com/ayush9h"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-2 py-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800"
+              className="flex items-center gap-1.5 px-2 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800"
             >
               <GitHubLogoIcon className="text-stone-900 dark:text-stone-100 h-4 w-4" />
 
@@ -110,7 +110,7 @@ export default function Navbar() {
           <Tip label={theme === "light" ? "Dark theme" : "Light theme"}>
             <button
               onClick={() => changeTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer"
+              className="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer"
             >
               {theme === "light" ? (
                 <Sun className="h-4 w-4 text-stone-900" />

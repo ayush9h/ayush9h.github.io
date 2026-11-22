@@ -43,9 +43,18 @@ function MouseGlider() {
   });
 
   return (
-    <RigidBody ref={rigidBody} type="kinematicPosition" colliders="ball" position={[0, 0, 0]}>
+    <RigidBody
+      ref={rigidBody}
+      type="kinematicPosition"
+      colliders="ball"
+      position={[0, 0, 0]}
+    >
       <CuboidCollider args={[0.5, 0.2, 0.2]} />
-      <Sphere args={[0.5, 16, 16]} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)}>
+      <Sphere
+        args={[0.5, 16, 16]}
+        onPointerOver={() => setHover(true)}
+        onPointerOut={() => setHover(false)}
+      >
         <meshStandardMaterial color="white" opacity={0.2} transparent />
       </Sphere>
     </RigidBody>
@@ -68,7 +77,11 @@ function FloatingSpheres({ color, trigger }) {
       const body = bodies.current[sphere.id];
       if (body) {
         const currentPos = body.translation();
-        const dir = new THREE.Vector3(currentPos.x, 0, currentPos.z).normalize();
+        const dir = new THREE.Vector3(
+          currentPos.x,
+          0,
+          currentPos.z,
+        ).normalize();
         body.applyImpulse(dir.multiplyScalar(30), true);
       }
     });
@@ -101,7 +114,11 @@ function FloatingSpheres({ color, trigger }) {
           }}
         >
           <Sphere args={[0.6, 64, 64]}>
-            <meshStandardMaterial color={d.blue ? color : "#111"} metalness={0.9} roughness={0.1} />
+            <meshStandardMaterial
+              color={d.blue ? color : "#111"}
+              metalness={0.9}
+              roughness={0.1}
+            />
           </Sphere>
         </RigidBody>
       ))}
@@ -113,9 +130,19 @@ export default function Spheres() {
   const colors = ["#1e40ff", "#ff0000", "#facc15"];
   const [index, setIndex] = useState(0);
   const [clickCount, setClickCount] = useState(0);
+  const canvas = useRef(null);
+  const [onScreen, setOnScreen] = useState(false);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(([e]) => setOnScreen(e.isIntersecting));
+    io.observe(canvas.current);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <Canvas
+      ref={canvas}
+      frameloop={onScreen ? "always" : "never"}
       camera={{ position: [0, 10, 0], fov: 30 }}
       onPointerDown={() => {
         setIndex((i) => (i + 1) % colors.length);

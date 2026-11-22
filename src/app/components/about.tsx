@@ -229,34 +229,6 @@ export default function About() {
                   across purchase orders and varying payment terms.
                 </li>
               </ul>
-
-              <div className="mt-4 px-4">
-                <div className="flex flex-wrap gap-1">
-                  {[
-                    "Python",
-                    "FastAPI",
-                    "LangGraph",
-                    "LangChain",
-                    "Redis",
-                    "PostgreSQL",
-                    "Docker",
-                    "Dramatiq",
-                    "Azure Kubernetes Services",
-                    "Azure Service Bus",
-                    "Azure ML Studio",
-                    "Azure Search",
-                    "Power Automate",
-                  ].map((tech) => (
-                    <span
-                      key={tech}
-                      className=" rounded-full border border-gray-300 dark:border-stone-700 px-3 py-1 text-sm font-mont text-gray-700 dark:text-stone-200 bg-white dark:bg-stone-950
-                      "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </Accordion.Panel>
           </Accordion.Item>
         </Accordion.Root>
@@ -371,37 +343,6 @@ export default function About() {
                   for enterprise development teams.
                 </li>
               </ul>
-
-              <div className="mt-4 px-4">
-                <div className="flex flex-wrap gap-1">
-                  {[
-                    "Python",
-                    "Flask",
-                    "PostgreSQL",
-                    "Amazon Web Services",
-                    "Amazon Nova",
-                    "HuggingFace",
-                    "LangChain",
-                    "LangGraph",
-                    "Pinecone",
-                    "Milvus",
-                    "ChromaDB",
-                    "Elasticsearch",
-                    "Logstash",
-                    "Kibana",
-                    "Docker",
-                    "PyTest",
-                  ].map((tech) => (
-                    <span
-                      key={tech}
-                      className=" rounded-full border border-gray-300 dark:border-stone-700 px-3 py-1 text-sm font-mont text-gray-700 dark:text-stone-200 bg-white dark:bg-stone-950
-                "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </Accordion.Panel>
           </Accordion.Item>
         </Accordion.Root>
@@ -428,14 +369,17 @@ export default function About() {
             >
               {/* fixed-height box: logos differ in aspect ratio, so without it
                   every caption lands at a different height across cells */}
-              <Tip label={item.alt} className="h-20 items-center justify-center">
+              <Tip
+                label={item.alt}
+                className="h-20 items-center justify-center"
+              >
                 <Image
                   alt={item.alt}
                   src={item.img}
                   width={item.w}
                   height={item.h}
                   style={{ maxWidth: item.cap }}
-                  className="max-h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-[filter] duration-500"
+                  className="max-h-20 w-auto object-contain"
                 />
               </Tip>
 

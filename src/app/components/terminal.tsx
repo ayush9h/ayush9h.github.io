@@ -26,7 +26,7 @@ import {
 import { useTheme } from "../providers/theme-provider";
 
 const itemClass =
-  "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-mont text-stone-900 dark:text-stone-100 data-[selected=true]:bg-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer";
+  "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-mont text-stone-900 dark:text-stone-100 data-[selected=true]:bg-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer";
 
 const headingClass =
   "mt-4 mb-2 block px-3 text-xs font-mont text-stone-400 dark:text-stone-500";
@@ -229,7 +229,7 @@ export default function CommandMenu() {
               <Command.Item
                 key={item.value}
                 onSelect={() => changeTheme(item.value)}
-                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-mont text-stone-900 data-[selected=true]:bg-stone-100 dark:text-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer"
+                className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-mont text-stone-900 data-[selected=true]:bg-stone-100 dark:text-stone-100 dark:data-[selected=true]:bg-stone-800 cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   {item.icon}
